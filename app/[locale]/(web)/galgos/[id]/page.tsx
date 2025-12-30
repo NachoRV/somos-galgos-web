@@ -97,23 +97,16 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
                 <p>
                   <span className="font-semibold">{t('age')}:</span> {age} {t('years')}
                 </p>
-                <p>
+                {/* <p>
                   <span className="font-semibold">{t('birthDate')}:</span>{' '}
                   {formatDate(dog.birth_date)}
+                </p> */}
+                <p>
+                  <span className="font-semibold">{t('testedWithCats')}:</span>{' '}
+                  {dog.tested_with_cats ? '✅ Sí' : '❌ No'}
                 </p>
               </div>
             </div>
-
-            {/* Estado */}
-            <div className="border-t border-[var(--color-text-secondary)]/20 pt-6">
-              <p className="text-sm text-[var(--color-text-secondary)]">
-                <span className="font-semibold">{t('status')}:</span>
-              </p>
-              <div className="mt-2 inline-block bg-[var(--color-secondary)] text-[var(--color-text-on-gold)] px-4 py-2 rounded-full text-sm font-semibold">
-                {t(`statuses.${dog.status}`)}
-              </div>
-            </div>
-
             {/* Datos de rescate */}
             <div className="border-t border-[var(--color-text-secondary)]/20 pt-6">
               <h3 className="font-bold text-[var(--color-primary)] mb-3">
@@ -123,17 +116,6 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
                 <p>
                   <span className="font-semibold">{t('entryDate')}:</span>{' '}
                   {formatDate(dog.entry_date)}
-                </p>
-                <p>
-                  <span className="font-semibold">{t('origin')}:</span> {dog.origin}
-                </p>
-                <p>
-                  <span className="font-semibold">{t('neuteringDate')}:</span>{' '}
-                  {formatDate(dog.neutering_date)}
-                </p>
-                <p>
-                  <span className="font-semibold">{t('chipNumber')}:</span>{' '}
-                  {dog.chip_number || 'N/A'}
                 </p>
               </div>
             </div>
@@ -145,19 +127,18 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
               </h3>
               <div className="space-y-2 text-sm text-[var(--color-text-secondary)]">
                 <p>
-                  <span className="font-semibold">{t('testedWithCats')}:</span>{' '}
-                  {dog.tested_with_cats ? '✅ Sí' : '❌ No'}
+                  <span className="font-semibold">{t('neutered')}:</span>{' '}
+                  {dog.neutering_date ? '✅' : '❌'}
                 </p>
-                {dog.vet_history_url && (
-                  <a
-                    href={dog.vet_history_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--color-accent)] hover:underline block"
-                  >
-                    {t('vetHistory')} ↗
-                  </a>
-                )}
+              </div>
+            </div>
+            {/* Estado */}
+            <div className="border-t border-[var(--color-text-secondary)]/20 pt-6">
+              <p className="text-sm text-[var(--color-text-secondary)]">
+                <span className="font-semibold">{t('status')}:</span>
+              </p>
+              <div className="mt-2 inline-block bg-[var(--color-secondary)] text-[var(--color-text-on-gold)] px-4 py-2 rounded-full text-sm font-semibold">
+                {t(`statuses.${dog.status}`)}
               </div>
             </div>
 
@@ -173,7 +154,7 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
         {/* Descripción completa */}
         <div className="mt-12 border-t border-[var(--color-text-secondary)]/20 pt-8">
           <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4">
-            {t('about')}
+            {t('about')} {dog.name}
           </h2>
           <p className="text-[var(--color-text-secondary)] leading-relaxed whitespace-pre-wrap">
             {dog.web_description}

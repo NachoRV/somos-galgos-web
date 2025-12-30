@@ -43,12 +43,12 @@
     "rescueInfo": "Rescue Information",
     "entryDate": "Arrival date",
     "origin": "Origin",
-    "neuteringDate": "Neutering date",
+    "neutered": "Neutered",
     "chipNumber": "Chip number",
     "health": "Health",
     "testedWithCats": "Tested with cats",
     "vetHistory": "Vet history",
-    "about": "About this dog",
+    "about": "About",
     "notes": "Additional notes",
     "adoptButton": "Adopt this dog"
   }

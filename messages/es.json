@@ -43,12 +43,12 @@
     "rescueInfo": "Información de Rescate",
     "entryDate": "Fecha de llegada",
     "origin": "Origen",
-    "neuteringDate": "Fecha de esterilización",
+    "neutered": "Esterilizado",
     "chipNumber": "Número de chip",
     "health": "Salud",
     "testedWithCats": "Probado con gatos",
     "vetHistory": "Historial veterinario",
-    "about": "Sobre este perro",
+    "about": "Sobre",
     "notes": "Notas adicionales",
     "adoptButton": "Adoptar a este perro"
   }
