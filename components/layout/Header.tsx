@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from "next/image";
 
 const navigation = [
-	{ name: 'Inicio', href: '/' },
-	{ name: 'Galgos', href: '/galgos' },
+	{ name: 'Nuestros Perros', href: '/galgos' },
 	{ name: 'Adoptar', href: '/adoptar' },
 	{ name: 'Acoger', href: '/acoger' },
 	{ name: 'Apadrinar', href: '/apadrinar' },
@@ -19,11 +19,19 @@ export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className='sticky top-0 z-50 w-full border-b bg-base-100 backdrop-blur'>
-			<nav className='container flex h-16 items-center justify-between px-4'>
+    <header className="sticky top-0 z-50 w-full bg-[var(--color-secondary)] backdrop-blur shadow-lg/40">
+      <nav className="container flex h-16 items-center justify-between px-4 bg-[var(--color-secondary)]/90">
 				<div className='flex items-center gap-6'>
 					<Link href='/' className='flex items-center space-x-2'>
-						<span className='text-2xl font-bold'>🐕 Somos Galgos</span>
+            <Image
+              src="/logo.webp"
+              alt="Logo Somos Galgos"
+              width={40}
+              height={40}
+              className="border-2 border-black rounded-full bg-white"
+              priority
+            />
+						<span className='text-2xl font-bold'>Somos Galgos</span>
 					</Link>
 				</div>
 
@@ -33,7 +41,8 @@ export function Header() {
 						<Link
 							key={item.name}
 							href={item.href}
-							className='text-sm font-medium transition-colors hover:text-primary'
+              className='font-semibold text-lg transition-colors hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-primary)] decoration-4'
+
 						>
 							{item.name}
 						</Link>

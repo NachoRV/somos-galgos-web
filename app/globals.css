@@ -48,51 +48,61 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  /* Brand Colors */
-  --primary: #2a2d20;           /* black-olive */
-  --secondary: #be9a14;         /* satin-sheen-gold */
-  --verdigris: #56a3a6;
-  --black-olive: #2a2d20;
-  --satin-sheen-gold: #be9a14;
-  --seasalt: #daf31d;
-  --lavender-web: #e3dfff;
-  /* Variations */
-  --primary-light: #3d4033;
-  --primary-dark: #1f2118;
-  --secondary-light: #d4ae2e;
-  --secondary-dark: #9a7d0f;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Primary Colors - Somos Galgos Brand */
+  --color-primary: rgb(42, 45, 32);      /* Black Olive - Main brand color */
+  --color-primary-dark: #2a2d20;         /* Darker shade for hover states */
+  --color-primary-light: #5a5d50;        /* Lighter shade for backgrounds */
+  /* Secondary Colors */
+  --color-secondary: #be9a14ff;          /* Satin Sheen Gold - Accent color */
+  --color-secondary-light: #d4b84a;      /* Lighter gold */
+  /* Accent Colors */
+  --color-accent: #56a3a6ff;             /* Verdigris - Teal green */
+  --color-accent-light: #7db7ba;         /* Lighter verdigris */
+  /* Neutral Colors */
+  --color-neutral-900: #1A1A1A;   /* Almost black */
+  --color-neutral-800: #2D2D2D;   /* Dark gray */
+  --color-neutral-700: #4A4A4A;   /* Medium-dark gray */
+  --color-neutral-600: #666666;   /* Medium gray */
+  --color-neutral-500: #808080;   /* Gray */
+  --color-neutral-400: #ABABAB;   /* Light gray */
+  --color-neutral-300: #D3D3D3;   /* Lighter gray */
+  --color-neutral-200: #E8E8E8;   /* Very light gray */
+  --color-neutral-100: #F5F5F5;   /* Almost white */
+  --color-neutral-0: #FFFFFF;     /* White */
+  /* Semantic Colors - Updated */
+  --color-success: #56a3a6ff;     /* Verdigris - Using the teal green */
+  --color-warning: #be9a14ff;     /* Satin Sheen Gold */
+  --color-danger: #E74C3C;        /* Red for danger/errors */
+  --color-info: #56a3a6ff;        /* Verdigris for info */
+  /* Highlight Color - Using Seasalt (bright lime) */
+  --color-highlight: rgb(218, 243, 29);
+  --color-highlight-light: #daff80;
+  /* Lavender accent */
+  --color-tertiary: #e3dfffff;
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9F9F9;
+  --color-bg-tertiary: #F0F0F0;
+  /* Text Colors - Adjusted for dark primary */
+  --color-text-primary: rgb(42, 45, 32);      /* Black Olive - Same as primary */
+  --color-text-secondary: #4A4A4A;            /* Medium gray */
+  --color-text-tertiary: #808080;             /* Gray */
+  --color-text-inverted: #FFFFFF;             /* White for dark backgrounds */
+  --color-text-on-gold: rgb(42, 45, 32);      /* Dark text on gold backgrounds */
+  --color-text-on-accent: #FFFFFF;            /* White text on teal */
+  /* Border Colors */
+  --color-border-light: #E8E8E8;
+  --color-border-medium: #D3D3D3;
+  --color-border-dark: #ABABAB;
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
 }
 
 .dark {
