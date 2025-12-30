@@ -7,23 +7,8 @@ const config: Config = {
     './lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: 'var(--primary)',
-        'primary-light': 'var(--primary-light)',
-        'primary-dark': 'var(--primary-dark)',
-        secondary: 'var(--secondary)',
-        'secondary-light': 'var(--secondary-light)',
-        'secondary-dark': 'var(--secondary-dark)',
-        verdigris: 'var(--verdigris)',
-        'black-olive': 'var(--black-olive)',
-        'satin-sheen-gold': 'var(--satin-sheen-gold)',
-        seasalt: 'var(--seasalt)',
-        'lavender-web': 'var(--lavender-web)',
-      },
-    },
+    extend: {},
   },
-  plugins: [],
 };
 
 export default config;
