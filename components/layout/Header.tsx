@@ -22,7 +22,7 @@ export function Header() {
 
 	return (
     <header className="sticky top-0 z-50 w-full bg-[var(--color-secondary)] backdrop-blur shadow-lg/40">
-      <nav className="container flex h-16 items-center justify-between px-4 bg-[var(--color-secondary)]/90">
+      <nav className="flex h-16 items-center justify-between px-4 bg-[var(--color-secondary)]/90 w-full">
 				<div className='flex items-center gap-6'>
 					<Link href='/' className='flex items-center space-x-2'>
             <Image
@@ -56,8 +56,6 @@ export function Header() {
 					{t('adoptNow')}
 				</Link>
 			</div>
-
-				{/* Mobile menu button */}
 				<div className='flex lg:hidden'>
 					<button
 						className='btn btn-ghost btn-square'
