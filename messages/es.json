@@ -12,5 +12,15 @@
     "about": "Sobre Nosotros",
     "contact": "Contacto",
     "adoptNow": "Adopta Ahora"
+  },
+  "Dogs": {
+    "title": "Nuestros Perros",
+    "subtitle": "Conoce a los galgos que están esperando un hogar lleno de amor",
+    "age": "Edad",
+    "breed": "Raza",
+    "knowMore": "Conocer más",
+    "ctaTitle": "¿Quieres adoptar?",
+    "ctaDescription": "Si has encontrado a tu nuevo compañero, te ayudamos en todo el proceso de adopción.",
+    "ctaButton": "Inicia el proceso"
   }
 }

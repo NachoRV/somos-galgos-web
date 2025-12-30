@@ -12,5 +12,15 @@
     "about": "About Us",
     "contact": "Contact",
     "adoptNow": "Adopt Now"
+  },
+  "Dogs": {
+    "title": "Our Dogs",
+    "subtitle": "Meet the galgos (Spanish greyhounds) waiting for a loving home",
+    "age": "Age",
+    "breed": "Breed",
+    "knowMore": "Learn More",
+    "ctaTitle": "Ready to Adopt?",
+    "ctaDescription": "If you found your new companion, we help you through the entire adoption process.",
+    "ctaButton": "Start the Process"
   }
 }
