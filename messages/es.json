@@ -22,5 +22,34 @@
     "ctaTitle": "¿Quieres adoptar?",
     "ctaDescription": "Si has encontrado a tu nuevo compañero, te ayudamos en todo el proceso de adopción.",
     "ctaButton": "Inicia el proceso"
+  },
+  "DogDetail": {
+    "backToList": "Volver a la lista",
+    "breed": "Raza",
+    "sex": "Sexo",
+    "age": "Edad",
+    "birthDate": "Fecha de nacimiento",
+    "years": "años",
+    "status": "Estado",
+    "statuses": {
+      "in_residence": "En Residencia",
+      "fostered": "En Acogida",
+      "adopted": "Adoptado",
+      "in_treatment": "En Tratamiento",
+      "deceased": "Fallecido",
+      "lost": "Perdido",
+      "available": "Disponible"
+    },
+    "rescueInfo": "Información de Rescate",
+    "entryDate": "Fecha de llegada",
+    "origin": "Origen",
+    "neuteringDate": "Fecha de esterilización",
+    "chipNumber": "Número de chip",
+    "health": "Salud",
+    "testedWithCats": "Probado con gatos",
+    "vetHistory": "Historial veterinario",
+    "about": "Sobre este perro",
+    "notes": "Notas adicionales",
+    "adoptButton": "Adoptar a este perro"
   }
 }

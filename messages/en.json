@@ -22,5 +22,34 @@
     "ctaTitle": "Ready to Adopt?",
     "ctaDescription": "If you found your new companion, we help you through the entire adoption process.",
     "ctaButton": "Start the Process"
+  },
+  "DogDetail": {
+    "backToList": "Back to list",
+    "breed": "Breed",
+    "sex": "Sex",
+    "age": "Age",
+    "birthDate": "Date of birth",
+    "years": "years",
+    "status": "Status",
+    "statuses": {
+      "in_residence": "In Residence",
+      "fostered": "Fostered",
+      "adopted": "Adopted",
+      "in_treatment": "In Treatment",
+      "deceased": "Deceased",
+      "lost": "Lost",
+      "available": "Available"
+    },
+    "rescueInfo": "Rescue Information",
+    "entryDate": "Arrival date",
+    "origin": "Origin",
+    "neuteringDate": "Neutering date",
+    "chipNumber": "Chip number",
+    "health": "Health",
+    "testedWithCats": "Tested with cats",
+    "vetHistory": "Vet history",
+    "about": "About this dog",
+    "notes": "Additional notes",
+    "adoptButton": "Adopt this dog"
   }
 }
