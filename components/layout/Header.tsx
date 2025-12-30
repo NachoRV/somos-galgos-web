@@ -3,21 +3,22 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from "next/image";
-
-
-const navigation = [
-	{ name: 'Nuestros Perros', href: '/galgos' },
-	{ name: 'Adoptar', href: '/adoptar' },
-	{ name: 'Acoger', href: '/acoger' },
-	{ name: 'Apadrinar', href: '/apadrinar' },
-	{ name: 'Historias', href: '/historias' },
-	{ name: 'Blog', href: '/blog' },
-	{ name: 'Sobre Nosotros', href: '/sobre-nosotros' },
-	{ name: 'Contacto', href: '/contacto' },
-];
+import { useTranslations } from 'next-intl';
 
 export function Header() {
+	const t = useTranslations('Header');
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+	const navigation = [
+		{ name: t('dogs'), href: '/galgos' },
+		{ name: t('adopt'), href: '/adoptar' },
+		{ name: t('foster'), href: '/acoger' },
+		{ name: t('sponsor'), href: '/apadrinar' },
+		{ name: t('stories'), href: '/historias' },
+		{ name: t('blog'), href: '/blog' },
+		{ name: t('about'), href: '/sobre-nosotros' },
+		{ name: t('contact'), href: '/contacto' },
+	];
 
 	return (
     <header className="sticky top-0 z-50 w-full bg-[var(--color-secondary)] backdrop-blur shadow-lg/40">
@@ -52,9 +53,9 @@ export function Header() {
 
 				<div className='hidden lg:flex lg:gap-x-4'>
 					<Link href='/adoptar' className='btn btn-primary'>
-						Adopta Ahora
-					</Link>
-				</div>
+					{t('adoptNow')}
+				</Link>
+			</div>
 
 				{/* Mobile menu button */}
 				<div className='flex lg:hidden'>
@@ -90,7 +91,7 @@ export function Header() {
 								href='/adoptar'
 								className='btn btn-primary w-full'
 							>
-								Adopta Ahora
+								{t('adoptNow')}
 							</Link>
 						</div>
 					</div>

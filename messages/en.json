@@ -1,5 +1,16 @@
 {
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Header": {
+    "dogs": "Our Dogs",
+    "adopt": "Adopt",
+    "foster": "Foster",
+    "sponsor": "Sponsor",
+    "stories": "Stories",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "adoptNow": "Adopt Now"
   }
 }

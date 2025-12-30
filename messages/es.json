@@ -1,5 +1,16 @@
 {
   "HomePage": {
     "title": "Hola Mundo!"
+  },
+  "Header": {
+    "dogs": "Nuestros Perros",
+    "adopt": "Adoptar",
+    "foster": "Acoger",
+    "sponsor": "Apadrinar",
+    "stories": "Historias",
+    "blog": "Blog",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto",
+    "adoptNow": "Adopta Ahora"
   }
 }
