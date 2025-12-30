@@ -16,6 +16,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Somos Galgos",
   description: "Rescate y protección de galgos en Madrid",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+  },
+  openGraph: {
+    title: "Somos Galgos",
+    description: "Rescate y protección de galgos en Madrid",
+    url: "https://somosgalgos.es",
+    siteName: "Somos Galgos",
+    images: [
+      {
+        url: '/icon.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 
