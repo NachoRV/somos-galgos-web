@@ -7,7 +7,7 @@ export function HeroSection() {
   const t = useTranslations('Home.Hero');
   
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-secondary)] text-white overflow-hidden">
+    <section className="relative min-h-[700px] flex items-center justify-center bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-secondary)] text-white overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
       
