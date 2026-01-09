@@ -10,6 +10,7 @@ import { AmazonIcon } from '@/components/icons/AmazonIcon';
 import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { TwitterIcon } from '@/components/icons/TwitterIcon';
 import { TiktokIcon } from '@/components/icons/TiktokIcon';
+import { SITE_URL, SOCIAL_LINKS } from '@/lib/constants';
 
 const data = [
   {
@@ -67,7 +68,7 @@ export default function Welcome() {
       />
       <main>
         <section id="hero">
-          <a href="https://somosgalgos.es">
+          <a href={SITE_URL}>
             <Image
               src={somosGalgosLogo}
               width={230}
@@ -78,37 +79,42 @@ export default function Welcome() {
           </a>
           <section id="social">
             <a
-              href="https://www.facebook.com/AsociacionSomosGalgos/"
+              href={SOCIAL_LINKS.facebook}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Síguenos en Facebook"
             >
               <FacebookIcon className="icon-social" />
             </a>
             <a
-              href="https://www.instagram.com/somos_galgos"
+              href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Síguenos en Instagram"
             >
               <InstagramIcon className="icon-social" />
             </a>
             <a
-              href="https://x.com/somos_galgos"
+              href={SOCIAL_LINKS.twitter}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Síguenos en Twitter"
             >
               <TwitterIcon className="icon-social" />
             </a>
             <a
-              href="https://www.tiktok.com/@somosgalgos"
+              href={SOCIAL_LINKS.tiktok}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Síguenos en TikTok"
             >
               <TiktokIcon className="icon-social" />
             </a>
             <a
-              href="https://www.amazon.es/hz/wishlist/ls/8VOG5MGRKLJ1?ref_=wl_fv_le"
+              href={SOCIAL_LINKS.amazonWishlist}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Nuestra lista de deseos en Amazon"
             >
               <AmazonIcon className="icon-social" />
             </a>
