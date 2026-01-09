@@ -29,7 +29,7 @@ export interface Dog {
   //vet_history_url: string;
   photos: Photo[];
   status: DogStatus;
-  // notes: string;
+  notes?: string;
   web_description: string;
   tested_with_cats: boolean;
   is_invisible: boolean;
