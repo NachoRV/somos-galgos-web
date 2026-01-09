@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import somosGalgosLogo from '@/public/logo.webp';
-import background from '@/public/background.svg';
 import { Mail, Users, Euro, Heart, Home, UserPlus } from 'lucide-react';
 import { FacebookIcon } from '@/components/icons/FacebookIcon';
 import { BrandAmazonIcon } from '@/components/icons/BrandAmazonIcon';
@@ -58,14 +57,6 @@ const data = [
 export default function Welcome() {
   return (
     <div id="container">
-      <Image
-        id="background"
-        src={background}
-        alt=""
-        priority
-        className="fixed top-0 left-0 w-full h-full -z-10"
-        style={{ filter: 'blur(100px)' }}
-      />
       <main>
         <section id="hero">
           <a href={SITE_URL}>
@@ -144,16 +135,6 @@ export default function Welcome() {
       </main>
 
       <style jsx>{`
-        #background {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-          filter: blur(100px);
-        }
-
         #container {
           font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
             Arial, sans-serif;

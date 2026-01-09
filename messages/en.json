@@ -7,11 +7,14 @@
     "adopt": "Adopt",
     "foster": "Foster",
     "sponsor": "Sponsor",
+    "socio": "Become a Member",
+    "volunteer": "Volunteer",
     "stories": "Stories",
     "blog": "Blog",
     "about": "About Us",
     "contact": "Contact",
-    "adoptNow": "Adopt Now"
+    "adoptNow": "Adopt Now",
+    "colaborate": "Collaborate"
   },
   "Dogs": {
     "title": "Our Dogs",
@@ -51,5 +54,28 @@
     "about": "About",
     "notes": "Additional notes",
     "adoptButton": "Adopt this dog"
-  }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "infoTitle": "Contact Information",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "success": "Message sent successfully! We will contact you soon.",
+    "error": "An error occurred while sending the message. Please try again later.",
+    "location": "Location",
+    "bizum": "Bizum NGO",
+    "followUs": "Follow us:"  },
+  "menu": {
+    "sobreNosotros": "About Us",
+    "adoptar": "Adopt",
+    "acoger": "Foster",
+    "apadrinar": "Sponsor",
+    "historias": "Stories",
+    "blog": "Blog",
+    "socio": "Become a Member",
+    "voluntario": "Become a Volunteer"  }
 }

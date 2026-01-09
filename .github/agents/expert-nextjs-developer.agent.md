@@ -1,6 +1,6 @@
 ---
 description: "Expert Next.js 16 developer specializing in App Router, Server Components, Cache Components, Turbopack, and modern React patterns with TypeScript"
-model: "GPT-4.1"
+model: "Claude Sonnet 4.5"
 tools: ['vscode', 'execute', 'read', 'edit/editFiles', 'search', 'web', 'azure-mcp-server/search', 'github/*']
 ---
 

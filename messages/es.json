@@ -7,11 +7,14 @@
     "adopt": "Adoptar",
     "foster": "Acoger",
     "sponsor": "Apadrinar",
+    "socio": "Hazte Socio",
+    "volunteer": "Hazte Voluntario",
     "stories": "Historias",
     "blog": "Blog",
     "about": "Sobre Nosotros",
     "contact": "Contacto",
-    "adoptNow": "Adopta Ahora"
+    "adoptNow": "Adopta Ahora",
+    "colaborate": "Colabora"
   },
   "Dogs": {
     "title": "Nuestros Perros",
@@ -51,5 +54,30 @@
     "about": "Sobre",
     "notes": "Notas adicionales",
     "adoptButton": "Adoptar a este perro"
+  },
+  "Contact": {
+    "title": "Contáctanos",
+    "infoTitle": "Información de contacto",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "success": "¡Mensaje enviado correctamente! Pronto te contactaremos.",
+    "error": "Ocurrió un error al enviar el mensaje. Intenta de nuevo más tarde.",
+    "location": "Ubicación",
+    "bizum": "Bizum ONG",
+    "followUs": "Síguenos:"
+  },
+  "menu": {
+    "sobreNosotros": "Sobre Nosotros",
+    "adoptar": "Adoptar",
+    "acoger": "Acoger",
+    "apadrinar": "Apadrinar",
+    "historias": "Historias",
+    "blog": "Blog",
+    "socio": "Hazte Socio",
+    "voluntario": "Hazte Voluntario"
   }
 }

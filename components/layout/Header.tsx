@@ -10,19 +10,26 @@ export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	const navigation = [
+		{ name: t('about'), href: '/sobre-nosotros' },
 		{ name: t('dogs'), href: '/galgos' },
 		{ name: t('adopt'), href: '/adoptar' },
 		{ name: t('foster'), href: '/acoger' },
 		{ name: t('sponsor'), href: '/apadrinar' },
 		{ name: t('stories'), href: '/historias' },
 		{ name: t('blog'), href: '/blog' },
-		{ name: t('about'), href: '/sobre-nosotros' },
 		{ name: t('contact'), href: '/contacto' },
 	];
 
+	const colaborateOptions = [
+		{ name: t('sponsor'), href: '/apadrinar' },
+		{ name: t('socio'), href: '/socio' },
+		{ name: t('volunteer'), href: '/voluntario' },
+		{ name: t('adopt'), href: '/adoptar' },
+	];
+
 	return (
-    <header className="sticky top-0 z-50 w-full bg-[var(--color-secondary)] backdrop-blur shadow-lg/40">
-      <nav className="flex h-16 items-center justify-between px-4 bg-[var(--color-secondary)]/90 w-full">
+    <header className="sticky top-0 z-50 w-full backdrop-blur shadow-lg/40">
+      <nav className="flex h-16 items-center justify-between px-4 bg-[var(--color-secondary)]/0 w-full">
 				<div className='flex items-center gap-6'>
 					<Link href='/' className='flex items-center space-x-2'>
             <Image
@@ -30,21 +37,28 @@ export function Header() {
               alt="Logo Somos Galgos"
               width={40}
               height={40}
-              className="border-2 border-black rounded-full bg-white"
+              className=""
               priority
             />
-						<span className='text-2xl font-bold'>Somos Galgos</span>
+						<span className='text-2xl font-bold text-[var(--color-secondary)]'>Somos Galgos</span>
 					</Link>
 				</div>
 
 				{/* Desktop Navigation */}
 				<div className='hidden lg:flex lg:gap-x-6'>
-					{navigation.map((item) => (
+					<div className="dropdown dropdown-hover">
+						<label tabIndex={0} className="font-semibold text-lg cursor-pointer hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4">{t('colaborate')}</label>
+						<ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+							{colaborateOptions.map(opt => (
+								<li key={opt.href}><Link href={opt.href}>{opt.name}</Link></li>
+							))}
+						</ul>
+					</div>
+					{navigation.filter(item => !['/apadrinar','/socio','/voluntario','/adoptar'].includes(item.href)).map((item) => (
 						<Link
 							key={item.name}
 							href={item.href}
-              className='font-semibold text-lg transition-colors hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-primary)] decoration-4'
-
+							className='font-semibold text-lg transition-colors hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4'
 						>
 							{item.name}
 						</Link>
@@ -74,7 +88,7 @@ export function Header() {
 			{mobileMenuOpen && (
 				<div className='lg:hidden'>
 					<div className='space-y-1 px-4 pb-3 pt-2'>
-						{navigation.map((item) => (
+						{navigation.filter(item => !['/apadrinar','/socio','/voluntario','/adoptar'].includes(item.href)).map((item) => (
 							<Link
 								key={item.name}
 								href={item.href}
@@ -84,6 +98,21 @@ export function Header() {
 								{item.name}
 							</Link>
 						))}
+						<div className="collapse collapse-arrow bg-base-100">
+							<input type="checkbox"  />
+							<div className="collapse-title font-semibold text-base bg-base-100">
+								{t('colaborate')}
+							</div>
+							<div className="collapse-content p-0">
+								<ul className="menu p-0">
+									{colaborateOptions.map(opt => (
+										<li key={opt.href}>
+											<Link href={opt.href} className='block px-3 py-2 hover:bg-base-200' onClick={() => setMobileMenuOpen(false)}>{opt.name}</Link>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
 						<div className='pt-4'>
 							<Link
 								href='/adoptar'

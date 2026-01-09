@@ -53,7 +53,7 @@
   --color-primary-dark: #2a2d20;         /* Darker shade for hover states */
   --color-primary-light: #5a5d50;        /* Lighter shade for backgrounds */
   /* Secondary Colors */
-  --color-secondary: #be9a14ff;          /* Satin Sheen Gold - Accent color */
+  --color-secondary: #be9a14;          /* Satin Sheen Gold - Accent color */
   --color-secondary-light: #d4b84a;      /* Lighter gold */
   /* Accent Colors */
   --color-accent: #56a3a6ff;             /* Verdigris - Teal green */
@@ -71,7 +71,7 @@
   --color-neutral-0: #FFFFFF;     /* White */
   /* Semantic Colors - Updated */
   --color-success: #56a3a6ff;     /* Verdigris - Using the teal green */
-  --color-warning: #be9a14ff;     /* Satin Sheen Gold */
+  --color-warning: #be9a14;     /* Satin Sheen Gold */
   --color-danger: #E74C3C;        /* Red for danger/errors */
   --color-info: #56a3a6ff;        /* Verdigris for info */
   /* Highlight Color - Using Seasalt (bright lime) */
