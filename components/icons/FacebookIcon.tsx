@@ -8,6 +8,7 @@ export function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       enableBackground="new 0 0 24 24"
       className="sc-gKsewC hXghNr"
+      fill="currentColor"
       {...props}
     >
       <title id="title_0.603790028042215">Facebook</title>

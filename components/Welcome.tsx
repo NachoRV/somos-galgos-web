@@ -189,13 +189,17 @@ export default function Welcome() {
         }
 
         #social a:hover .icon-social {
-          transform: scale(1.18) rotate(-6deg);
-          filter: drop-shadow(0 2px 8px rgba(190,154,20,0.25));
-          stroke: #be9a14;
-          color: #be9a14;
+          transform: scale(1.2) rotate(-6deg) translateY(-6px);
+          filter: drop-shadow(0 8px 16px rgba(190,154,20,0.5));
+          stroke: #be9a14 !important;
+          fill: #be9a14 !important;
+          color: #be9a14 !important;
+        }
+        #social a {
+          cursor: pointer;
         }
         .icon-social {
-          transition: transform 0.18s cubic-bezier(.4,2,.6,1), filter 0.18s, stroke 0.18s, color 0.18s;
+          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         main {

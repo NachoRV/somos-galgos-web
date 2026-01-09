@@ -7,6 +7,7 @@ export function TiktokIcon(props: React.SVGProps<SVGSVGElement>) {
       height="100%"
       viewBox="0 0 24 24"
       enableBackground="new 0 0 24 24"
+      fill="currentColor"
       {...props}
     >
       <title id="title_0.5032434418029708">TikTok</title>
