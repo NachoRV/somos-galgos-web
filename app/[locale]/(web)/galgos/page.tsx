@@ -27,8 +27,7 @@ export default async function GalgosPage() {
             {dogs.map((dog) => (
               <DogCard 
                 key={dog.id} 
-                dog={dog} 
-                labels={{ knowMore: t('knowMore') }}
+                dog={dog}
               />
             ))}
           </div>

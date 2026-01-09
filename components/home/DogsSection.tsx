@@ -5,7 +5,7 @@ import { DogCard } from '@/components/DogCard';
 
 export async function DogsSection() {
   const t = await getTranslations('Home.Dogs');
-  const dogs = await getDogs({ status: ['available', 'fostered'] });
+  const dogs = await getDogs(['available', 'fostered']);
   const displayDogs = dogs.slice(0, 6);
   
   return (

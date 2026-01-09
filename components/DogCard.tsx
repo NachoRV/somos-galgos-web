@@ -1,15 +1,16 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import type { Dog } from '@/types/dog';
 
 interface DogCardProps {
   dog: Dog;
-  labels: {
-    knowMore: string;
-  };
 }
 
-export function DogCard({ dog, labels }: DogCardProps) {
+export function DogCard({ dog }: DogCardProps) {
+  const t = useTranslations('Dogs');
+  
   // Obtener la foto principal o la primera foto
   const primaryPhoto = dog.photos?.find((p) => p.is_primary) || dog.photos?.[0];
 
@@ -58,7 +59,7 @@ export function DogCard({ dog, labels }: DogCardProps) {
 
         {/* Botón */}
         <Link href={`/galgos/${dog.id}`} className="btn btn-primary w-full mt-auto">
-          {labels.knowMore}
+          {t('knowMore')}
         </Link>
       </div>
     </div>
