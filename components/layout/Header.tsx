@@ -29,7 +29,7 @@ export function Header() {
 
 	return (
     <header className="sticky top-0 z-50 w-full backdrop-blur shadow-lg/40">
-      <nav className="flex h-16 items-center justify-between px-4 bg-[var(--color-secondary)]/0 w-full">
+      <nav className="flex h-16 items-center justify-between px-16 bg-[var(--color-secondary)]/0 w-full">
 				<div className='flex items-center gap-6'>
 					<Link href='/' className='flex items-center space-x-2'>
             <Image

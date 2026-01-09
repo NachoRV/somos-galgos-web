@@ -1,16 +1,18 @@
 import { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
-import Welcome from '@/components/Welcome';
-import { SITE_URL, ORG_INFO, SOCIAL_LINKS, SEO_KEYWORDS } from '@/lib/constants';
+import { SITE_URL, SEO_KEYWORDS } from '@/lib/constants';
+import {
+  HeroSection,
+  DogsSection,
+  HowToHelpSection,
+  SuccessStoriesSection,
+  ImpactCounterSection,
+  BlogSection,
+} from '@/components/home';
 
 export const metadata: Metadata = {
   title: 'Rescate y Adopción de Galgos en Madrid',
   description: 'Asociación sin ánimo de lucro dedicada al rescate, protección y adopción de galgos. Apadrina, hazte socio o adopta un galgo hoy.',
   keywords: SEO_KEYWORDS,
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -49,11 +51,14 @@ export const metadata: Metadata = {
 };
 
 export default function WebHome() {
-  const t = useTranslations('HomePage');
   return (
-    <section className="flex flex-col items-center justify-center py-16">
-      <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-      <Welcome />
-    </section>
+    <>
+      <HeroSection />
+      <DogsSection />
+      <HowToHelpSection />
+      <SuccessStoriesSection />
+      <ImpactCounterSection />
+      <BlogSection />
+    </>
   );
 }

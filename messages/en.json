@@ -1,6 +1,60 @@
 {
   "HomePage": {
-    "title": ""
+    "title": "Rescuing Greyhounds, Saving Lives"
+  },
+  "Home": {
+    "Hero": {
+      "title": "Rescuing Greyhounds, Saving Lives",
+      "subtitle": "Non-profit organization dedicated to the rescue, protection and adoption of greyhounds in Madrid",
+      "ctaAdopt": "Adopt a Greyhound",
+      "ctaHelp": "Collaborate"
+    },
+    "Dogs": {
+      "title": "Greyhounds for Adoption",
+      "subtitle": "These wonderful greyhounds are waiting for a loving home",
+      "viewAll": "View All Greyhounds"
+    },
+    "HowToHelp": {
+      "title": "How Can You Help?",
+      "subtitle": "There are many ways to collaborate and change a greyhound's life",
+      "adoptTitle": "Adopt",
+      "adoptDescription": "Give a greyhound a forever home and receive unconditional love",
+      "fosterTitle": "Foster",
+      "fosterDescription": "Provide a temporary home while they find their family",
+      "sponsorTitle": "Sponsor",
+      "sponsorDescription": "Financially support a greyhound from wherever you are",
+      "volunteerTitle": "Volunteer",
+      "volunteerDescription": "Dedicate your time and affection to help at the shelter",
+      "learnMore": "Learn more"
+    },
+    "SuccessStories": {
+      "title": "Success Stories",
+      "subtitle": "Meet the stories of greyhounds who found their forever home",
+      "adoptedBy": "Adopted by {owner}",
+      "story1Quote": "Luna has completely transformed our life. She is the sweetest and most affectionate companion we could have imagined. Every day she surprises us with her unconditional love.",
+      "story2Quote": "Adopting Max was the best decision we've made. He is incredibly calm and adapts perfectly to our routine. We can't imagine life without him.",
+      "story3Quote": "Bella arrived scared but over time has become the queen of the house. Watching her transformation has been the most rewarding thing we've experienced."
+    },
+    "Impact": {
+      "title": "Our Impact",
+      "subtitle": "Together we have managed to change hundreds of lives",
+      "rescuedLabel": "Greyhounds Rescued",
+      "adoptedLabel": "Greyhounds Adopted",
+      "sponsoredLabel": "Greyhounds Sponsored",
+      "volunteersLabel": "Active Volunteers"
+    },
+    "Blog": {
+      "title": "Latest News",
+      "subtitle": "Stay informed about the greyhound world and our work",
+      "post1Title": "Complete Guide: Basic Care for Greyhounds",
+      "post1Excerpt": "Everything you need to know about essential greyhound care, from nutrition to exercise and health.",
+      "post2Title": "The Adoption Process: Step by Step",
+      "post2Excerpt": "Learn all the steps of the adoption process and how to prepare to welcome your new companion home.",
+      "post3Title": "Healthy Nutrition for Greyhounds",
+      "post3Excerpt": "Discover the best feeding practices to keep your greyhound healthy and happy throughout their life.",
+      "readMore": "Read more",
+      "viewAllPosts": "View All News"
+    }
   },
   "Header": {
     "dogs": "Our Dogs",
@@ -77,5 +131,24 @@
     "historias": "Stories",
     "blog": "Blog",
     "socio": "Become a Member",
-    "voluntario": "Become a Volunteer"  }
+    "voluntario": "Become a Volunteer"  },
+      "Footer": {
+    "about": "About Us",
+    "aboutText": "Non-profit organization dedicated to the rescue, protection and adoption of greyhounds in Madrid.",
+    "quickLinks": "Quick Links",
+    "dogs": "Our Dogs",
+    "adopt": "Adopt",
+    "foster": "Foster",
+    "sponsor": "Sponsor",
+    "contact": "Contact",
+    "collaborate": "Collaborate",
+    "socio": "Become a Member",
+    "volunteer": "Become a Volunteer",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "followUs": "Follow Us",
+    "copyright": "© {year} Somos Galgos. All rights reserved.",
+    "madeWith": "Made with ❤️ for greyhounds by irvb.dev"
+  }
 }

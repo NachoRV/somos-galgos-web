@@ -6,8 +6,7 @@ import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import background from '@/public/background.svg';
-
-// import { Footer } from '@/components/layout/Footer';
+import { Footer } from '@/components/layout/Footer';
 
 type Props = {
   children: React.ReactNode;
@@ -31,7 +30,7 @@ export default async function WebLayout({ children, params }: Props) {
       />
       {!process.env.PRO && <Header />}
       <main className="flex-1">{children}</main>
-      {/* <Footer /> */}
+      <Footer /> 
       <GoogleAnalytics />
     </div>
   );

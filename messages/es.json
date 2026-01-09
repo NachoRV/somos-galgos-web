@@ -1,6 +1,60 @@
 {
   "HomePage": {
-    "title": ""
+    "title": "Rescatando Galgos, Salvando Vidas"
+  },
+  "Home": {
+    "Hero": {
+      "title": "Rescatando Galgos, Salvando Vidas",
+      "subtitle": "Asociación sin ánimo de lucro dedicada al rescate, protección y adopción de galgos en Madrid",
+      "ctaAdopt": "Adopta un Galgo",
+      "ctaHelp": "Colabora"
+    },
+    "Dogs": {
+      "title": "Galgos en Adopción",
+      "subtitle": "Estos maravillosos galgos están esperando un hogar lleno de amor",
+      "viewAll": "Ver Todos los Galgos"
+    },
+    "HowToHelp": {
+      "title": "¿Cómo Puedes Ayudar?",
+      "subtitle": "Hay muchas formas de colaborar y cambiar la vida de un galgo",
+      "adoptTitle": "Adoptar",
+      "adoptDescription": "Dale un hogar definitivo a un galgo y recibe amor incondicional",
+      "fosterTitle": "Acoger",
+      "fosterDescription": "Proporciona un hogar temporal mientras encuentra familia",
+      "sponsorTitle": "Apadrinar",
+      "sponsorDescription": "Ayuda económicamente a un galgo desde donde estés",
+      "volunteerTitle": "Voluntario",
+      "volunteerDescription": "Dedica tu tiempo y cariño a ayudar en la protectora",
+      "learnMore": "Más información"
+    },
+    "SuccessStories": {
+      "title": "Historias de Éxito",
+      "subtitle": "Conoce las historias de galgos que encontraron su hogar para siempre",
+      "adoptedBy": "Adoptado por {owner}",
+      "story1Quote": "Luna ha transformado completamente nuestra vida. Es la compañera más dulce y cariñosa que podríamos haber imaginado. Cada día nos sorprende con su amor incondicional.",
+      "story2Quote": "Adoptar a Max fue la mejor decisión que hemos tomado. Es increíblemente tranquilo y se adapta perfectamente a nuestra rutina. No podemos imaginar la vida sin él.",
+      "story3Quote": "Bella llegó asustada pero con el tiempo se ha convertido en la reina de la casa. Ver su transformación ha sido lo más gratificante que hemos vivido."
+    },
+    "Impact": {
+      "title": "Nuestro Impacto",
+      "subtitle": "Juntos hemos logrado cambiar cientos de vidas",
+      "rescuedLabel": "Galgos Rescatados",
+      "adoptedLabel": "Galgos Adoptados",
+      "sponsoredLabel": "Galgos Apadrinados",
+      "volunteersLabel": "Voluntarios Activos"
+    },
+    "Blog": {
+      "title": "Últimas Noticias",
+      "subtitle": "Mantente informado sobre el mundo de los galgos y nuestra labor",
+      "post1Title": "Guía Completa: Cuidados Básicos para Galgos",
+      "post1Excerpt": "Todo lo que necesitas saber sobre los cuidados esenciales de tu galgo, desde alimentación hasta ejercicio y salud.",
+      "post2Title": "El Proceso de Adopción: Paso a Paso",
+      "post2Excerpt": "Conoce todos los pasos del proceso de adopción y cómo prepararte para recibir a tu nuevo compañero en casa.",
+      "post3Title": "Alimentación Saludable para Galgos",
+      "post3Excerpt": "Descubre las mejores prácticas de alimentación para mantener a tu galgo sano y feliz durante toda su vida.",
+      "readMore": "Leer más",
+      "viewAllPosts": "Ver Todas las Noticias"
+    }
   },
   "Header": {
     "dogs": "Nuestros Perros",
@@ -79,5 +133,24 @@
     "blog": "Blog",
     "socio": "Hazte Socio",
     "voluntario": "Hazte Voluntario"
+  },
+  "Footer": {
+    "about": "Sobre Nosotros",
+    "aboutText": "Asociación sin ánimo de lucro dedicada al rescate, protección y adopción de galgos en Madrid.",
+    "quickLinks": "Enlaces Rápidos",
+    "dogs": "Nuestros Perros",
+    "adopt": "Adoptar",
+    "foster": "Acoger",
+    "sponsor": "Apadrinar",
+    "contact": "Contacto",
+    "collaborate": "Colabora",
+    "socio": "Hazte Socio",
+    "volunteer": "Hazte Voluntario",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "followUs": "Síguenos",
+    "copyright": "© {year} Somos Galgos. Todos los derechos reservados.",
+    "madeWith": "Hecho con ❤️ para los galgos by irvb.dev"
   }
 }
