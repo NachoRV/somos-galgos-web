@@ -37,7 +37,7 @@ export function Header() {
         { name: t('about'), href: '/sobre-nosotros' },
         { name: t('dogs'), href: '/galgos' },
         { name: t('adopt'), href: '/adoptar' },
-        { name: t('foster'), href: '/acoger' },
+        // { name: t('foster'), href: '/acoger' },
         { name: t('sponsor'), href: '/apadrinar' },
         { name: t('blog'), href: '/blog' },
         { name: t('contact'), href: '/contacto' },
@@ -45,6 +45,7 @@ export function Header() {
 
     const colaborateOptions = [
         { name: t('adopt'), href: '/adoptar' },
+				{ name: t('foster'), href: '/acoger' },
         { name: t('sponsor'), href: '/apadrinar' },
         { name: t('socio'), href: '/socio' },
         { name: t('volunteer'), href: '/voluntario' },

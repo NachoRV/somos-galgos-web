@@ -1,0 +1,42 @@
+'use client';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
+
+export function FosterHeroSection() {
+  const t = useTranslations('Foster');
+
+  return (
+    <section className="relative min-h-[60vh] flex items-center justify-center px-4 py-20 bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-secondary)]">
+      <div className="max-w-4xl mx-auto text-center z-10">
+        <div className="mb-8">
+          <Image
+            src="/logo.webp"
+            alt="Somos Galgos"
+            width={120}
+            height={120}
+            className="mx-auto rounded-full border-4 border-white shadow-2xl"
+            priority
+          />
+        </div>
+        
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          {t('heroTitle')}
+        </h1>
+        
+        <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
+          {t('heroSubtitle')}
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#formulario" 
+            className="btn btn-primary btn-lg text-lg px-8"
+          >
+            {t('heroCTA')}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

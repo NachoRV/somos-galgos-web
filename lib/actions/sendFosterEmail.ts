@@ -5,7 +5,7 @@ import { adoptionSchema, AdoptionFormData } from '@/lib/validations/adoption';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
 
-export async function sendAdoptionEmail(formData: AdoptionFormData) {
+export async function sendFosterEmail(formData: AdoptionFormData) {
   const parsed = adoptionSchema.safeParse(formData);
   if (!parsed.success) {
     return { error: parsed.error.flatten().fieldErrors };
@@ -13,15 +13,15 @@ export async function sendAdoptionEmail(formData: AdoptionFormData) {
 
   try {
     const subject = formData.dogName 
-      ? `[Adopción] Solicitud para ${formData.dogName}` 
-      : '[Adopción] Nueva solicitud';
+      ? `[Acogida] Solicitud para ${formData.dogName}` 
+      : '[Acogida] Nueva solicitud';
 
     await resend.emails.send({
-      from: 'Adopción <no-reply@somosgalgos.es>',
+      from: 'Acogida <no-reply@somosgalgos.es>',
       to: [TO_EMAIL],
       subject,
       replyTo: formData.email,
-      text: `SOLICITUD DE ADOPCIÓN
+      text: `SOLICITUD DE ACOGIDA
 
 ${formData.dogName ? `Perro: ${formData.dogName} (ID: ${formData.dogId})\n` : ''}
 DATOS PERSONALES
@@ -51,18 +51,16 @@ ${formData.additionalInfo ? `INFORMACIÓN ADICIONAL\n=====================\n${fo
       from: 'Somos Galgos <no-reply@somosgalgos.es>',
       to: [formData.email],
       subject: formData.dogName 
-        ? `Solicitud de adopción de ${formData.dogName} recibida` 
-        : 'Solicitud de adopción recibida',
+        ? `Solicitud de acogida de ${formData.dogName} recibida` 
+        : 'Solicitud de acogida recibida',
       text: `Hola ${formData.firstName},
 
-Gracias por tu interés en adoptar${formData.dogName ? ` a ${formData.dogName}` : ' uno de nuestros galgos'}. Hemos recibido tu solicitud y nos pondremos en contacto contigo lo antes posible para continuar con el proceso de adopción.
+Gracias por tu interés en acoger${formData.dogName ? ` a ${formData.dogName}` : ' uno de nuestros galgos'}. Hemos recibido tu solicitud y nos pondremos en contacto contigo lo antes posible para continuar con el proceso de acogida temporal.
 
-El proceso de adopción incluye:
-1. Revisión de tu solicitud
-2. Entrevista personal o telefónica
-3. Visita al hogar (si procede)
-4. Conocer al galgo
-5. Seguimiento post-adopción
+La acogida es fundamental para que nuestros galgos puedan:
+- Adaptarse a la vida en un hogar
+- Socializar y ganar confianza
+- Encontrar la familia perfecta para ellos
 
 Te responderemos en un plazo de 2-3 días hábiles.
 
@@ -72,7 +70,7 @@ El equipo de Somos Galgos`,
 
     return { success: true };
   } catch (error: any) {
-    console.error('Error enviando email de adopción:', error);
+    console.error('Error enviando email de acogida:', error);
     return { error: error.message || 'Error enviando el email' };
   }
 }

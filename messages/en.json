@@ -107,7 +107,8 @@
     "vetHistory": "Vet history",
     "about": "About",
     "notes": "Additional notes",
-    "adoptButton": "Adopt this dog"
+    "adoptButton": "Adopt this dog",
+    "fosterButton": "Foster this dog"
   },
   "Contact": {
     "title": "Contact Us",
@@ -180,5 +181,47 @@
     "submit": "Submit Application",
     "submitting": "Submitting...",
     "successMessage": "Form submitted successfully! We will contact you soon.",
-    "errorMessage": "An error occurred while submitting the form. Please try again."  }
+    "errorMessage": "An error occurred while submitting the form. Please try again."
+  },
+  "Foster": {
+    "title": "Foster Application Form",
+    "subtitle": "Complete this form to become a temporary foster family",
+    "fosteringDog": "I want to foster",
+    "heroTitle": "Foster a Greyhound",
+    "heroSubtitle": "Become a temporary foster family and help us save lives",
+    "heroCTA": "I Want to Foster",
+    "whatIsTitle": "What does it mean to be a foster family?",
+    "whatIsDescription": "Being a foster family means temporarily opening your home to a greyhound that needs a safe place while finding their forever family. It's a rewarding experience that allows you to directly help in their physical and emotional recovery, without the permanent commitment of adoption.",
+    "whatIsBenefit1": "You help save a life by providing temporary care",
+    "whatIsBenefit2": "The greyhound adapts better in a home than in a shelter",
+    "whatIsBenefit3": "We cover veterinary costs and food",
+    "whatIsBenefit4": "You can become an adopter if you fall in love with the greyhound",
+    "personalInfo": "Personal Information",
+    "addressInfo": "Address",
+    "contactInfo": "Contact",
+    "additionalInfo": "Additional Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "idDocument": "ID/NIE",
+    "street": "Street",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "province": "Province",
+    "birthYear": "Birth Year",
+    "maritalStatus": "Marital Status",
+    "single": "Single",
+    "married": "Married",
+    "divorced": "Divorced",
+    "widowed": "Widowed",
+    "partner": "Domestic Partner",
+    "profession": "Profession",
+    "phone": "Phone",
+    "email": "Email",
+    "additionalInfoLabel": "Others (optional)",
+    "additionalInfoPlaceholder": "Do you have other pets? Previous experience with dogs? How long could you foster? Tell us more...",
+    "submit": "Submit Application",
+    "submitting": "Submitting...",
+    "successMessage": "Form submitted successfully! We will contact you soon.",
+    "errorMessage": "An error occurred while submitting the form. Please try again."
+  }
 }
