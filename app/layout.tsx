@@ -88,7 +88,7 @@ export default async function LocaleLayout({
   params
 }: Props) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

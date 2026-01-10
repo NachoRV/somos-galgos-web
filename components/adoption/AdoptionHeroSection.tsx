@@ -1,10 +1,9 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
 
-export function FosterHeroSection() {
-  const t = useTranslations('Foster');
+export function AdoptionHeroSection() {
+  const t = useTranslations('Adoption');
 
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center px-4 py-20 bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-secondary)] pt-40">
