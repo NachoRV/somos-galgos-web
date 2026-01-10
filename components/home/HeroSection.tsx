@@ -7,7 +7,7 @@ export function HeroSection() {
   const t = useTranslations('Home.Hero');
   
   return (
-    <section className="relative min-h-[700px] flex items-center justify-center bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-secondary)] text-white overflow-hidden">
+    <section className="relative min-h-[800px] flex items-center justify-center bg-gradient-to-br to-[var(--color-primary)] via-[var(--color-accent)] from-[var(--color-secondary)] text-white overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
       
@@ -23,6 +23,9 @@ export function HeroSection() {
             className="drop-shadow-2xl"
           />
         </div>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg text-[var(--color-secondary)]">
+          Somos Galgos
+        </h1>
         
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
           {t('title')}

@@ -18,10 +18,12 @@ export default function ContactInfo() {
       <div className="mt-4">
         <h4 className="font-semibold mb-1">{t('followUs', { default: 'Síguenos:' })}</h4>
         <div className="flex gap-3">
-          <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon className="icon-social" /></a>
-          <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon className="icon-social" /></a>
-          <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter"><TwitterIcon className="icon-social" /></a>
-          <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok"><TiktokIcon className="icon-social" /></a>
+          <a 
+            className="btn btn-circle btn-ghost hover:bg-secondary"
+            href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon className="icon-social w-6 h-6" /></a>
+          <a className="btn btn-circle btn-ghost hover:bg-secondary"  href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon className="icon-social w-6 h-6" /></a>
+          <a className="btn btn-circle btn-ghost hover:bg-secondary" href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter"><TwitterIcon className="icon-social w-6 h-6" /></a>
+          <a className="btn btn-circle btn-ghost hover:bg-secondary" href={SOCIAL_LINKS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok"><TiktokIcon className="icon-social w-6 h-6" /></a>
         </div>
       </div>
     </aside>

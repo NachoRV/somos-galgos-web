@@ -4,48 +4,58 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export function Header() {
-	const t = useTranslations('Header');
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const [isVisible, setIsVisible] = useState(false);
+    const t = useTranslations('Header');
+    const pathname = usePathname();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const currentScrollY = window.scrollY;
-			
-			// Mostrar header solo si hemos scrolleado más de 50px
-			setIsVisible(currentScrollY > 10);
-		};
+    // Check if we're on the home page
+    const isHomePage = pathname === '/' || pathname === '/es' || pathname === '/en';
 
-		window.addEventListener('scroll', handleScroll, { passive: true });
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+    useEffect(() => {
+        // Only apply scroll effect on home page
+        if (!isHomePage) {
+            setIsVisible(true); // Always visible on non-home pages
+            return;
+        }
 
-	const navigation = [
-		{ name: t('about'), href: '/sobre-nosotros' },
-		{ name: t('dogs'), href: '/galgos' },
-		{ name: t('adopt'), href: '/adoptar' },
-		{ name: t('foster'), href: '/acoger' },
-		{ name: t('sponsor'), href: '/apadrinar' },
-		{ name: t('stories'), href: '/historias' },
-		{ name: t('blog'), href: '/blog' },
-		{ name: t('contact'), href: '/contacto' },
-	];
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            // Mostrar header solo si hemos scrolleado más de 50px (only on home)
+            setIsVisible(currentScrollY > 50);
+        };
 
-	const colaborateOptions = [
-		{ name: t('sponsor'), href: '/apadrinar' },
-		{ name: t('socio'), href: '/socio' },
-		{ name: t('volunteer'), href: '/voluntario' },
-		{ name: t('adopt'), href: '/adoptar' },
-	];
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isHomePage]);
 
-	return (
-    <header 
-			className={`fixed top-0 z-50 w-full backdrop-blur shadow-lg/40 transition-transform duration-300 ${
-				isVisible ? 'translate-y-0' : '-translate-y-full'
-			}`}
-		>
+    const navigation = [
+        { name: t('about'), href: '/sobre-nosotros' },
+        { name: t('dogs'), href: '/galgos' },
+        { name: t('adopt'), href: '/adoptar' },
+        { name: t('foster'), href: '/acoger' },
+        { name: t('sponsor'), href: '/apadrinar' },
+        { name: t('blog'), href: '/blog' },
+        { name: t('contact'), href: '/contacto' },
+    ];
+
+    const colaborateOptions = [
+        { name: t('adopt'), href: '/adoptar' },
+        { name: t('sponsor'), href: '/apadrinar' },
+        { name: t('socio'), href: '/socio' },
+        { name: t('volunteer'), href: '/voluntario' },
+    ];
+
+    return (
+        <header 
+            className={`fixed top-0 z-50 w-full backdrop-blur shadow-lg/40 transition-transform duration-300 ${
+                isVisible ? 'translate-y-0' : '-translate-y-full'
+            }`}
+        >
       <nav className="flex h-16 items-center justify-between px-16 bg-[var(--color-secondary)]/0 w-full">
 				<div className='flex items-center gap-6'>
 					<Link href='/' className='flex items-center space-x-2'>

@@ -171,8 +171,8 @@ export default function Welcome() {
           transition: stroke 0.2s;
         }
         .icon-social {
-          width: 2.5em;
-          height: 2.5em;
+          width: 1.5em;
+          height: 1.5em;
         }
 
         #social a:hover .icon-social {
