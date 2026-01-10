@@ -144,7 +144,7 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
 
             {/* CTA */}
             <div className="border-t border-[var(--color-text-secondary)]/20 pt-6">
-              <Link href="/adoptar" className="btn btn-primary w-full">
+              <Link href={`/adoptar?dogId=${dog.id}&dogName=${encodeURIComponent(dog.name)}`} className="btn btn-primary w-full">
                 {t('adoptButton')}
               </Link>
             </div>

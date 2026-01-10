@@ -29,7 +29,7 @@ export default async function WebLayout({ children, params }: Props) {
         style={{ filter: 'blur(100px)' }}
       />
       {!process.env.PRO && <Header />}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 m-40">{children}</main>
       <Footer /> 
       <GoogleAnalytics />
     </div>
