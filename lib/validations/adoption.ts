@@ -10,7 +10,7 @@ export const adoptionSchema = z.object({
   province: z.string().min(2, 'La provincia es obligatoria'),
   birthYear: z.string().regex(/^\d{4}$/, 'Año inválido (formato: AAAA)'),
   maritalStatus: z.enum(['single', 'married', 'divorced', 'widowed', 'partner'], {
-    errorMap: () => ({ message: 'Selecciona un estado civil' }),
+    message: 'Selecciona un estado civil',
   }),
   profession: z.string().min(2, 'La profesión es obligatoria'),
   phone: z
