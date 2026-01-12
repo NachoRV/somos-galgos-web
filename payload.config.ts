@@ -20,6 +20,21 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    components: {
+      graphics: {
+        Logo: "@/components/icons/Logo",
+        Icon: "@/components/icons/Logo",
+      },
+    },
+    meta: {
+      icons: [
+        {
+          rel: "icon",
+          type: "image/png",
+          url: "/icon.png",
+        },
+      ],
+    },
   },
   i18n: {
     supportedLanguages: { es, en },

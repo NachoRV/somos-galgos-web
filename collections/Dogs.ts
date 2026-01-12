@@ -16,11 +16,69 @@ export const Dogs: CollectionConfig = {
           label: "Información Básica",
           fields: [
             {
-              name: "name",
-              type: "text",
-              required: true,
-              minLength: 1,
-              maxLength: 100,
+              type: "row",
+              fields: [
+                {
+                  name: "name",
+                  type: "text",
+                  required: true,
+                  minLength: 1,
+                  maxLength: 100,
+                  admin: { width: "50%" },
+                },
+                {
+                  name: "sex",
+                  type: "select",
+                  options: [
+                    {
+                      label: "Male",
+                      value: "male",
+                    },
+                    {
+                      label: "Female",
+                      value: "female",
+                    },
+                  ],
+                  admin: {
+                    width: "25%",
+                  },
+                },
+                {
+                  name: "breed",
+                  type: "text",
+                  maxLength: 100,
+                  admin: {
+                    width: "25%",
+                  },
+                },
+              ],
+            },
+            {
+              type: "row",
+              fields: [
+                {
+                  name: "entryDate",
+                  type: "date",
+                  label: "Entry Date",
+                  required: true,
+                  admin: {
+                    width: "50%",
+                  },
+                },
+                {
+                  name: "birthDate",
+                  type: "date",
+                  label: "Birth Date",
+                  admin: {
+                    width: "50%",
+                  },
+                },
+              ],
+            },
+            {
+              name: "origin",
+              type: "textarea",
+              maxLength: 5000,
             },
             {
               name: "chipNumber",
@@ -30,53 +88,6 @@ export const Dogs: CollectionConfig = {
               admin: {
                 width: "50%",
               },
-            },
-            {
-              name: "sex",
-              type: "select",
-              options: [
-                {
-                  label: "Male",
-                  value: "male",
-                },
-                {
-                  label: "Female",
-                  value: "female",
-                },
-              ],
-              admin: {
-                width: "50%",
-              },
-            },
-            {
-              name: "breed",
-              type: "text",
-              maxLength: 100,
-              admin: {
-                width: "50%",
-              },
-            },
-            {
-              name: "birthDate",
-              type: "date",
-              label: "Birth Date",
-              admin: {
-                width: "50%",
-              },
-            },
-            {
-              name: "entryDate",
-              type: "date",
-              label: "Entry Date",
-              required: true,
-              admin: {
-                width: "50%",
-              },
-            },
-            {
-              name: "origin",
-              type: "textarea",
-              maxLength: 5000,
             },
           ],
         },
@@ -126,22 +137,6 @@ export const Dogs: CollectionConfig = {
                 width: "50%",
               },
             },
-            {
-              name: "isInvisible",
-              type: "checkbox",
-              label: "Is Invisible (Hidden from web)",
-              defaultValue: false,
-            },
-            {
-              name: "testedWithCats",
-              type: "checkbox",
-              label: "Tested With Cats",
-            },
-            {
-              name: "webDescription",
-              type: "richText",
-              label: "Web Description",
-            },
           ],
         },
         {
@@ -150,7 +145,7 @@ export const Dogs: CollectionConfig = {
             {
               name: "neuteringDate",
               type: "date",
-              label: "Neutering Date",
+              label: "Fecha de esterilización",
               admin: {
                 width: "50%",
               },
@@ -158,24 +153,29 @@ export const Dogs: CollectionConfig = {
             {
               name: "vaccines",
               type: "array",
+              label: "Vacunas",
               fields: [
                 {
                   name: "name",
                   type: "text",
+                  label: "Nombre de la vacuna",
                   required: true,
                 },
                 {
                   name: "date",
                   type: "date",
+                  label: "Fecha",
                   required: true,
                 },
                 {
                   name: "veterinarian",
                   type: "text",
+                  label: "Veterinario/a",
                 },
                 {
                   name: "notes",
                   type: "textarea",
+                  label: "Notas",
                   maxLength: 1000,
                 },
               ],
@@ -183,23 +183,28 @@ export const Dogs: CollectionConfig = {
             {
               name: "deworming",
               type: "array",
+              label: "Desparasitaciones",
               fields: [
                 {
                   name: "date",
                   type: "date",
+                  label: "Fecha",
                   required: true,
                 },
                 {
                   name: "product",
                   type: "text",
+                  label: "Producto",
                 },
                 {
                   name: "veterinarian",
                   type: "text",
+                  label: "Veterinario/a",
                 },
                 {
                   name: "notes",
                   type: "textarea",
+                  label: "Notas",
                   maxLength: 1000,
                 },
               ],
@@ -207,16 +212,18 @@ export const Dogs: CollectionConfig = {
             {
               name: "vetHistoryUrl",
               type: "array",
-              label: "Veterinary History URLs",
+              label: "Historial veterinario (URLs)",
               fields: [
                 {
                   name: "url",
                   type: "text",
+                  label: "URL",
                   required: true,
                 },
                 {
                   name: "description",
                   type: "text",
+                  label: "Descripción",
                   maxLength: 500,
                 },
               ],
@@ -255,8 +262,7 @@ export const Dogs: CollectionConfig = {
           fields: [
             {
               name: "notes",
-              type: "textarea",
-              maxLength: 5000,
+              type: "richText",
             },
             {
               name: "createdBy",
@@ -277,6 +283,27 @@ export const Dogs: CollectionConfig = {
                 readOnly: true,
                 hidden: true,
               },
+            },
+          ],
+        },
+        {
+          label: "Información para la web",
+          fields: [
+            {
+              name: "isInvisible",
+              type: "checkbox",
+              label: "Is Invisible",
+              defaultValue: false,
+            },
+            {
+              name: "testedWithCats",
+              type: "checkbox",
+              label: "Tested With Cats",
+            },
+            {
+              name: "webDescription",
+              type: "richText",
+              label: "Web Description",
             },
           ],
         },
