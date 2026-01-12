@@ -12,5 +12,26 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  upload: true,
+  upload: {
+    disableLocalStorage: true,
+    adminThumbnail: ({ doc }) => doc.url || '',
+  },
+  hooks: {
+    afterRead: [
+      ({ doc }) => {
+        // Replace R2 endpoint URL with custom domain
+        if (doc.url && process.env.CLOUDFLARE_R2_PUBLIC_URL) {
+          const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+          const bucket = process.env.CLOUDFLARE_R2_BUCKET_NAME;
+          
+          // Replace the R2 endpoint URL with the custom domain
+          doc.url = doc.url.replace(
+            `https://${accountId}.r2.cloudflarestorage.com/${bucket}`,
+            process.env.CLOUDFLARE_R2_PUBLIC_URL
+          );
+        }
+        return doc;
+      },
+    ],
+  },
 }

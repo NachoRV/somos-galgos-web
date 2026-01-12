@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
         hostname: 'mpnqfsnbbbamcgtajmqd.supabase.co',
         pathname: '/storage/v1/object/public/**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.r2.cloudflarestorage.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.somosgalgos.es',
+        pathname: '/**',
+      },
     ],
   },
 };

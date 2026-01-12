@@ -1,37 +1,77 @@
-import { createSupabaseClient } from '@/lib/supabase';
-import type { Dog, DogStatus, Vaccine, Deworming, Photo } from '@/types/dog';
+import { getPayload } from 'payload';
+import config from '@payload-config';
+import type { Dog as PayloadDog } from '@/payload-types';
+import type { Dog, DogStatus, PhotoTransformed } from '@/types/dog';
 
 // Re-exportar los tipos para compatibilidad
-export type { Dog, DogStatus, Vaccine, Deworming, Photo } from '@/types/dog';
+export type { Dog, DogStatus, Vaccine, Deworming, PhotoTransformed } from '@/types/dog';
+
+/**
+ * Get Payload CMS client instance
+ */
+async function getPayloadClient() {
+  return await getPayload({ config });
+}
+
+/**
+ * Transform Payload CMS dog data to frontend Dog format
+ */
+function transformPayloadDog(payloadDog: PayloadDog): Dog {
+  const photos: PhotoTransformed[] = (payloadDog.photos || [])
+    .map((photo, index) => {
+      // If image is a populated Media object
+      if (typeof photo.image === 'object' && photo.image !== null) {
+        return {
+          url: photo.image.url || '',
+          is_primary: photo.order === 0 || index === 0,
+          description: photo.caption || '',
+        };
+      }
+      // If image is just an ID (string), skip it
+      return null;
+    })
+    .filter((p): p is PhotoTransformed => p !== null)
+    .sort((a, b) => (a.is_primary ? -1 : 1));
+
+  return {
+    id: payloadDog.id,
+    name: payloadDog.name,
+    sex: payloadDog.sex,
+    breed: payloadDog.breed || '',
+    birth_date: payloadDog.birthDate || '',
+    entry_date: payloadDog.entryDate,
+    neutering_date: payloadDog.neuteringDate || '',
+    photos,
+    status: payloadDog.status,
+    notes: payloadDog.notes || '',
+    web_description: payloadDog.webDescription || '',
+    tested_with_cats: payloadDog.testedWithCats || false,
+    is_invisible: payloadDog.isInvisible || false,
+  };
+}
 
 export async function getDogs(status?: DogStatus | DogStatus[]): Promise<Dog[]> {
   try {
-    const supabase = createSupabaseClient();
+    const payload = await getPayloadClient();
     
-    // Seleccionar solo los campos no comentados en la interfaz Dog
-    let query = supabase.from('dogs').select(
-      'id, name, sex, breed, birth_date, entry_date, neutering_date, photos, status, web_description, tested_with_cats, is_invisible'
-    );
-
-    // Si especificas estado(s), filtra por eso
+    let whereCondition: any = {};
+    
     if (status) {
-      if (Array.isArray(status)) {
-        query = query.in('status', status);
-      } else {
-        query = query.eq('status', status);
-      }
+      whereCondition.status = Array.isArray(status) 
+        ? { in: status }
+        : { equals: status };
     }
 
-    const { data, error } = await query.order('created_at', { ascending: false });
+    const { docs } = await payload.find({
+      collection: 'dogs',
+      where: whereCondition,
+      depth: 2, // Populate Media relations
+      limit: 1000,
+    });
 
-    if (error) {
-      console.error('Error fetching dogs from Supabase:', error.message);
-      return getExampleDogs();
-    }
-    console.log('Fetched dogs:', data);
-    return data || [];
+    return docs.map(transformPayloadDog);
   } catch (error) {
-    console.error('Unexpected error fetching dogs:', error);
+    console.error('Error fetching dogs from Payload:', error);
     return getExampleDogs();
   }
 }
@@ -78,23 +118,19 @@ function getExampleDogs(): Dog[] {
 
 export async function getDogById(id: string): Promise<Dog | null> {
   try {
-    const supabase = createSupabaseClient();
+    const payload = await getPayloadClient();
 
-    // Seleccionar solo los campos no comentados en la interfaz Dog
-    const { data, error } = await supabase
-      .from('dogs')
-      .select('id, name, sex, breed, birth_date, entry_date, neutering_date, photos, status, web_description, tested_with_cats, is_invisible')
-      .eq('id', id)
-      .single();
+    const dog = await payload.findByID({
+      collection: 'dogs',
+      id,
+      depth: 2, // Populate Media relations
+    });
 
-    if (error) {
-      console.error('Error fetching dog:', error.message);
-      return null;
-    }
+    if (!dog) return null;
 
-    return data;
+    return transformPayloadDog(dog);
   } catch (error) {
-    console.error('Unexpected error fetching dog:', error);
+    console.error('Error fetching dog by ID:', error);
     return null;
   }
 }
