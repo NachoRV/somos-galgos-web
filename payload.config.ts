@@ -10,6 +10,7 @@ import { en } from "@payloadcms/translations/languages/en";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Dogs } from "./collections/Dogs";
+import { FosterAdoptions } from "./collections/FosterAdoptions";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -40,7 +41,7 @@ export default buildConfig({
     supportedLanguages: { es, en },
     fallbackLanguage: "es",
   },
-  collections: [Users, Media, Dogs],
+  collections: [Users, Media, Dogs, FosterAdoptions],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
