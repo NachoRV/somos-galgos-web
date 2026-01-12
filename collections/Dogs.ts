@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { volunteerReadOnlyCollectionAccess } from '../lib/access/volunteerReadOnly';
 
 export const Dogs: CollectionConfig = {
   slug: "dogs",
@@ -8,6 +9,7 @@ export const Dogs: CollectionConfig = {
     group: "Gestión",
   },
   timestamps: true,
+  access: volunteerReadOnlyCollectionAccess,
   fields: [
     {
       type: "tabs",
@@ -310,18 +312,6 @@ export const Dogs: CollectionConfig = {
       ],
     },
   ],
-  access: {
-    read: async () => true,
-    create: async ({ req }) => {
-      return req.user ? true : false;
-    },
-    update: async ({ req }) => {
-      return req.user ? true : false;
-    },
-    delete: async ({ req }) => {
-      return req.user ? true : false;
-    },
-  },
   hooks: {
     beforeChange: [
       async ({ data, req, operation }) => {

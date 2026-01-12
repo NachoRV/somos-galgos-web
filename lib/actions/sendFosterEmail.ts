@@ -1,10 +1,11 @@
 "use server";
-import { Resend } from 'resend';
 import { adoptionSchema, AdoptionFormData } from '@/lib/validations/adoption';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
-
+/**
+ * Server Action: sendFosterEmail
+ * Envía los datos del formulario de acogida al endpoint de la API
+ * que se encarga de guardar en Payload y enviar emails
+ */
 export async function sendFosterEmail(formData: AdoptionFormData) {
   const parsed = adoptionSchema.safeParse(formData);
   if (!parsed.success) {
@@ -12,65 +13,28 @@ export async function sendFosterEmail(formData: AdoptionFormData) {
   }
 
   try {
-    const subject = formData.dogName 
-      ? `[Acogida] Solicitud para ${formData.dogName}` 
-      : '[Acogida] Nueva solicitud';
-
-    await resend.emails.send({
-      from: 'Acogida <no-reply@somosgalgos.es>',
-      to: [TO_EMAIL],
-      subject,
-      replyTo: formData.email,
-      text: `SOLICITUD DE ACOGIDA
-
-${formData.dogName ? `Perro: ${formData.dogName} (ID: ${formData.dogId})\n` : ''}
-DATOS PERSONALES
-================
-Nombre: ${formData.firstName} ${formData.lastName}
-DNI/NIE: ${formData.idDocument}
-Año de nacimiento: ${formData.birthYear}
-Estado civil: ${formData.maritalStatus}
-Profesión: ${formData.profession}
-
-DIRECCIÓN
-=========
-Calle: ${formData.street}
-Localidad: ${formData.city}
-Código Postal: ${formData.postalCode}
-Provincia: ${formData.province}
-
-CONTACTO
-========
-Teléfono: ${formData.phone}
-Email: ${formData.email}
-
-${formData.additionalInfo ? `INFORMACIÓN ADICIONAL\n=====================\n${formData.additionalInfo}` : ''}`,
+    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/foster-adoptions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        type: 'foster', // Identificar como solicitud de acogida
+      }),
     });
 
-    await resend.emails.send({
-      from: 'Somos Galgos <no-reply@somosgalgos.es>',
-      to: [formData.email],
-      subject: formData.dogName 
-        ? `Solicitud de acogida de ${formData.dogName} recibida` 
-        : 'Solicitud de acogida recibida',
-      text: `Hola ${formData.firstName},
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Error desde API:', error);
+      return { error: error.message || 'Error al procesar la solicitud' };
+    }
 
-Gracias por tu interés en acoger${formData.dogName ? ` a ${formData.dogName}` : ' uno de nuestros galgos'}. Hemos recibido tu solicitud y nos pondremos en contacto contigo lo antes posible para continuar con el proceso de acogida temporal.
-
-La acogida es fundamental para que nuestros galgos puedan:
-- Adaptarse a la vida en un hogar
-- Socializar y ganar confianza
-- Encontrar la familia perfecta para ellos
-
-Te responderemos en un plazo de 2-3 días hábiles.
-
-Un saludo,
-El equipo de Somos Galgos`,
-    });
-
+    const result = await response.json();
+    console.log('Solicitud de acogida guardada:', result.recordId);
     return { success: true };
   } catch (error: any) {
-    console.error('Error enviando email de acogida:', error);
-    return { error: error.message || 'Error enviando el email' };
+    console.error('Error enviando solicitud de acogida:', error);
+    return { error: error.message || 'Error enviando la solicitud' };
   }
 }
