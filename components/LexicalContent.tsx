@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import * as React from 'react';
 
 interface LexicalNode {
   text?: string;
@@ -56,7 +56,7 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
         return <p key={index} className="mb-4 last:mb-0">{children}</p>;
       
       case 'heading':
-        const HeadingTag = (node.tag || 'h2') as keyof JSX.IntrinsicElements;
+        const HeadingTag = (node.tag || 'h2') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
         const headingClasses = {
           h1: 'text-3xl font-bold mb-4',
           h2: 'text-2xl font-bold mb-3',
@@ -65,10 +65,10 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
           h5: 'text-base font-bold mb-2',
           h6: 'text-sm font-bold mb-2',
         };
-        return (
-          <HeadingTag key={index} className={headingClasses[HeadingTag as keyof typeof headingClasses] || ''}>
-            {children}
-          </HeadingTag>
+        return React.createElement(
+          HeadingTag,
+          { key: index, className: headingClasses[HeadingTag] || '' },
+          children
         );
       
       case 'list':

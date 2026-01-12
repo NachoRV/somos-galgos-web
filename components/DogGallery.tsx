@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import type { Photo } from '@/types/dog';
+import type { PhotoTransformed } from '@/types/dog';
 
 interface DogGalleryProps {
-  photos: Photo[];
+  photos: PhotoTransformed[];
   dogName: string;
 }
 

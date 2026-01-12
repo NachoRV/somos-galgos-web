@@ -1,6 +1,6 @@
 import { getPayload } from 'payload';
 import config from '@payload-config';
-import type { Dog as PayloadDog } from '@/payload-types';
+// import type { Dog as PayloadDog } from '@/payload-types';
 import type { Dog, DogStatus, PhotoTransformed } from '@/types/dog';
 
 // Re-exportar los tipos para compatibilidad
@@ -45,9 +45,9 @@ function lexicalToText(richText: any): string {
 /**
  * Transform Payload CMS dog data to frontend Dog format
  */
-function transformPayloadDog(payloadDog: PayloadDog): Dog {
+function transformPayloadDog(payloadDog: any): Dog {
   const photos: PhotoTransformed[] = (payloadDog.photos || [])
-    .map((photo, index) => {
+    .map((photo: any, index: number) => {
       // If image is a populated Media object
       if (typeof photo.image === 'object' && photo.image !== null) {
         return {
@@ -59,8 +59,8 @@ function transformPayloadDog(payloadDog: PayloadDog): Dog {
       // If image is just an ID (string), skip it
       return null;
     })
-    .filter((p): p is PhotoTransformed => p !== null)
-    .sort((a, b) => (a.is_primary ? -1 : 1));
+    .filter((p: PhotoTransformed | null): p is PhotoTransformed => p !== null)
+    .sort((a: PhotoTransformed, b: PhotoTransformed) => (a.is_primary ? -1 : 1));
 
   return {
     id: payloadDog.id,
@@ -92,7 +92,7 @@ export async function getDogs(status?: DogStatus | DogStatus[]): Promise<Dog[]> 
     }
 
     const { docs } = await payload.find({
-      collection: 'dogs',
+      collection: 'dogs' as any,
       where: whereCondition,
       depth: 2, // Populate Media relations
       limit: 1000,
@@ -150,7 +150,7 @@ export async function getDogById(id: string): Promise<Dog | null> {
     const payload = await getPayloadClient();
 
     const dog = await payload.findByID({
-      collection: 'dogs',
+      collection: 'dogs' as any,
       id,
       depth: 2, // Populate Media relations
     });

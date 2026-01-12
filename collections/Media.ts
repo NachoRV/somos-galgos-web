@@ -14,7 +14,7 @@ export const Media: CollectionConfig = {
   ],
   upload: {
     disableLocalStorage: true,
-    adminThumbnail: ({ doc }) => doc.url || '',
+    adminThumbnail: ({ doc }) => (doc.url as string) || null,
   },
   hooks: {
     afterRead: [
