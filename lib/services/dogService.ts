@@ -14,6 +14,35 @@ async function getPayloadClient() {
 }
 
 /**
+ * Convert Lexical richText to plain text
+ * This function extracts text content from Lexical JSON structure
+ */
+function lexicalToText(richText: any): string {
+  if (!richText || typeof richText !== 'object') return '';
+  
+  // If it's a Lexical JSON structure
+  if (richText.root && richText.root.children) {
+    const extractText = (node: any): string => {
+      if (!node) return '';
+      
+      // If node has text property, return it
+      if (node.text) return node.text;
+      
+      // If node has children, recursively extract text
+      if (node.children && Array.isArray(node.children)) {
+        return node.children.map(extractText).join('');
+      }
+      
+      return '';
+    };
+    
+    return richText.root.children.map(extractText).join('\n');
+  }
+  
+  return '';
+}
+
+/**
  * Transform Payload CMS dog data to frontend Dog format
  */
 function transformPayloadDog(payloadDog: PayloadDog): Dog {
@@ -44,7 +73,7 @@ function transformPayloadDog(payloadDog: PayloadDog): Dog {
     photos,
     status: payloadDog.status,
     notes: payloadDog.notes || '',
-    web_description: payloadDog.webDescription || '',
+    web_description: payloadDog.webDescription || null,
     tested_with_cats: payloadDog.testedWithCats || false,
     is_invisible: payloadDog.isInvisible || false,
   };
@@ -54,7 +83,7 @@ export async function getDogs(status?: DogStatus | DogStatus[]): Promise<Dog[]> 
   try {
     const payload = await getPayloadClient();
     
-    let whereCondition: any = {};
+    const whereCondition: any = {};
     
     if (status) {
       whereCondition.status = Array.isArray(status) 

@@ -28,26 +28,18 @@ export interface Photo {
 export interface Dog {
   id: string;
   name: string;
-  // chip_number: string;
   sex: 'male' | 'female';
   breed: string;
   birth_date: string;
   entry_date: string;
   neutering_date: string;
-  // origin: string;
-  // vaccines: Vaccine[];
-  // deworming: Deworming[];
-  //vet_history_url: string;
   photos: PhotoTransformed[];
   status: DogStatus;
   notes?: string;
-  web_description: string;
+  web_description: any; // Lexical richText object
   tested_with_cats: boolean;
   is_invisible: boolean;
-  //created_at: string;
-  //updated_at: string;
-  //created_by: string | null;
-  //updated_by: string | null;
+
 }
 
 export type DogStatus = 'in_residence' | 'fostered' | 'adopted' | 'in_treatment' | 'deceased' | 'lost' | 'available';

@@ -5,7 +5,8 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import { s3Storage } from '@payloadcms/storage-s3';
-
+import { es } from '@payloadcms/translations/languages/es';
+import { en } from "@payloadcms/translations/languages/en";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Dogs } from "./collections/Dogs";
@@ -19,6 +20,10 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+  },
+  i18n: {
+    supportedLanguages: { es, en },
+    fallbackLanguage: "es",
   },
   collections: [Users, Media, Dogs],
   editor: lexicalEditor(),
@@ -46,7 +51,7 @@ export default buildConfig({
           accessKeyId: process.env.CLOUDFLARE_R2_ACCESS_KEY_ID!,
           secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY!,
         },
-        region: 'auto', // Cloudflare R2 uses 'auto' as region
+        region: "auto", // Cloudflare R2 uses 'auto' as region
         endpoint: `https://${process.env.CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com`,
         forcePathStyle: true, // Required for R2
       },

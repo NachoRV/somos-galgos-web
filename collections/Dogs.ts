@@ -139,9 +139,8 @@ export const Dogs: CollectionConfig = {
             },
             {
               name: "webDescription",
-              type: "textarea",
+              type: "richText",
               label: "Web Description",
-              maxLength: 10000,
             },
           ],
         },

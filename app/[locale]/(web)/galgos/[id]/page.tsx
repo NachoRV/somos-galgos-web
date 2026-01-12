@@ -4,6 +4,8 @@ import { getTranslations } from 'next-intl/server';
 import { getDogById } from '@/lib/services/dogService';
 import { DogGallery } from '@/components/DogGallery';
 import type { Dog } from '@/types/dog';
+import { LexicalContent } from '@/components/LexicalContent';
+import { lexicalToText } from '@/lib/utils/lexicalToText';
 
 interface DogDetailPageProps {
   params: Promise<{ id: string; locale: string }>;
@@ -20,12 +22,14 @@ export async function generateMetadata({ params }: DogDetailPageProps) {
     };
   }
 
+  const description = lexicalToText(dog.web_description) || 'Conoce más sobre este galgo';
+
   return {
     title: `${dog.name} - Somos Galgos`,
-    description: dog.web_description || 'Conoce más sobre este galgo',
+    description,
     openGraph: {
       title: `${dog.name} - Somos Galgos`,
-      description: dog.web_description,
+      description,
       images: dog.photos && dog.photos.length > 0 ? [{ url: dog.photos[0].url }] : [],
     },
   };
@@ -159,9 +163,9 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
           <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4">
             {t('about')} {dog.name}
           </h2>
-          <p className="text-[var(--color-text-secondary)] leading-relaxed whitespace-pre-wrap">
-            {dog.web_description}
-          </p>
+          <div className="text-[var(--color-text-secondary)] leading-relaxed">
+            <LexicalContent content={dog.web_description} />
+          </div>
 
           {dog.notes && (
             <div className="mt-6 p-4 bg-[var(--color-bg-secondary)] rounded-lg">

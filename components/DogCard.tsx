@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { Dog } from '@/types/dog';
+import { LexicalContent } from '@/components/LexicalContent';
 
 interface DogCardProps {
   dog: Dog;
@@ -52,9 +53,9 @@ export function DogCard({ dog }: DogCardProps) {
 
         {/* Descripción web */}
         {dog.web_description && (
-          <p className="text-[var(--color-text-secondary)] mb-6 text-sm line-clamp-3 flex-grow">
-            {dog.web_description}
-          </p>
+          <div className="text-[var(--color-text-secondary)] mb-6 text-sm line-clamp-3 flex-grow">
+            <LexicalContent content={dog.web_description} />
+          </div>
         )}
 
         {/* Botón */}
