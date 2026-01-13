@@ -275,5 +275,72 @@
     "submitting": "Enviando...",
     "successMessage": "¡Formulario enviado correctamente! Nos pondremos en contacto contigo pronto.",
     "errorMessage": "Ocurrió un error al enviar el formulario. Por favor, inténtalo de nuevo."
+  },
+  "Volunteer": {
+    "volunteer": "Voluntario",
+    "hero": {
+      "title": "¡Hazte Voluntario!",
+      "subtitle": "Dedica tu tiempo a ayudar a los galgos y cambiar sus vidas",
+      "description": "Somos Galgos es una asociación sin ánimo de lucro que depende de voluntarios comprometidos. Tu ayuda es fundamental para seguir rescatando, cuidando y encontrando hogar a cientos de galgos cada año."
+    },
+    "whatIs": {
+      "title": "¿Qué es ser voluntario?",
+      "description": "Ser voluntario en Somos Galgos significa dedicar tu tiempo y energía a ayudar en la protectora. Puedes participar en diferentes actividades según tus habilidades e intereses: paseos con los galgos, socialización, ayuda administrativa, eventos, o incluso ser familia de acogida.",
+      "impact": "Tu contribución es vital. Cada hora que dediques ayuda directamente a mejorar la calidad de vida de los galgos y acelera su proceso de adopción.",
+      "flexibility": {
+        "title": "Flexibilidad",
+        "description": "Elige cuándo y cuánto tiempo puedes dedicar. No necesita ser todos los días, puedes colaborar según tu disponibilidad."
+      },
+      "community": {
+        "title": "Comunidad",
+        "description": "Únete a un equipo de personas apasionadas por los animales. Comparte experiencias y disfruta de una comunidad comprometida."
+      }
+    },
+    "benefits": {
+      "title": "Beneficios de Ser Voluntario",
+      "benefit1": {
+        "title": "Ayuda Significativa",
+        "description": "Tu trabajo directo ayuda a salvar vidas y cambiar el futuro de los galgos rescatados."
+      },
+      "benefit2": {
+        "title": "Conexión Especial",
+        "description": "Experimentarás una conexión única y profunda con los animales, vivirás su transformación y recuperación."
+      },
+      "benefit3": {
+        "title": "Crecimiento Personal",
+        "description": "Desarrolla nuevas habilidades, expande tu red de amigos y contribuye a una causa significativa."
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "question1": "¿Qué requisitos se necesitan para ser voluntario?",
+      "answer1": "Solo necesitas tener 18 años cumplidos, disponibilidad y pasión por ayudar. No es necesaria experiencia previa con animales.",
+      "question2": "¿Cuánto tiempo debo dedicar?",
+      "answer2": "Depende de ti. Puedes dedicar desde unas horas a la semana hasta varios días. Te pedimos que te comprometas con un mínimo de un turno semanal.",
+      "question3": "¿Qué tipo de tareas puedo hacer?",
+      "answer3": "Hay muchas opciones: paseos con galgos, socialización, ayuda en eventos, tareas administrativas, limpieza de instalaciones, o ser familia de acogida temporal.",
+      "question4": "¿Necesito experiencia previa con perros?",
+      "answer4": "No es necesario. Te proporcionaremos toda la formación que necesites. Solo necesitas ganas de aprender y amor por los animales."
+    },
+    "form": {
+      "fullName": "Nombre Completo",
+      "fullNamePlaceholder": "Tu nombre completo",
+      "dni": "DNI/NIE",
+      "dniPlaceholder": "12345678X",
+      "birthDate": "Fecha de Nacimiento",
+      "residenceLocation": "Lugar de Residencia",
+      "residenceLocationPlaceholder": "Tu ciudad/localidad",
+      "phone": "Teléfono de Contacto",
+      "phonePlaceholder": "+34 XXX XXX XXX",
+      "drivingLicense": "¿Tienes carnet de conducir?",
+      "drivingLicenseSelect": "Selecciona una opción",
+      "drivingLicenseYes": "Sí, tengo carnet.",
+      "drivingLicenseYesWithCar": "Sí, tengo carnet y coche propio.",
+      "drivingLicenseNo": "No tengo carnet de conducir.",
+      "submit": "Enviar Solicitud de Voluntariado",
+      "submitting": "Enviando...",
+      "success": "¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.",
+      "required": "Los campos con * son obligatorios"
+    }
   }
 }

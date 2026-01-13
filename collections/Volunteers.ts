@@ -1,18 +1,18 @@
 import type { CollectionConfig } from 'payload';
 
 // Control de acceso para Volunteers:
-// - Voluntarios pueden leer (read-only)
-// - Admins/usuarios pueden crear, actualizar y eliminar
+// - Cualquiera puede crear (formulario público de voluntariado)
+// - Solo lectura para usuarios registrados
+// - Admins pueden crear, actualizar y eliminar
 const volunteersAccess = {
   read: async ({ req }: any) => {
+    // Los admins pueden leer, otros solo si están autenticados
     const user = req.user as any;
     if (!user) return false;
     return true;
   },
   create: async ({ req }: any) => {
-    const user = req.user as any;
-    if (!user) return false;
-    if (user.role === 'voluntario') return false;
+    // Permitir crear sin autenticación (formulario público)
     return true;
   },
   update: async ({ req }: any) => {
@@ -36,8 +36,8 @@ export const Volunteers: CollectionConfig = {
     plural: 'Voluntarios',
   },
   admin: {
-    useAsTitle: 'first_name',
-    defaultColumns: ['first_name', 'last_name', 'phone', 'is_active', 'start_date'],
+    useAsTitle: 'full_name',
+    defaultColumns: ['full_name', 'phone', 'status', 'created_at'],
     group: 'Gestión',
   },
   timestamps: true,
@@ -50,62 +50,87 @@ export const Volunteers: CollectionConfig = {
           label: 'Información Personal',
           fields: [
             {
-              type: 'row',
-              fields: [
-                {
-                  name: 'first_name',
-                  label: 'Nombre',
-                  type: 'text',
-                  required: true,
-                  maxLength: 100,
-                  admin: {
-                    width: '50%',
-                  },
-                },
-                {
-                  name: 'last_name',
-                  label: 'Apellido',
-                  type: 'text',
-                  required: true,
-                  maxLength: 100,
-                  admin: {
-                    width: '50%',
-                  },
-                },
-              ],
+              name: 'full_name',
+              label: 'Nombre Completo',
+              type: 'text',
+              required: true,
+              maxLength: 200,
+            },
+            {
+              name: 'dni',
+              label: 'DNI/NIE',
+              type: 'text',
+              required: true,
+              maxLength: 20,
+            },
+            {
+              name: 'birth_date',
+              label: 'Fecha de Nacimiento',
+              type: 'date',
+              required: true,
+            },
+            {
+              name: 'residence_location',
+              label: 'Lugar de Residencia',
+              type: 'text',
+              required: true,
+              maxLength: 200,
             },
             {
               name: 'phone',
-              label: 'Teléfono',
+              label: 'Teléfono de Contacto',
               type: 'text',
+              required: true,
               maxLength: 20,
+            },
+            {
+              name: 'driving_license',
+              label: '¿Tienes carnet de conducir?',
+              type: 'select',
+              required: true,
+              options: [
+                {
+                  label: 'Sí, tengo carnet.',
+                  value: 'si_carnet',
+                },
+                {
+                  label: 'Sí, tengo carnet y coche propio.',
+                  value: 'si_carnet_coche',
+                },
+                {
+                  label: 'No tengo carnet de conducir.',
+                  value: 'no_carnet',
+                },
+              ],
             },
           ],
         },
         {
-          label: 'Disponibilidad',
+          label: 'Gestión',
           fields: [
             {
-              type: 'row',
-              fields: [
+              name: 'status',
+              label: 'Estado',
+              type: 'select',
+              defaultValue: 'en_revision',
+              required: true,
+              options: [
                 {
-                  name: 'start_date',
-                  label: 'Fecha de Inicio',
-                  type: 'date',
-                  required: true,
-                  admin: {
-                    width: '50%',
-                  },
+                  label: 'En Revisión',
+                  value: 'en_revision',
                 },
                 {
-                  name: 'end_date',
-                  label: 'Fecha de Fin',
-                  type: 'date',
-                  admin: {
-                    width: '50%',
-                  },
+                  label: 'Activo',
+                  value: 'activo',
+                },
+                {
+                  label: 'Baja',
+                  value: 'baja',
                 },
               ],
+              admin: {
+                description: 'Estado del voluntario en el sistema',
+              },
             },
             {
               name: 'availability',
@@ -113,14 +138,25 @@ export const Volunteers: CollectionConfig = {
               type: 'textarea',
               defaultValue: '',
               admin: {
-                description: 'Describe tu disponibilidad (ej: fines de semana, tardes, etc)',
+                description: 'Describe su disponibilidad (ej: fines de semana, tardes, etc)',
               },
             },
             {
-              name: 'is_active',
-              label: 'Activo',
-              type: 'checkbox',
-              defaultValue: true,
+              name: 'start_date',
+              label: 'Fecha de Inicio',
+              type: 'date',
+              admin: {
+                description: 'Fecha en que comenzó el voluntariado',
+              },
+            },
+            {
+              name: 'notes',
+              label: 'Notas del Administrador',
+              type: 'textarea',
+              defaultValue: '',
+              admin: {
+                description: 'Notas internas sobre el voluntario',
+              },
             },
           ],
         },

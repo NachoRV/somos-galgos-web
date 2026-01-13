@@ -194,10 +194,11 @@ export const FosterAdoptions: CollectionConfig = {
               type: "textarea",
             },
             {
-              name: "creado_por",
+              name: "voluntario_asignado",
               label: "Voluntario asignado",
               type: "relationship",
-              relationTo: "users",
+              relationTo: "volunteers",
+              required: false,
             },
           ],
         },

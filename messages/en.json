@@ -123,7 +123,8 @@
     "error": "An error occurred while sending the message. Please try again later.",
     "location": "Location",
     "bizum": "Bizum NGO",
-    "followUs": "Follow us:"  },
+    "followUs": "Follow us:"
+  },
   "menu": {
     "sobreNosotros": "About Us",
     "adoptar": "Adopt",
@@ -132,8 +133,9 @@
     "historias": "Stories",
     "blog": "Blog",
     "socio": "Become a Member",
-    "voluntario": "Become a Volunteer"  },
-      "Footer": {
+    "voluntario": "Become a Volunteer"
+  },
+  "Footer": {
     "about": "About Us",
     "aboutText": "Non-profit organization dedicated to the rescue, protection and adoption of greyhounds in Madrid.",
     "quickLinks": "Quick Links",
@@ -150,7 +152,8 @@
     "terms": "Terms and Conditions",
     "followUs": "Follow Us",
     "copyright": "© {year} Somos Galgos. All rights reserved.",
-    "madeWith": "Made with ❤️ for greyhounds by irvb.dev"  },
+    "madeWith": "Made with ❤️ for greyhounds by irvb.dev"
+  },
   "Adoption": {
     "title": "Adoption Form",
     "subtitle": "Complete this form to start the adoption process",
@@ -272,5 +275,72 @@
     "submitting": "Submitting...",
     "successMessage": "Form submitted successfully! We will contact you soon.",
     "errorMessage": "An error occurred while submitting the form. Please try again."
+  },
+  "Volunteer": {
+    "volunteer": "Volunteer",
+    "hero": {
+      "title": "Become a Volunteer!",
+      "subtitle": "Dedicate your time to help greyhounds and change their lives",
+      "description": "Somos Galgos is a non-profit organization that depends on committed volunteers. Your help is essential to continue rescuing, caring for, and finding homes for hundreds of greyhounds every year."
+    },
+    "whatIs": {
+      "title": "What does it mean to be a volunteer?",
+      "description": "Being a volunteer at Somos Galgos means dedicating your time and energy to helping at the shelter. You can participate in different activities according to your skills and interests: walks with greyhounds, socialization, administrative help, events, or even being a temporary foster family.",
+      "impact": "Your contribution is vital. Every hour you dedicate directly helps improve the quality of life of the greyhounds and speeds up their adoption process.",
+      "flexibility": {
+        "title": "Flexibility",
+        "description": "Choose when and how much time you can dedicate. It doesn't have to be every day, you can collaborate according to your availability."
+      },
+      "community": {
+        "title": "Community",
+        "description": "Join a team of people passionate about animals. Share experiences and enjoy a committed community."
+      }
+    },
+    "benefits": {
+      "title": "Benefits of Being a Volunteer",
+      "benefit1": {
+        "title": "Meaningful Help",
+        "description": "Your direct work helps save lives and change the future of rescued greyhounds."
+      },
+      "benefit2": {
+        "title": "Special Connection",
+        "description": "You will experience a unique and deep connection with the animals, you will witness their transformation and recovery."
+      },
+      "benefit3": {
+        "title": "Personal Growth",
+        "description": "Develop new skills, expand your network of friends, and contribute to a meaningful cause."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "question1": "What are the requirements to be a volunteer?",
+      "answer1": "You only need to be 18 years old, have availability, and a passion for helping. No previous experience with animals is necessary.",
+      "question2": "How much time do I need to dedicate?",
+      "answer2": "It depends on you. You can dedicate from a few hours a week to several days. We ask that you commit to a minimum of one shift per week.",
+      "question3": "What type of tasks can I do?",
+      "answer3": "There are many options: walks with greyhounds, socialization, help with events, administrative tasks, facility cleaning, or being a temporary foster family.",
+      "question4": "Do I need previous experience with dogs?",
+      "answer4": "No, it's not necessary. We will provide you with all the training you need. You just need the desire to learn and a love for animals."
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "dni": "ID/NIE",
+      "dniPlaceholder": "12345678X",
+      "birthDate": "Date of Birth",
+      "residenceLocation": "Place of Residence",
+      "residenceLocationPlaceholder": "Your city/town",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+34 XXX XXX XXX",
+      "drivingLicense": "Do you have a driving license?",
+      "drivingLicenseSelect": "Select an option",
+      "drivingLicenseYes": "Yes, I have a driving license.",
+      "drivingLicenseYesWithCar": "Yes, I have a driving license and own a car.",
+      "drivingLicenseNo": "No, I don't have a driving license.",
+      "submit": "Submit Volunteer Application",
+      "submitting": "Submitting...",
+      "success": "Thank you for your application! We will contact you soon.",
+      "required": "Fields marked with * are required"
+    }
   }
 }
