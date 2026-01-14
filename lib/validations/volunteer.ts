@@ -25,7 +25,7 @@ export const volunteerSchema = z.object({
     .min(9, 'Phone must be at least 9 characters')
     .trim(),
   drivingLicense: z.enum(['si_carnet', 'si_carnet_coche', 'no_carnet'], {
-    errorMap: () => ({ message: 'Please select a driving license option' }),
+    message: 'Please select a driving license option'
   }),
 });
 

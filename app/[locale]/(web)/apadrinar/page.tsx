@@ -1,11 +1,55 @@
-import { useTranslations } from "next-intl";
+import { SponsorshipForm } from '@/components/SponsorshipForm';
+import { getTranslations } from 'next-intl/server';
+import {
+  SponsorshipHeroSection,
+  WhatIsSponsorshipSection,
+  SponsorshipBenefitsSection,
+  SponsorshipFAQSection,
+} from '@/components/sponsorship';
 
-export default function ApadrinarPage() {
-  const t = useTranslations("menu");
+interface ApadrinarPageProps {
+  searchParams: Promise<{
+    dogId?: string;
+    dogName?: string;
+  }>;
+}
+
+export default async function ApadrinarPage({ searchParams }: ApadrinarPageProps) {
+  const t = await getTranslations("Sponsorship");
+  const params = await searchParams;
+  
   return (
-    <main className="flex flex-col items-center justify-center min-h-[60vh]">
-      <h1 className="text-3xl font-bold mb-4">{t("apadrinar")}</h1>
-      <p className="text-lg">Trabajando en la página: {t("apadrinar")}</p>
+    <main className="min-h-screen">
+      <SponsorshipHeroSection />
+      <WhatIsSponsorshipSection />
+      <SponsorshipBenefitsSection />
+      <SponsorshipFAQSection />
+      
+      <section id="formulario" className="py-20 px-16 bg-base-100">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[var(--color-primary)]">
+              {t('formTitle')}
+            </h2>
+            <p className="text-lg text-base-content/70">
+              {t('formSubtitle')}
+            </p>
+          </div>
+          
+          {params.dogId && params.dogName && (
+            <div className="bg-[var(--color-accent)]/10 border-2 border-[var(--color-accent)] rounded-lg p-6 mb-8">
+              <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-2">
+                {t('sponsoringDog')}: {params.dogName}
+              </h3>
+              <p className="text-sm text-[var(--color-text-secondary)]">
+                ID: {params.dogId}
+              </p>
+            </div>
+          )}
+          
+          <SponsorshipForm dogId={params.dogId} dogName={params.dogName} />
+        </div>
+      </section>
     </main>
   );
 }

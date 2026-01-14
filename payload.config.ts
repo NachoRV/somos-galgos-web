@@ -11,6 +11,7 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Dogs } from "./collections/Dogs";
 import { FosterAdoptions } from "./collections/FosterAdoptions";
+import { Sponsorships } from "./collections/Sponsorships";
 import { Volunteers } from "./collections/Volunteers";
 
 const filename = fileURLToPath(import.meta.url);
@@ -42,7 +43,7 @@ export default buildConfig({
     supportedLanguages: { es, en },
     fallbackLanguage: "es",
   },
-  collections: [Users, Media, Dogs, FosterAdoptions, Volunteers],
+  collections: [Users, Media, Dogs, FosterAdoptions, Sponsorships, Volunteers],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
