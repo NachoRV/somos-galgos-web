@@ -108,7 +108,8 @@
     "about": "Sobre",
     "notes": "Notas adicionales",
     "adoptButton": "Adoptar a este perro",
-    "fosterButton": "Acoger a este perro"
+    "fosterButton": "Acoger a este perro",
+    "sponsorButton": "Apadrinar este perro"
   },
   "Contact": {
     "title": "Contáctanos",
@@ -349,6 +350,7 @@
     "sponsoringDog": "Quiero apadrinar a",
     "heroTitle": "Apadrina un Galgo",
     "heroSubtitle": "Ayuda económicamente a un galgo y recibe actualizaciones sobre su vida",
+    "heroCTA": "Quiero Apadrinar",
     "whatTitle": "¿Qué es apadrinar un galgo?",
     "whatDescription1": "Apadrinar es una forma flexible de ayudar a los galgos rescatados sin el compromiso de adopción permanente. Tu cuota mensual ayuda directamente a cubrir gastos veterinarios, alimentación y cuidados.",
     "whatDescription2": "Como padrino recibirás actualizaciones periódicas sobre el galgo que apadrinas, fotos y noticias sobre su evolución.",
@@ -392,6 +394,11 @@
     "quotaInfo": "Información de Cuota",
     "quota": "Cuota Mensual *",
     "quotaOther": "Otra cantidad (€)",
+    "feeFrequency": "Frecuencia de pago",
+    "feeFrequencyMonthly": "Mensual",
+    "feeFrequencyQuarterly": "Trimestral",
+    "feeFrequencySemiannual": "Semestral",
+    "feeFrequencyAnnual": "Anual",
     "quotaNote": "La cuota mínima es de 10€/mes. Si prefieres otras formas de pago (trimestral, semestral, etc.) escríbenos a somosgalgos1@gmail.com",
     "transferTitle": "Transferencia Automática de Apadrinamiento",
     "transferYes": "Sí, transfiere mi apadrinamiento a otro galgo cuando sea adoptado",

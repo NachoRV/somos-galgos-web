@@ -210,6 +210,25 @@ export function SponsorshipForm({ dogId, dogName }: SponsorshipFormProps) {
             {errors.cuota && <label className="label"><span className="label-text-alt text-error">{errors.cuota}</span></label>}
           </div>
         </div>
+
+        {/* Frecuencia de pago */}
+        <div className="form-control mt-4">
+          <label className="label"><span className="label-text">{t('feeFrequency')} *</span></label>
+          <select 
+            name="fee_frequency"
+            value={formData.fee_frequency}
+            onChange={handleChange}
+            className={`select select-bordered ${errors.fee_frequency ? 'select-error' : ''}`}
+            required
+          >
+            <option value="monthly">{t('feeFrequencyMonthly')}</option>
+            <option value="quarterly">{t('feeFrequencyQuarterly')}</option>
+            <option value="semiannual">{t('feeFrequencySemiannual')}</option>
+            <option value="annual">{t('feeFrequencyAnnual')}</option>
+          </select>
+          {errors.fee_frequency && <label className="label"><span className="label-text-alt text-error">{errors.fee_frequency}</span></label>}
+        </div>
+
         <div className="alert alert-info mt-4">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>{t('quotaNote')}</span>

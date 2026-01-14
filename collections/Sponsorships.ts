@@ -55,8 +55,11 @@ export const Sponsorships: CollectionConfig = {
               name: "nombre_perro_opcional",
               label: "Nombre del perro (opcional)",
               type: "text",
-              maxLength: 100,
               required: false,
+              maxLength: 100,
+              admin: {
+                description: "Nombre del perro proporcionado en el formulario",
+              },
             },
             {
               name: "fecha_inicio",
@@ -151,11 +154,56 @@ export const Sponsorships: CollectionConfig = {
               min: 10,
             },
             {
+              name: "fee_frequency",
+              label: "Frecuencia de pago",
+              type: "select",
+              required: false,
+              defaultValue: "monthly",
+              options: [
+                { label: "Mensual", value: "monthly" },
+                { label: "Trimestral", value: "quarterly" },
+                { label: "Semestral", value: "semiannual" },
+                { label: "Anual", value: "annual" },
+              ],
+              admin: {
+                description: "Frecuencia con la que se realizará el pago",
+              },
+            },
+            {
               name: "iban",
               label: "IBAN",
               type: "text",
               required: true,
               maxLength: 34,
+            },
+            {
+              name: "bank_control_number",
+              label: "Número de control bancario",
+              type: "text",
+              required: false,
+              maxLength: 50,
+              admin: {
+                description: "Número de control interno del banco",
+              },
+            },
+            {
+              name: "receipt_reference",
+              label: "Referencia del recibo",
+              type: "text",
+              required: false,
+              maxLength: 100,
+              admin: {
+                description: "Referencia interna del recibo",
+              },
+            },
+            {
+              name: "first_receipt_date",
+              label: "Fecha del primer recibo",
+              type: "date",
+              required: false,
+              admin: {
+                description: "Fecha en la que se emitió el primer recibo",
+              },
             },
           ],
         },
@@ -190,6 +238,53 @@ export const Sponsorships: CollectionConfig = {
               label: "Aceptación de política de privacidad",
               type: "checkbox",
               required: true,
+            },
+          ],
+        },
+        {
+          label: "Gestión",
+          fields: [
+            {
+              name: "registration_date",
+              label: "Fecha de alta",
+              type: "date",
+              required: false,
+              admin: {
+                description: "Fecha de registro del apadrinamiento",
+                readOnly: true,
+                position: "sidebar",
+              },
+            },
+            {
+              name: "sponsor_mode",
+              label: "Modo de patrocinio",
+              type: "select",
+              required: false,
+              defaultValue: "padrino",
+              options: [
+                { label: "Padrino", value: "padrino" },
+                { label: "Socio", value: "socio" },
+              ],
+              admin: {
+                description: "Tipo de patrocinio: padrino (apadrinamiento) o socio",
+                position: "sidebar",
+              },
+            },
+            {
+              name: "status",
+              label: "Estado",
+              type: "select",
+              required: false,
+              defaultValue: "en revision",
+              options: [
+                { label: "En revisión", value: "en revision" },
+                { label: "Alta", value: "alta" },
+                { label: "Baja", value: "baja" },
+              ],
+              admin: {
+                description: "Estado actual del apadrinamiento",
+                position: "sidebar",
+              },
             },
           ],
         },

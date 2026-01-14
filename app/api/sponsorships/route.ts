@@ -19,6 +19,15 @@ async function sendSponsorshipEmails(
       ? `[APADRINAMIENTO] Solicitud de apadrinamiento para ${formData.dogName}`
       : `[APADRINAMIENTO] Nueva solicitud de apadrinamiento`;
 
+    // Traducir frecuencia de pago
+    const frequencyLabels: Record<string, string> = {
+      monthly: 'Mensual',
+      quarterly: 'Trimestral',
+      semiannual: 'Semestral',
+      annual: 'Anual',
+    };
+    const frequencyLabel = frequencyLabels[formData.fee_frequency || 'monthly'] || 'Mensual';
+
     // Email al administrador
     await resend.emails.send({
       from: 'Apadrinamiento <no-reply@somosgalgos.es>',
@@ -48,6 +57,7 @@ Teléfono: ${formData.phone}
 INFORMACIÓN DE APADRINAMIENTO
 =============================
 Cuota mensual: ${formData.cuota}€
+Frecuencia de pago: ${frequencyLabel}
 IBAN: ${formData.iban}
 Transferencia automática: ${formData.transferencia_automatica ? 'Sí' : 'No'}
 Suscripción a boletín: ${formData.suscripcion_boletin ? 'Sí' : 'No'}
@@ -125,13 +135,17 @@ export async function POST(request: NextRequest) {
       telefono_contacto: formData.phone,
       nombre_perro_opcional: formData.dogName || null,
       cuota_mensual: formData.cuota,
+      fee_frequency: formData.fee_frequency || 'monthly',
       iban: formData.iban,
       transferencia_automatica: formData.transferencia_automatica || false,
       suscripcion_boletin: formData.suscripcion_boletin || false,
       autorizacion_cargos: formData.autorizacion_cargos,
       politica_privacidad: formData.politica_privacidad,
       fecha_inicio: new Date().toISOString().split('T')[0],
+      registration_date: new Date().toISOString().split('T')[0],
       perro: formData.dogId ? formData.dogId : null,
+      sponsor_mode: 'padrino',
+      status: 'en revision',
     };
 
     // Guardar en Payload CMS usando getPayload

@@ -154,6 +154,9 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
               <Link href={`/acoger?dogId=${dog.id}&dogName=${encodeURIComponent(dog.name)}`} className="btn btn-secondary w-full">
                 {t('fosterButton')}
               </Link>
+              <Link href={`/apadrinar?dogId=${dog.id}&dogName=${encodeURIComponent(dog.name)}`} className="btn btn-accent w-full">
+                {t('sponsorButton')}
+              </Link>
             </div>
           </div>
         </div>

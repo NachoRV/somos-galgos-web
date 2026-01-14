@@ -108,7 +108,8 @@
     "about": "About",
     "notes": "Additional notes",
     "adoptButton": "Adopt this dog",
-    "fosterButton": "Foster this dog"
+    "fosterButton": "Foster this dog",
+    "sponsorButton": "Sponsor this dog"
   },
   "Contact": {
     "title": "Contact Us",
@@ -349,6 +350,7 @@
     "sponsoringDog": "I want to sponsor",
     "heroTitle": "Sponsor a Greyhound",
     "heroSubtitle": "Help financially a greyhound and receive updates about their life",
+    "heroCTA": "I Want to Sponsor",
     "whatTitle": "What does it mean to sponsor a greyhound?",
     "whatDescription1": "Sponsoring is a flexible way to help rescued greyhounds without the commitment of permanent adoption. Your monthly fee directly helps cover veterinary expenses, food, and care.",
     "whatDescription2": "As a sponsor, you will receive periodic updates about the greyhound you sponsor, photos and news about their progress.",
@@ -392,6 +394,11 @@
     "quotaInfo": "Fee Information",
     "quota": "Monthly Fee *",
     "quotaOther": "Another amount (€)",
+    "feeFrequency": "Payment frequency",
+    "feeFrequencyMonthly": "Monthly",
+    "feeFrequencyQuarterly": "Quarterly",
+    "feeFrequencySemiannual": "Semi-annual",
+    "feeFrequencyAnnual": "Annual",
     "quotaNote": "The minimum fee is €10/month. If you prefer other payment methods (quarterly, semi-annual, etc.) please email us at somosgalgos1@gmail.com",
     "transferTitle": "Automatic Sponsorship Transfer",
     "transferYes": "Yes, transfer my sponsorship to another greyhound when adopted",

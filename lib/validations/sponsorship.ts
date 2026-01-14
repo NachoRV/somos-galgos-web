@@ -17,6 +17,7 @@ export const sponsorshipSchema = z.object({
   dogName: z.string().optional(),
   dogId: z.string().optional(),
   cuota: z.number().min(10, 'La cuota mínima es 10€'),
+  fee_frequency: z.enum(['monthly', 'quarterly', 'semiannual', 'annual']).default('monthly'),
   iban: z
     .string()
     .min(24, 'IBAN inválido')
