@@ -6,15 +6,17 @@ import { useTranslations } from 'next-intl';
 interface SponsorshipFormProps {
   dogId?: string;
   dogName?: string;
+  sponsorMode?: 'padrino' | 'socio';
 }
 
-export function SponsorshipForm({ dogId, dogName }: SponsorshipFormProps) {
+export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: SponsorshipFormProps) {
   const formState = useSponsorshipForm({
     dogId,
     dogName,
+    sponsorMode,
     onSubmit: sendSponsorshipEmail,
   });
-  const t = useTranslations('Sponsorship');
+  const t = useTranslations(sponsorMode === 'socio' ? 'Member' : 'Sponsorship');
   const { formData, errors, isSubmitting, submitStatus, handleChange, handleSubmit } = formState;
 
   return (
@@ -160,22 +162,24 @@ export function SponsorshipForm({ dogId, dogName }: SponsorshipFormProps) {
         </div>
       </div>
 
-      {/* Perro a apadrinar */}
-      <div className="bg-base-200 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-4">{t('dogInfo')}</h3>
-        <div className="form-control">
-          <label className="label"><span className="label-text">{t('dogName')}</span></label>
-          <input 
-            type="text" 
-            name="dogName" 
-            value={formData.dogName} 
-            onChange={handleChange} 
-            placeholder={t('dogNamePlaceholder')}
-            className="input input-bordered" 
-          />
-          <label className="label"><span className="label-text-alt">{t('dogNameHint')}</span></label>
+      {/* Perro a apadrinar - Solo visible en modo padrino */}
+      {sponsorMode === 'padrino' && (
+        <div className="bg-base-200 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4">{t('dogInfo')}</h3>
+          <div className="form-control">
+            <label className="label"><span className="label-text">{t('dogName')}</span></label>
+            <input 
+              type="text" 
+              name="dogName" 
+              value={formData.dogName} 
+              onChange={handleChange} 
+              placeholder={t('dogNamePlaceholder')}
+              className="input input-bordered" 
+            />
+            <label className="label"><span className="label-text-alt">{t('dogNameHint')}</span></label>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Cuota */}
       <div className="bg-base-200 p-6 rounded-lg">

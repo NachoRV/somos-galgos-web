@@ -4,10 +4,11 @@ import { sponsorshipSchema, type SponsorshipFormData } from '@/lib/validations/s
 interface UseSponsorshipFormProps {
   dogId?: string;
   dogName?: string;
+  sponsorMode?: 'padrino' | 'socio';
   onSubmit: (data: SponsorshipFormData) => Promise<{ success?: boolean; error?: any }>;
 }
 
-export function useSponsorshipForm({ dogId, dogName, onSubmit }: UseSponsorshipFormProps) {
+export function useSponsorshipForm({ dogId, dogName, sponsorMode = 'padrino', onSubmit }: UseSponsorshipFormProps) {
   const [formData, setFormData] = useState<SponsorshipFormData>({
     firstName: '',
     lastName1: '',
@@ -28,6 +29,7 @@ export function useSponsorshipForm({ dogId, dogName, onSubmit }: UseSponsorshipF
     suscripcion_boletin: false,
     autorizacion_cargos: false,
     politica_privacidad: false,
+    sponsor_mode: sponsorMode,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -102,6 +104,7 @@ export function useSponsorshipForm({ dogId, dogName, onSubmit }: UseSponsorshipF
           suscripcion_boletin: false,
           autorizacion_cargos: false,
           politica_privacidad: false,
+          sponsor_mode: sponsorMode,
         });
       }
     } catch (error: any) {

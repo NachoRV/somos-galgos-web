@@ -31,6 +31,7 @@ export const sponsorshipSchema = z.object({
   politica_privacidad: z.boolean().refine(val => val === true, {
     message: 'Debes aceptar la política de privacidad',
   }),
+  sponsor_mode: z.enum(['padrino', 'socio']).default('padrino'),
 });
 
 export type SponsorshipFormData = z.infer<typeof sponsorshipSchema>;

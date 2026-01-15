@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
       fecha_inicio: new Date().toISOString().split('T')[0],
       registration_date: new Date().toISOString().split('T')[0],
       perro: formData.dogId ? formData.dogId : null,
-      sponsor_mode: 'padrino',
+      sponsor_mode: formData.sponsor_mode || 'padrino',
       status: 'en revision',
     };
 
