@@ -32,7 +32,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="firstName" 
               value={formData.firstName} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.firstName ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.firstName ? 'input-error' : ''}`} 
               required 
             />
             {errors.firstName && <label className="label"><span className="label-text-alt text-error">{errors.firstName}</span></label>}
@@ -44,7 +44,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="lastName1" 
               value={formData.lastName1} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.lastName1 ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.lastName1 ? 'input-error' : ''}`} 
               required 
             />
             {errors.lastName1 && <label className="label"><span className="label-text-alt text-error">{errors.lastName1}</span></label>}
@@ -56,7 +56,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="lastName2" 
               value={formData.lastName2} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.lastName2 ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.lastName2 ? 'input-error' : ''}`} 
               required 
             />
             {errors.lastName2 && <label className="label"><span className="label-text-alt text-error">{errors.lastName2}</span></label>}
@@ -68,7 +68,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="idDocument" 
               value={formData.idDocument} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.idDocument ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.idDocument ? 'input-error' : ''}`} 
               required 
             />
             {errors.idDocument && <label className="label"><span className="label-text-alt text-error">{errors.idDocument}</span></label>}
@@ -87,7 +87,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="street" 
               value={formData.street} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.street ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.street ? 'input-error' : ''}`} 
               required 
             />
             {errors.street && <label className="label"><span className="label-text-alt text-error">{errors.street}</span></label>}
@@ -99,7 +99,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="postalCode" 
               value={formData.postalCode} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.postalCode ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.postalCode ? 'input-error' : ''}`} 
               required 
             />
             {errors.postalCode && <label className="label"><span className="label-text-alt text-error">{errors.postalCode}</span></label>}
@@ -111,7 +111,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="city" 
               value={formData.city} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.city ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.city ? 'input-error' : ''}`} 
               required 
             />
             {errors.city && <label className="label"><span className="label-text-alt text-error">{errors.city}</span></label>}
@@ -123,7 +123,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="province" 
               value={formData.province} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.province ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.province ? 'input-error' : ''}`} 
               required 
             />
             {errors.province && <label className="label"><span className="label-text-alt text-error">{errors.province}</span></label>}
@@ -142,7 +142,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="email" 
               value={formData.email} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.email ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.email ? 'input-error' : ''}`} 
               required 
             />
             {errors.email && <label className="label"><span className="label-text-alt text-error">{errors.email}</span></label>}
@@ -154,7 +154,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               name="phone" 
               value={formData.phone} 
               onChange={handleChange} 
-              className={`input input-bordered ${errors.phone ? 'input-error' : ''}`} 
+              className={`input input-bordered w-full ${errors.phone ? 'input-error' : ''}`} 
               required 
             />
             {errors.phone && <label className="label"><span className="label-text-alt text-error">{errors.phone}</span></label>}
@@ -174,7 +174,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               value={formData.dogName} 
               onChange={handleChange} 
               placeholder={t('dogNamePlaceholder')}
-              className="input input-bordered" 
+              className="input input-bordered w-full" 
             />
             <label className="label"><span className="label-text-alt">{t('dogNameHint')}</span></label>
           </div>
@@ -209,7 +209,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               value={formData.cuota} 
               onChange={handleChange}
               min="10"
-              className={`input input-bordered ${errors.cuota ? 'input-error' : ''}`}
+              className={`input input-bordered w-full ${errors.cuota ? 'input-error' : ''}`}
             />
             {errors.cuota && <label className="label"><span className="label-text-alt text-error">{errors.cuota}</span></label>}
           </div>
@@ -222,7 +222,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
             name="fee_frequency"
             value={formData.fee_frequency}
             onChange={handleChange}
-            className={`select select-bordered ${errors.fee_frequency ? 'select-error' : ''}`}
+            className={`select select-bordered w-full ${errors.fee_frequency ? 'select-error' : ''}`}
             required
           >
             <option value="monthly">{t('feeFrequencyMonthly')}</option>
@@ -279,7 +279,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
             value={formData.iban} 
             onChange={handleChange}
             placeholder="ES..."
-            className={`input input-bordered ${errors.iban ? 'input-error' : ''}`} 
+            className={`input input-bordered w-full ${errors.iban ? 'input-error' : ''}`} 
             required 
           />
           {errors.iban && <label className="label"><span className="label-text-alt text-error">{errors.iban}</span></label>}
