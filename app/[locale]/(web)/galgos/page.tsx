@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { getDogs } from '@/lib/services/dogService';
 import { DogCard } from '@/components/DogCard';
+import { GalgosHeroSection } from '@/components/dogs';
 import type { Dog } from '@/types/dog';
 
 export default async function GalgosPage() {
@@ -10,16 +11,7 @@ export default async function GalgosPage() {
 
   return (
     <div className="w-full min-h-screen">
-      <section className="py-16 bg-[var(--color-bg-secondary)]">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-5xl font-bold text-[var(--color-primary)] mb-4">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-[var(--color-text-secondary)]">
-            {t('subtitle')}
-          </p>
-        </div>
-      </section>
+      <GalgosHeroSection />
 
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">

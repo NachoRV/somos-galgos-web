@@ -33,13 +33,20 @@ export function Header() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [isHomePage]);
 
+	// Helper to check if link is active
+	const isActive = (href: string) => {
+		// Remove locale from pathname (e.g., /es/colabora -> /colabora)
+		const pathWithoutLocale = pathname.replace(/^\/(es|en)/, '') || '/';
+		// Check if current path starts with the href (for exact or nested matches)
+		return pathWithoutLocale === href || pathWithoutLocale.startsWith(href + '/');
+	};
+
 	const navigation = [
 		{ name: t('about'), href: '/sobre-nosotros' },
 		{ name: t('dogs'), href: '/galgos' },
 		{ name: t('adopt'), href: '/adoptar' },
 		{ name: t('sponsor'), href: '/apadrinar' },
-		{ name: t('colaborateMenu'), href: '/colabora' },
-		{ name: t('blog'), href: '/blog' },
+		// { name: t('blog'), href: '/blog' },
 		{ name: t('contact'), href: '/contacto' },
 	];
 
@@ -77,7 +84,9 @@ export function Header() {
 					<div className="dropdown dropdown-hover">
 						<Link
 							href="/colabora"
-							className="font-semibold text-lg cursor-pointer hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4"
+							className={`font-semibold text-lg cursor-pointer hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4 ${
+								isActive('/colabora') ? 'text-primary underline' : ''
+							}`}
 						>
 							{t('colaborate')}
 						</Link>
@@ -91,7 +100,9 @@ export function Header() {
 						<Link
 							key={item.name}
 							href={item.href}
-							className='font-semibold text-lg transition-colors hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4'
+							className={`font-semibold text-lg transition-colors hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4 ${
+								isActive(item.href) ? 'text-primary underline' : ''
+							}`}
 						>
 							{item.name}
 						</Link>
@@ -125,7 +136,9 @@ export function Header() {
 							<Link
 								key={item.name}
 								href={item.href}
-								className='block rounded-md px-3 py-2 text-base font-medium hover:bg-base-200'
+								className={`block rounded-md px-3 py-2 text-base font-medium hover:bg-base-200 ${
+									isActive(item.href) ? 'bg-base-200 text-primary font-semibold' : ''
+								}`}
 								onClick={() => setMobileMenuOpen(false)}
 							>
 								{item.name}

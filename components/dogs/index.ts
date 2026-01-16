@@ -1,0 +1,1 @@
+export { GalgosHeroSection } from './GalgosHeroSection';
