@@ -43,7 +43,7 @@ export function HeroSection() {
             {t('ctaAdopt')}
           </Link>
           <Link 
-            href="/socio" 
+            href="/colabora" 
             className="btn btn-outline btn-lg text-lg px-8 border-white text-white hover:bg-white hover:text-[var(--color-primary)]"
           >
             {t('ctaHelp')}

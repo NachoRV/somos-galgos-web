@@ -483,5 +483,24 @@
     "submitting": "Submitting...",
     "successMessage": "Form submitted successfully! We will contact you soon.",
     "errorMessage": "An error occurred while submitting the form. Please try again."
+  },
+  "Colabora": {
+    "heroTitle": "Collaborate",
+    "heroSubtitle": "Your help is essential so we can continue rescuing and changing the lives of more greyhounds! There are many ways to collaborate:",
+    "options": {
+      "memberTitle": "Become a member or sponsor",
+      "memberDescription": "Support our cause with a monthly contribution.",
+      "sponsorTitle": "Sponsor a greyhound",
+      "sponsorDescription": "Directly help a greyhound with your sponsorship.",
+      "donateTitle": "Make a one-time donation",
+      "donateDescription": "Any contribution helps us continue rescuing lives.",
+      "fosterTitle": "Collaborate as a foster home",
+      "fosterDescription": "Offer a temporary home to a greyhound in need.",
+      "volunteerTitle": "Participate as a volunteer",
+      "volunteerDescription": "Dedicate your time to help in our activities.",
+      "shareTitle": "Share our work",
+      "shareDescription": "Spread our cause on social media.",
+      "learnMore": "More information"
+    }
   }
 }

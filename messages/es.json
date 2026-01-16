@@ -483,5 +483,24 @@
     "submitting": "Enviando...",
     "successMessage": "¡Formulario enviado correctamente! Nos pondremos en contacto contigo pronto.",
     "errorMessage": "Ocurrió un error al enviar el formulario. Por favor, inténtalo de nuevo."
+  },
+  "Colabora": {
+    "heroTitle": "Colabora",
+    "heroSubtitle": "¡Tu ayuda es fundamental para que podamos seguir rescatando y cambiando la vida de más galgos! Hay muchas formas de colaborar:",
+    "options": {
+      "memberTitle": "Hazte socio/a o padrino/madrina",
+      "memberDescription": "Apoya nuestra causa con una contribución mensual.",
+      "sponsorTitle": "Apadrina un galgo",
+      "sponsorDescription": "Ayuda directamente a un galgo con tu apadrinamiento.",
+      "donateTitle": "Haz una donación puntual",
+      "donateDescription": "Cualquier aporte nos ayuda a seguir rescatando vidas.",
+      "fosterTitle": "Colabora como casa de acogida",
+      "fosterDescription": "Ofrece un hogar temporal a un galgo necesitado.",
+      "volunteerTitle": "Participa como voluntario/a",
+      "volunteerDescription": "Dedica tu tiempo a ayudar en nuestras actividades.",
+      "shareTitle": "Comparte nuestro trabajo",
+      "shareDescription": "Difunde nuestra causa en redes sociales.",
+      "learnMore": "Más información"
+    }
   }
 }

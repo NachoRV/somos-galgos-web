@@ -7,67 +7,67 @@ import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
 export function Header() {
-    const t = useTranslations('Header');
-    const pathname = usePathname();
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
+	const t = useTranslations('Header');
+	const pathname = usePathname();
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [isVisible, setIsVisible] = useState(false);
 
-    // Check if we're on the home page
-    const isHomePage = pathname === '/' || pathname === '/es' || pathname === '/en';
+	// Check if we're on the home page
+	const isHomePage = pathname === '/' || pathname === '/es' || pathname === '/en';
 
-    useEffect(() => {
-        // Only apply scroll effect on home page
-        if (!isHomePage) {
-            setIsVisible(true); // Always visible on non-home pages
-            return;
-        }
+	useEffect(() => {
+		// Only apply scroll effect on home page
+		if (!isHomePage) {
+			setIsVisible(true); // Always visible on non-home pages
+			return;
+		}
 
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            
-            // Mostrar header solo si hemos scrolleado más de 50px (only on home)
-            setIsVisible(currentScrollY > 50);
-        };
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY;
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [isHomePage]);
+			// Mostrar header solo si hemos scrolleado más de 50px (only on home)
+			setIsVisible(currentScrollY > 50);
+		};
 
-    const navigation = [
-        { name: t('about'), href: '/sobre-nosotros' },
-        { name: t('dogs'), href: '/galgos' },
-        { name: t('adopt'), href: '/adoptar' },
-        // { name: t('foster'), href: '/acoger' },
-        { name: t('sponsor'), href: '/apadrinar' },
-        { name: t('blog'), href: '/blog' },
-        { name: t('contact'), href: '/contacto' },
-    ];
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, [isHomePage]);
 
-    const colaborateOptions = [
-        { name: t('adopt'), href: '/adoptar' },
-				{ name: t('foster'), href: '/acoger' },
-        { name: t('sponsor'), href: '/apadrinar' },
-        { name: t('socio'), href: '/socio' },
-        { name: t('volunteer'), href: '/voluntario' },
-    ];
+	const navigation = [
+		{ name: t('about'), href: '/sobre-nosotros' },
+		{ name: t('dogs'), href: '/galgos' },
+		{ name: t('adopt'), href: '/adoptar' },
+		{ name: t('sponsor'), href: '/apadrinar' },
+		{ name: t('colaborateMenu'), href: '/colabora' },
+		{ name: t('blog'), href: '/blog' },
+		{ name: t('contact'), href: '/contacto' },
+	];
 
-    return (
-        <header 
-            className={`fixed top-0 z-50 w-full backdrop-blur shadow-lg/40 transition-transform duration-300 ${
-                isVisible ? 'translate-y-0' : '-translate-y-full'
-            }`}
-        >
-      <nav className="flex h-16 items-center justify-between px-16 bg-[var(--color-secondary)]/0 w-full">
+	const colaborateOptions = [
+
+		{ name: t('adopt'), href: '/adoptar' },
+		{ name: t('foster'), href: '/acoger' },
+		{ name: t('sponsor'), href: '/apadrinar' },
+		{ name: t('socio'), href: '/socio' },
+		{ name: t('volunteer'), href: '/voluntario' },
+	];
+
+	return (
+		<header
+			className={`fixed top-0 z-50 w-full backdrop-blur shadow-lg/40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+				}`}
+		>
+			<nav className="flex h-16 items-center justify-between px-16 bg-[var(--color-secondary)]/0 w-full">
 				<div className='flex items-center gap-6'>
 					<Link href='/' className='flex items-center space-x-2'>
-            <Image
-              src="/logo.webp"
-              alt="Logo Somos Galgos"
-              width={40}
-              height={40}
-              className=""
-              priority
-            />
+						<Image
+							src="/logo.webp"
+							alt="Logo Somos Galgos"
+							width={40}
+							height={40}
+							className=""
+							priority
+						/>
 						<span className='text-2xl font-bold text-[var(--color-secondary)]'>Somos Galgos</span>
 					</Link>
 				</div>
@@ -75,14 +75,19 @@ export function Header() {
 				{/* Desktop Navigation */}
 				<div className='hidden lg:flex lg:gap-x-6'>
 					<div className="dropdown dropdown-hover">
-						<label tabIndex={0} className="font-semibold text-lg cursor-pointer hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4">{t('colaborate')}</label>
+						<Link
+							href="/colabora"
+							className="font-semibold text-lg cursor-pointer hover:text-primary hover:underline underline-offset-8 decoration-[var(--color-secondary)] decoration-4"
+						>
+							{t('colaborate')}
+						</Link>
 						<ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
 							{colaborateOptions.map(opt => (
 								<li key={opt.href}><Link href={opt.href}>{opt.name}</Link></li>
 							))}
 						</ul>
 					</div>
-					{navigation.filter(item => !['/apadrinar','/socio','/voluntario','/adoptar'].includes(item.href)).map((item) => (
+					{navigation.filter(item => !['/apadrinar', '/socio', '/voluntario', '/adoptar'].includes(item.href)).map((item) => (
 						<Link
 							key={item.name}
 							href={item.href}
@@ -95,9 +100,9 @@ export function Header() {
 
 				<div className='hidden lg:flex lg:gap-x-4'>
 					<Link href='/adoptar' className='btn btn-primary'>
-					{t('adoptNow')}
-				</Link>
-			</div>
+						{t('adoptNow')}
+					</Link>
+				</div>
 				<div className='flex lg:hidden'>
 					<button
 						className='btn btn-ghost btn-square'
@@ -116,7 +121,7 @@ export function Header() {
 			{mobileMenuOpen && (
 				<div className='lg:hidden'>
 					<div className='space-y-1 px-4 pb-3 pt-2'>
-						{navigation.filter(item => !['/apadrinar','/socio','/voluntario','/adoptar'].includes(item.href)).map((item) => (
+						{navigation.filter(item => !['/apadrinar', '/socio', '/voluntario', '/adoptar'].includes(item.href)).map((item) => (
 							<Link
 								key={item.name}
 								href={item.href}
@@ -127,7 +132,7 @@ export function Header() {
 							</Link>
 						))}
 						<div className="collapse collapse-arrow bg-base-100">
-							<input type="checkbox"  />
+							<input type="checkbox" />
 							<div className="collapse-title font-semibold text-base bg-base-100">
 								{t('colaborate')}
 							</div>
