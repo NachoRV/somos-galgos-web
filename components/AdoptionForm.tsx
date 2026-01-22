@@ -1,7 +1,5 @@
 'use client';
-import { sendAdoptionEmail } from '@/lib/actions/sendAdoptionEmail';
-import { useApplicationForm } from '@/hooks/useApplicationForm';
-import { BaseApplicationForm } from './BaseApplicationForm';
+import { AdoptionFormWizard } from './AdoptionFormWizard';
 
 interface AdoptionFormProps {
   dogId?: string;
@@ -9,16 +7,5 @@ interface AdoptionFormProps {
 }
 
 export function AdoptionForm({ dogId, dogName }: AdoptionFormProps) {
-  const formState = useApplicationForm({
-    dogId,
-    dogName,
-    onSubmit: sendAdoptionEmail,
-  });
-
-  return (
-    <BaseApplicationForm
-      {...formState}
-      translationNamespace="Adoption"
-    />
-  );
+  return <AdoptionFormWizard dogId={dogId} dogName={dogName} />;
 }

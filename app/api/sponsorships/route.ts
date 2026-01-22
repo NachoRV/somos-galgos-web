@@ -152,7 +152,7 @@ export async function POST(request: NextRequest) {
     console.log('📝 Guardando en Payload CMS...');
     const payload = await getPayload({ config });
     const payloadResponse = await payload.create({
-      collection: 'sponsorships',
+      collection: 'sponsorships' as any,
       data: payloadData,
     });
     console.log('✅ Registro guardado en Payload:', payloadResponse.id);
@@ -203,7 +203,7 @@ export async function GET(request: NextRequest) {
 
     const payload = await getPayload({ config });
     const response = await payload.find({
-      collection: 'sponsorships',
+      collection: 'sponsorships' as any,
       where: {
         email: {
           equals: email,

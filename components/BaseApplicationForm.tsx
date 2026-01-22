@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import type { AdoptionFormData } from '@/lib/validations/adoption';
 
 interface BaseApplicationFormProps {
-  formData: AdoptionFormData;
+  formData: Partial<AdoptionFormData>;
   errors: Record<string, string>;
   isSubmitting: boolean;
   submitStatus: 'idle' | 'success' | 'error';

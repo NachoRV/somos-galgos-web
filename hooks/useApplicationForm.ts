@@ -8,7 +8,7 @@ interface UseApplicationFormProps {
 }
 
 export function useApplicationForm({ dogId, dogName, onSubmit }: UseApplicationFormProps) {
-  const [formData, setFormData] = useState<AdoptionFormData>({
+  const [formData, setFormData] = useState<Partial<AdoptionFormData>>({
     firstName: '',
     lastName: '',
     idDocument: '',
@@ -47,7 +47,7 @@ export function useApplicationForm({ dogId, dogName, onSubmit }: UseApplicationF
 
     try {
       adoptionSchema.parse(formData);
-      const result = await onSubmit(formData);
+      const result = await onSubmit(formData as AdoptionFormData);
       
       if (result.error) {
         setSubmitStatus('error');

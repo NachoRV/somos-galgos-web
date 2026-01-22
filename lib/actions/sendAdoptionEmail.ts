@@ -19,7 +19,7 @@ export async function sendAdoptionEmail(formData: AdoptionFormData) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        ...formData,
+        ...parsed.data,
         type: 'adoption', // Identificar como solicitud de adopción
       }),
     });
