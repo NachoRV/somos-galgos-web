@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 import { volunteerSchema, type VolunteerFormData } from '@/lib/validations/volunteer';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const PAYLOAD_API_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:3000';
+const PAYLOAD_API_URL = '/' //  || 'http://localhost:3000';
 const PAYLOAD_API_KEY = process.env.PAYLOAD_API_KEY;
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
 
