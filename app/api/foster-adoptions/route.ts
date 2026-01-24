@@ -3,7 +3,6 @@ import { Resend } from 'resend';
 import { adoptionSchema, type AdoptionFormData } from '@/lib/validations/adoption';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const PAYLOAD_API_URL = '/' //|| 'http://localhost:3000';
 const PAYLOAD_API_KEY = process.env.PAYLOAD_API_KEY;
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
 
@@ -12,7 +11,7 @@ const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
  */
 async function callPayloadAPI(endpoint: string, method: string, body?: any) {
   try {
-    const response = await fetch(`${PAYLOAD_API_URL}/api${endpoint}`, {
+    const response = await fetch(`/api${endpoint}`, {
       method,
       headers: {
         "Content-Type": "application/json",

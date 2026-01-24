@@ -8,7 +8,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
  * Llamadas a la API de Payload usando credenciales de Authorization
  */
 async function callPayloadAPI(path: string, method: string = 'GET', body?: any) {
-  const baseURL = '/' //  || 'http://localhost:3000';
   const apiKey = process.env.PAYLOAD_API_KEY;
 
   const options: RequestInit = {
@@ -23,7 +22,7 @@ async function callPayloadAPI(path: string, method: string = 'GET', body?: any) 
     options.body = JSON.stringify(body);
   }
 
-  const response = await fetch(`${baseURL}/api${path}`, options);
+  const response = await fetch(`/api${path}`, options);
   if (!response.ok) {
     throw new Error(`Payload API error: ${response.status} ${response.statusText}`);
   }
