@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { volunteerSchema } from '@/lib/validations/volunteer';
+import { volunteerSchema, type VolunteerFormData } from '@/lib/validations/volunteer';
 
 interface VolunteerFormProps {
   locale: string;
@@ -24,7 +24,7 @@ export default function VolunteerForm({ locale }: VolunteerFormProps) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({
+  } = useForm<VolunteerFormData>({
     resolver: zodResolver(volunteerSchema),
   });
 
