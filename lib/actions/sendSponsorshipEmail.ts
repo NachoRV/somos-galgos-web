@@ -19,7 +19,7 @@ export async function sendSponsorshipEmail(formData: SponsorshipFormData) {
     const bodyToSend = JSON.stringify(formData);
     console.log('Enviando body:', bodyToSend);
     
-    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/sponsorships`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/sponsorships`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

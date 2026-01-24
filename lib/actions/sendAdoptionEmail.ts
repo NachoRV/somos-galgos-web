@@ -13,7 +13,7 @@ export async function sendAdoptionEmail(formData: AdoptionFormData) {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/foster-adoptions`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/foster-adoptions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
