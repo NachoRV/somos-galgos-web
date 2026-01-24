@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { volunteerSchema, type VolunteerFormData } from '@/lib/validations/volunteer';
+import { getPayload } from 'payload';
+import config from '@payload-config';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const PAYLOAD_API_KEY = process.env.PAYLOAD_API_KEY;
+// const PAYLOAD_API_KEY = process.env.PAYLOAD_API_KEY; // No longer used with Local API
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
 
 /**
@@ -99,42 +101,18 @@ export async function POST(request: NextRequest) {
 
     console.log('[POST] Datos para Payload:', JSON.stringify(payloadData, null, 2));
 
-    // Guardar en Payload CMS mediante REST API
-    console.log('[POST] Guardando en Payload CMS...');
-    let payloadResponse;
+    // Guardar en Payload CMS mediante Local API
+    console.log('[POST] Guardando en Payload CMS via Local API...');
+    let created;
     try {
-      const headers: any = {
-        'Content-Type': 'application/json',
-      };
-
-      // Agregar API key si está disponible
-      if (PAYLOAD_API_KEY) {
-        headers['Authorization'] = `Bearer ${PAYLOAD_API_KEY}`;
-      }
-
-      const payloadUrl = `/api/volunteers`;
-      console.log(`[POST] Llamando a Payload en: ${payloadUrl}`);
-
-      const response = await fetch(payloadUrl, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(payloadData),
+      const payload = await getPayload({ config });
+      created = await payload.create({
+        collection: 'volunteers' as any,
+        data: payloadData,
       });
-
-      console.log(`[POST] Payload respondió con status: ${response.status}`);
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('[POST] Error de Payload - Status:', response.status);
-        console.error('[POST] Error de Payload - Data:', JSON.stringify(errorData, null, 2));
-        console.error('[POST] Datos que enviamos:', JSON.stringify(payloadData, null, 2));
-        throw new Error(`Payload error ${response.status}: ${JSON.stringify(errorData)}`);
-      }
-
-      payloadResponse = await response.json();
-      console.log('[POST] Registro guardado en Payload:', payloadResponse.id);
+      console.log('[POST] Registro guardado en Payload:', created.id);
     } catch (payloadError: any) {
-      console.error('[POST] Error guardando en Payload:', payloadError.message);
+      console.error('[POST] Error guardando en Payload (Local API):', payloadError.message);
       return NextResponse.json(
         {
           error: 'Error al guardar en Payload',
@@ -159,7 +137,7 @@ export async function POST(request: NextRequest) {
       {
         success: true,
         message: 'Solicitud guardada correctamente',
-        recordId: payloadResponse?.id,
+        recordId: created?.id,
       },
       { status: 201 }
     );

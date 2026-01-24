@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { adoptionSchema, type AdoptionFormData } from '@/lib/validations/adoption';
+import { getPayload } from 'payload';
+import config from '@payload-config';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const PAYLOAD_API_KEY = process.env.PAYLOAD_API_KEY;
@@ -251,10 +253,14 @@ export async function POST(request: NextRequest) {
       info_adicional: formData.additionalInfo || null,
     };
 
-    // Guardar en Payload CMS
+    // Guardar en Payload CMS (Local API)
     console.log('Guardando en Payload CMS...');
-    const payloadResponse = await callPayloadAPI('/foster_adoptions', 'POST', payloadData);
-    console.log('Registro guardado en Payload:', payloadResponse.id);
+    const payload = await getPayload({ config });
+    const created = await payload.create({
+      collection: 'foster_adoptions' as any,
+      data: payloadData,
+    });
+    console.log('Registro guardado en Payload:', created.id);
 
     // Enviar emails
     console.log('Enviando emails...');
@@ -265,7 +271,7 @@ export async function POST(request: NextRequest) {
       {
         success: true,
         message: 'Solicitud guardada y emails enviados correctamente',
-        recordId: payloadResponse.id,
+        recordId: created.id,
       },
       { status: 201 }
     );
@@ -300,12 +306,15 @@ export async function GET(request: NextRequest) {
 
     console.log('Buscando solicitudes para:', email);
 
-    const response = await callPayloadAPI(
-      `/foster_adoptions?where[email][equals]=${encodeURIComponent(email)}`,
-      'GET'
-    );
+    const payload = await getPayload({ config });
+    const result = await payload.find({
+      collection: 'foster_adoptions' as any,
+      where: {
+        email: { equals: email },
+      },
+    });
 
-    return NextResponse.json(response);
+    return NextResponse.json(result);
   } catch (error: any) {
     console.error('Error en GET /api/foster-adoptions:', error);
 
