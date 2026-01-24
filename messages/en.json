@@ -68,6 +68,7 @@
     "about": "About Us",
     "contact": "Contact",
     "adoptNow": "Adopt Now",
+    "teamingButton": "Support us on Teaming",
     "colaborate": "Collaborate"
   },
   "Dogs": {
@@ -604,6 +605,8 @@
       "volunteerDescription": "Dedicate your time to help in our activities.",
       "shareTitle": "Share our work",
       "shareDescription": "Spread our cause on social media.",
+      "teamingTitle": "Support us on Teaming",
+      "teamingDescription": "Contribute with small periodic amounts to our crowdfunding campaign.",
       "learnMore": "More information"
     }
   }

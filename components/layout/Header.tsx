@@ -110,9 +110,9 @@ export function Header() {
 				</div>
 
 				<div className='hidden lg:flex lg:gap-x-4'>
-					<Link href='/adoptar' className='btn btn-primary'>
-						{t('adoptNow')}
-					</Link>
+					<a href='https://www.teaming.net/somosgalgos' target='_blank' rel='noopener noreferrer' className='btn btn-primary'>
+						{t('teamingButton')}
+					</a>
 				</div>
 				<div className='flex lg:hidden'>
 					<button
@@ -160,12 +160,14 @@ export function Header() {
 							</div>
 						</div>
 						<div className='pt-4'>
-							<Link
-								href='/adoptar'
+							<a
+								href='https://www.teaming.net/somosgalgos'
+								target='_blank'
+								rel='noopener noreferrer'
 								className='btn btn-primary w-full'
 							>
-								{t('adoptNow')}
-							</Link>
+								{t('teamingButton')}
+							</a>
 						</div>
 					</div>
 				</div>

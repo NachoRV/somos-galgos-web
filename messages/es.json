@@ -68,6 +68,7 @@
     "about": "Sobre Nosotros",
     "contact": "Contacto",
     "adoptNow": "Adopta Ahora",
+    "teamingButton": "Apoya en Teaming",
     "colaborate": "Colabora"
   },
   "Dogs": {
@@ -709,6 +710,8 @@
       "volunteerDescription": "Dedica tu tiempo a ayudar en nuestras actividades.",
       "shareTitle": "Comparte nuestro trabajo",
       "shareDescription": "Difunde nuestra causa en redes sociales.",
+      "teamingTitle": "Apoya en Teaming",
+      "teamingDescription": "Colabora con pequeños aportes periódicos en nuestra campaña de micromecenazgo.",
       "learnMore": "Más información"
     }
   }
