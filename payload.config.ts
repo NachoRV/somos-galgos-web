@@ -13,6 +13,7 @@ import { Dogs } from "./collections/Dogs";
 import { FosterAdoptions } from "./collections/FosterAdoptions";
 import { Sponsorships } from "./collections/Sponsorships";
 import { Volunteers } from "./collections/Volunteers";
+import { AboutPage } from "./globals/AboutPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -44,6 +45,7 @@ export default buildConfig({
     fallbackLanguage: "es",
   },
   collections: [Users, Media, Dogs, FosterAdoptions, Sponsorships, Volunteers],
+  globals: [AboutPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
