@@ -1,27 +1,24 @@
 "use server";
-import { adoptionSchema, AdoptionFormData } from '@/lib/validations/adoption';
+import { fosterSchema, FosterFormData } from '@/lib/validations/foster';
 
 /**
  * Server Action: sendFosterEmail
  * Envía los datos del formulario de acogida al endpoint de la API
  * que se encarga de guardar en Payload y enviar emails
  */
-export async function sendFosterEmail(formData: AdoptionFormData) {
-  const parsed = adoptionSchema.safeParse(formData);
+export async function sendFosterEmail(formData: FosterFormData) {
+  const parsed = fosterSchema.safeParse(formData);
   if (!parsed.success) {
     return { error: parsed.error.flatten().fieldErrors };
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/foster-adoptions`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/fosters`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        ...formData,
-        type: 'foster', // Identificar como solicitud de acogida
-      }),
+      body: JSON.stringify(parsed.data),
     });
 
     if (!response.ok) {

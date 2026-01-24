@@ -345,6 +345,12 @@ export const FosterAdoptions: CollectionConfig = {
               maxLength: 200,
             },
             {
+              name: "fecha_limite_acogida",
+              label: "¿Hasta cuándo podrías tener al galgo? (Solo para acogidas)",
+              type: "text",
+              maxLength: 200,
+            },
+            {
               name: "necesidades_perro",
               label: "¿Qué necesidades crees que puede tener un perro adoptado?",
               type: "textarea",

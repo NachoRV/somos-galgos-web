@@ -1,7 +1,5 @@
 'use client';
-import { sendFosterEmail } from '@/lib/actions/sendFosterEmail';
-import { useApplicationForm } from '@/hooks/useApplicationForm';
-import { BaseApplicationForm } from './BaseApplicationForm';
+import { FosterFormWizard } from './FosterFormWizard';
 
 interface FosterFormProps {
   dogId?: string;
@@ -9,16 +7,5 @@ interface FosterFormProps {
 }
 
 export function FosterForm({ dogId, dogName }: FosterFormProps) {
-  const formState = useApplicationForm({
-    dogId,
-    dogName,
-    onSubmit: sendFosterEmail,
-  });
-
-  return (
-    <BaseApplicationForm
-      {...formState}
-      translationNamespace="Foster"
-    />
-  );
+  return <FosterFormWizard dogId={dogId} dogName={dogName} />;
 }
