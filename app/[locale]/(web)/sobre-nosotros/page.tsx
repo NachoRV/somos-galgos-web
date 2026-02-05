@@ -49,13 +49,17 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
   const payload = await getPayload({ config });
 
   let aboutData: any = null;
+  let impactData: any = null;
 
   try {
     aboutData = await (payload.findGlobal as any)({
       slug: 'about-page',
     });
+    impactData = await (payload.findGlobal as any)({
+      slug: 'impact-stats',
+    });
   } catch (error) {
-    console.error('Error fetching AboutPage:', error);
+    console.error('Error fetching globals:', error);
   }
 
   return (
@@ -120,30 +124,7 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
       )}
 
       {/* Statistics Section */}
-      <ImpactCounterSection />
-      {/* {aboutData?.stats && aboutData.stats.length > 0 && (
-        <section className="py-20 px-4 md:px-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              Nuestro Impacto
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {aboutData.stats.map((stat: any, idx: number) => (
-                <div
-                  key={idx}
-                  className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg"
-                >
-                  <div className="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">
-                    {stat.number}
-                    {stat.suffix}
-                  </div>
-                  <p className="text-gray-700 font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )} */}
+      <ImpactCounterSection stats={impactData?.stats} />
 
       {/* Team Section */}
       {aboutData?.team_members && aboutData.team_members.length > 0 && (

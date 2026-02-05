@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import { getPayload } from 'payload';
+import config from '@payload-config';
 import { SITE_URL, SEO_KEYWORDS } from '@/lib/constants';
 import {
   HeroSection,
@@ -50,14 +52,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WebHome() {
+export default async function WebHome() {
+  const payload = await getPayload({ config });
+  
+  let impactData: any = null;
+  
+  try {
+    impactData = await (payload.findGlobal as any)({ slug: 'impact-stats' });
+  } catch (error) {
+    console.error('Error fetching impact-stats:', error);
+  }
+  
   return (
     <>
       <HeroSection />
       <DogsSection />
       <HowToHelpSection />
       <SuccessStoriesSection />
-      <ImpactCounterSection />
+      <ImpactCounterSection stats={impactData?.stats} />
       <BlogSection />
     </>
   );
