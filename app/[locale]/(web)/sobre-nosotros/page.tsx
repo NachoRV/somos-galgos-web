@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '@/lib/constants';
 import { LexicalContent } from '@/components/LexicalContent';
 import { SobreNosotrosHeroSection } from '@/components/about';
+import { ImpactCounterSection } from '@/components/home/ImpactCounterSection';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -119,7 +120,8 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
       )}
 
       {/* Statistics Section */}
-      {aboutData?.stats && aboutData.stats.length > 0 && (
+      <ImpactCounterSection />
+      {/* {aboutData?.stats && aboutData.stats.length > 0 && (
         <section className="py-20 px-4 md:px-8 bg-white">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
@@ -141,7 +143,7 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* Team Section */}
       {aboutData?.team_members && aboutData.team_members.length > 0 && (
