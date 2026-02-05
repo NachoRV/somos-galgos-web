@@ -56,11 +56,13 @@ export default async function WebHome() {
   const payload = await getPayload({ config });
   
   let impactData: any = null;
+  let successStoriesData: any = null;
   
   try {
     impactData = await (payload.findGlobal as any)({ slug: 'impact-stats' });
+    successStoriesData = await (payload.findGlobal as any)({ slug: 'success-stories' });
   } catch (error) {
-    console.error('Error fetching impact-stats:', error);
+    console.error('Error fetching globals:', error);
   }
   
   return (
@@ -68,7 +70,10 @@ export default async function WebHome() {
       <HeroSection />
       <DogsSection />
       <HowToHelpSection />
-      <SuccessStoriesSection />
+      <SuccessStoriesSection 
+        stories={successStoriesData?.stories} 
+        enabled={successStoriesData?.enabled}
+      />
       <ImpactCounterSection stats={impactData?.stats} />
       <BlogSection />
     </>

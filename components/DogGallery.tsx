@@ -43,6 +43,7 @@ export function DogGallery({ photos, dogName }: DogGalleryProps) {
           className="object-cover cursor-pointer"
           onClick={() => setIsOpen(true)}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+          unoptimized={currentPhoto.url.includes('r2.cloudflarestorage.com') || currentPhoto.url.includes('r2.dev')}
         />
 
         {/* Controles de navegación */}
@@ -88,6 +89,7 @@ export function DogGallery({ photos, dogName }: DogGalleryProps) {
                 fill
                 className="object-cover"
                 sizes="100px"
+                unoptimized={photo.url.includes('r2.cloudflarestorage.com') || photo.url.includes('r2.dev')}
               />
             </button>
           ))}
@@ -119,6 +121,7 @@ export function DogGallery({ photos, dogName }: DogGalleryProps) {
             width={1200}
             height={800}
             className="max-h-[90vh] w-auto object-contain"
+            unoptimized={currentPhoto.url.includes('r2.cloudflarestorage.com') || currentPhoto.url.includes('r2.dev')}
           />
 
           <button

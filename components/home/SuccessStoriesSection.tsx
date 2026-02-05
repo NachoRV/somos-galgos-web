@@ -1,33 +1,79 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
-export function SuccessStoriesSection() {
+interface SuccessStory {
+  dogName: string;
+  dogImage: {
+    url?: string;
+    alt?: string;
+  } | string;
+  ownerName: string;
+  testimonial: string;
+  adoptionDate: string;
+  featured?: boolean;
+  active?: boolean;
+  order?: number;
+}
+
+interface SuccessStoriesSectionProps {
+  stories?: SuccessStory[];
+  enabled?: boolean;
+}
+
+const DEFAULT_STORIES: SuccessStory[] = [
+  {
+    dogName: 'Luna',
+    ownerName: 'María García',
+    testimonial: 'Luna ha transformado completamente nuestras vidas. Es la compañera perfecta y no podemos imaginar nuestro hogar sin ella.',
+    adoptionDate: '2024-03-15',
+    dogImage: '/logo.webp',
+    active: true,
+    order: 0,
+  },
+  {
+    dogName: 'Max',
+    ownerName: 'Carlos Rodríguez',
+    testimonial: 'Adoptar a Max fue la mejor decisión que hemos tomado. Es increíblemente cariñoso y se ha adaptado perfectamente a nuestra familia.',
+    adoptionDate: '2024-05-22',
+    dogImage: '/logo.webp',
+    active: true,
+    order: 1,
+  },
+  {
+    dogName: 'Bella',
+    ownerName: 'Ana Martínez',
+    testimonial: 'Bella llegó asustada, pero con paciencia y amor se ha convertido en la perra más feliz del mundo. ¡Gracias por darnos esta oportunidad!',
+    adoptionDate: '2024-08-10',
+    dogImage: '/logo.webp',
+    active: true,
+    order: 2,
+  },
+];
+
+export function SuccessStoriesSection({ stories: propStories, enabled = true }: SuccessStoriesSectionProps) {
   const t = useTranslations('Home.SuccessStories');
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const stories = [
-    {
-      dogName: 'Luna',
-      ownerName: 'María García',
-      quote: t('story1Quote'),
-      date: '2024-03-15',
-    },
-    {
-      dogName: 'Max',
-      ownerName: 'Carlos Rodríguez',
-      quote: t('story2Quote'),
-      date: '2024-05-22',
-    },
-    {
-      dogName: 'Bella',
-      ownerName: 'Ana Martínez',
-      quote: t('story3Quote'),
-      date: '2024-08-10',
-    },
-  ];
+  const stories = useMemo(() => {
+    if (!propStories || propStories.length === 0) {
+      return DEFAULT_STORIES;
+    }
+    
+    return [...propStories]
+      .filter(story => story.active !== false)
+      .sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        return (a.order || 0) - (b.order || 0);
+      });
+  }, [propStories]);
+  
+  if (!enabled || stories.length === 0) {
+    return null;
+  }
   
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? stories.length - 1 : prev - 1));
@@ -59,10 +105,13 @@ export function SuccessStoriesSection() {
               <div className="avatar mb-6">
                 <div className="w-32 rounded-full ring ring-[var(--color-secondary)] ring-offset-base-100 ring-offset-2">
                   <Image
-                    src="/logo.webp"
+                    src={typeof currentStory.dogImage === 'object' && currentStory.dogImage.url ? currentStory.dogImage.url : (typeof currentStory.dogImage === 'string' ? currentStory.dogImage : '/logo.webp')}
                     alt={currentStory.dogName}
                     width={128}
                     height={128}
+                    className="object-cover"
+                    priority={currentIndex === 0}
+                    unoptimized={typeof currentStory.dogImage === 'object' && currentStory.dogImage.url && (currentStory.dogImage.url.includes('r2.cloudflarestorage.com') || currentStory.dogImage.url.includes('r2.dev'))}
                   />
                 </div>
               </div>
@@ -73,11 +122,11 @@ export function SuccessStoriesSection() {
               </p>
               
               <blockquote className="text-xl italic mb-6 max-w-2xl">
-                "{currentStory.quote}"
+                &ldquo;{currentStory.testimonial}&rdquo;
               </blockquote>
               
               <p className="text-sm text-base-content/50">
-                {new Date(currentStory.date).toLocaleDateString('es-ES', { 
+                {new Date(currentStory.adoptionDate).toLocaleDateString('es-ES', { 
                   year: 'numeric', 
                   month: 'long' 
                 })}
