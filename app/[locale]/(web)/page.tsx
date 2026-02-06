@@ -10,6 +10,7 @@ import {
   ImpactCounterSection,
   BlogSection,
 } from '@/components/home';
+import { ColaboraOptionsSection } from '@/components/colabora/ColaboraOptionsSection';
 
 export const metadata: Metadata = {
   title: 'Rescate y Adopción de Galgos en Madrid',
@@ -68,14 +69,15 @@ export default async function WebHome() {
   return (
     <>
       <HeroSection />
-      <DogsSection />
       <HowToHelpSection />
+      <ImpactCounterSection stats={impactData?.stats} />
+      <DogsSection />
       <SuccessStoriesSection 
         stories={successStoriesData?.stories} 
         enabled={successStoriesData?.enabled}
       />
-      <ImpactCounterSection stats={impactData?.stats} />
-      <BlogSection />
+      
+      {/* <BlogSection /> */}
     </>
   );
 }

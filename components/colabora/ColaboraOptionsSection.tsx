@@ -43,13 +43,6 @@ export function ColaboraOptionsSection() {
       color: 'text-[var(--color-accent)]',
     },
     {
-      icon: Share2,
-      titleKey: 'shareTitle',
-      descriptionKey: 'shareDescription',
-      href: '#compartir',
-      color: 'text-green-500',
-    },
-    {
       icon: Coins,
       titleKey: 'teamingTitle',
       descriptionKey: 'teamingDescription',
