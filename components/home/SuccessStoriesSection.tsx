@@ -111,7 +111,7 @@ export function SuccessStoriesSection({ stories: propStories, enabled = true }: 
                     height={128}
                     className="object-cover"
                     priority={currentIndex === 0}
-                    unoptimized={typeof currentStory.dogImage === 'object' && currentStory.dogImage.url && (currentStory.dogImage.url.includes('r2.cloudflarestorage.com') || currentStory.dogImage.url.includes('r2.dev'))}
+                    unoptimized={typeof currentStory.dogImage === 'object' && typeof currentStory.dogImage.url === 'string' && (currentStory.dogImage.url.includes('r2.cloudflarestorage.com') || currentStory.dogImage.url.includes('r2.dev'))}
                   />
                 </div>
               </div>
