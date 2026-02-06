@@ -1,5 +1,6 @@
 "use server";
 import { sponsorshipSchema, SponsorshipFormData } from '@/lib/validations/sponsorship';
+import { buildApiUrl } from '@/lib/utils';
 
 /**
  * Server Action: sendSponsorshipEmail
@@ -19,7 +20,7 @@ export async function sendSponsorshipEmail(formData: SponsorshipFormData) {
     const bodyToSend = JSON.stringify(formData);
     console.log('Enviando body:', bodyToSend);
     
-    const response = await fetch('/api/sponsorships', {
+    const response = await fetch(buildApiUrl('/api/sponsorships'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

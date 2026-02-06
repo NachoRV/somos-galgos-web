@@ -5,33 +5,7 @@ import { getPayload } from 'payload';
 import config from '@payload-config';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const PAYLOAD_API_KEY = process.env.PAYLOAD_API_KEY;
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@somosgalgos.es';
-
-/**
- * Helper para hacer llamadas a la API REST de Payload de forma segura
- */
-async function callPayloadAPI(endpoint: string, method: string, body?: any) {
-  try {
-    const response = await fetch(`/api${endpoint}`, {
-      method,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `users API-Key ${PAYLOAD_API_KEY}`,
-      },
-      body: body ? JSON.stringify(body) : undefined,
-    });
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(`Payload API error: ${error.message || response.statusText}`);
-    }
-
-    return await response.json();
-  } catch (error: any) {
-    console.error(`Error calling Payload API (${endpoint}):`, error);
-    throw error;
-  }
-}
 
 /**
  * Enviar email de notificación (adopción o acogida)

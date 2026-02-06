@@ -7,32 +7,6 @@ import config from '@payload-config';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 /**
- * Llamadas a la API de Payload usando credenciales de Authorization
- */
-async function callPayloadAPI(path: string, method: string = 'GET', body?: any) {
-  const apiKey = process.env.PAYLOAD_API_KEY;
-
-  const options: RequestInit = {
-    method,
-    headers: {
-      Authorization: `users API-Key ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-  };
-
-  if (body && (method === 'POST' || method === 'PATCH')) {
-    options.body = JSON.stringify(body);
-  }
-
-  const response = await fetch(`/api${path}`, options);
-  if (!response.ok) {
-    throw new Error(`Payload API error: ${response.status} ${response.statusText}`);
-  }
-
-  return response.json();
-}
-
-/**
  * Enviar email de notificación
  */
 async function sendNotificationEmail(formData: FosterFormData, isFoster: boolean = true) {

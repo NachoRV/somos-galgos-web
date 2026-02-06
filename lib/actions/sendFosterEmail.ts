@@ -1,5 +1,6 @@
 "use server";
 import { fosterSchema, FosterFormData } from '@/lib/validations/foster';
+import { buildApiUrl } from '@/lib/utils';
 
 /**
  * Server Action: sendFosterEmail
@@ -13,7 +14,7 @@ export async function sendFosterEmail(formData: FosterFormData) {
   }
 
   try {
-    const response = await fetch('/api/fosters', {
+    const response = await fetch(buildApiUrl('/api/fosters'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

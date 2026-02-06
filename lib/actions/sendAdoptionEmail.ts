@@ -1,5 +1,6 @@
 "use server";
 import { adoptionSchema, AdoptionFormData } from '@/lib/validations/adoption';
+import { buildApiUrl } from '@/lib/utils';
 
 /**
  * Server Action: sendAdoptionEmail
@@ -13,7 +14,7 @@ export async function sendAdoptionEmail(formData: AdoptionFormData) {
   }
 
   try {
-    const response = await fetch('/api/foster-adoptions', {
+    const response = await fetch(buildApiUrl('/api/foster-adoptions'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
