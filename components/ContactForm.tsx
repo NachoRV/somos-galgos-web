@@ -50,7 +50,7 @@ export default function ContactForm() {
     <form className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-lg" onSubmit={handleSubmit} noValidate>
       <h2 className="text-2xl font-bold mb-4">{t('title')}</h2>
       <div className="mb-4">
-        <label className="block font-semibold mb-1" htmlFor="name">{t('name')}</label>
+        <label className="block font-semibold mb-2 w-full" htmlFor="name">{t('name')}</label>
         <input
           className={`input input-bordered w-full ${errors.name ? 'border-red-500' : ''}`}
           type="text"
@@ -63,7 +63,7 @@ export default function ContactForm() {
         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name[0]}</p>}
       </div>
       <div className="mb-4">
-        <label className="block font-semibold mb-1" htmlFor="email">{t('email')}</label>
+        <label className="block font-semibold mb-2 w-full" htmlFor="email">{t('email')}</label>
         <input
           className={`input input-bordered w-full ${errors.email ? 'border-red-500' : ''}`}
           type="email"
@@ -76,7 +76,7 @@ export default function ContactForm() {
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email[0]}</p>}
       </div>
       <div className="mb-4">
-        <label className="block font-semibold mb-1" htmlFor="phone">{t('phone')}</label>
+        <label className="block font-semibold mb-2 w-full" htmlFor="phone">{t('phone')}</label>
         <input
           className={`input input-bordered w-full ${errors.phone ? 'border-red-500' : ''}`}
           type="tel"
@@ -89,7 +89,7 @@ export default function ContactForm() {
         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone[0]}</p>}
       </div>
       <div className="mb-4">
-        <label className="block font-semibold mb-1" htmlFor="subject">{t('subject')}</label>
+        <label className="block font-semibold mb-2 w-full" htmlFor="subject">{t('subject')}</label>
         <input
           className={`input input-bordered w-full ${errors.subject ? 'border-red-500' : ''}`}
           type="text"
@@ -102,7 +102,7 @@ export default function ContactForm() {
         {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject[0]}</p>}
       </div>
       <div className="mb-4">
-        <label className="block font-semibold mb-1" htmlFor="message">{t('message')}</label>
+        <label className="block font-semibold mb-2 w-full" htmlFor="message">{t('message')}</label>
         <textarea
           className={`textarea textarea-bordered w-full ${errors.message ? 'border-red-500' : ''}`}
           name="message"

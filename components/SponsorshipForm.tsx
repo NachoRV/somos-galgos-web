@@ -26,7 +26,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
         <h3 className="text-xl font-bold mb-4">{t('personalInfo')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('firstName')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('firstName')} *</span></label>
             <input 
               type="text" 
               name="firstName" 
@@ -35,10 +35,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.firstName ? 'input-error' : ''}`} 
               required 
             />
-            {errors.firstName && <label className="label"><span className="label-text-alt text-error">{errors.firstName}</span></label>}
+            {errors.firstName && <label className="label"><span className="label-text-alt text-error w-full">{errors.firstName}</span></label>}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('lastName1')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('lastName1')} *</span></label>
             <input 
               type="text" 
               name="lastName1" 
@@ -47,10 +47,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.lastName1 ? 'input-error' : ''}`} 
               required 
             />
-            {errors.lastName1 && <label className="label"><span className="label-text-alt text-error">{errors.lastName1}</span></label>}
+            {errors.lastName1 && <label className="label"><span className="label-text-alt text-error w-full">{errors.lastName1}</span></label>}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('lastName2')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('lastName2')} *</span></label>
             <input 
               type="text" 
               name="lastName2" 
@@ -59,10 +59,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.lastName2 ? 'input-error' : ''}`} 
               required 
             />
-            {errors.lastName2 && <label className="label"><span className="label-text-alt text-error">{errors.lastName2}</span></label>}
+            {errors.lastName2 && <label className="label"><span className="label-text-alt text-error w-full">{errors.lastName2}</span></label>}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('idDocument')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('idDocument')} *</span></label>
             <input 
               type="text" 
               name="idDocument" 
@@ -71,7 +71,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.idDocument ? 'input-error' : ''}`} 
               required 
             />
-            {errors.idDocument && <label className="label"><span className="label-text-alt text-error">{errors.idDocument}</span></label>}
+            {errors.idDocument && <label className="label"><span className="label-text-alt text-error w-full">{errors.idDocument}</span></label>}
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
         <h3 className="text-xl font-bold mb-4">{t('addressInfo')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="form-control md:col-span-2">
-            <label className="label"><span className="label-text">{t('street')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('street')} *</span></label>
             <input 
               type="text" 
               name="street" 
@@ -90,10 +90,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.street ? 'input-error' : ''}`} 
               required 
             />
-            {errors.street && <label className="label"><span className="label-text-alt text-error">{errors.street}</span></label>}
+            {errors.street && <label className="label"><span className="label-text-alt text-error w-full">{errors.street}</span></label>}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('postalCode')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('postalCode')} *</span></label>
             <input 
               type="text" 
               name="postalCode" 
@@ -102,10 +102,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.postalCode ? 'input-error' : ''}`} 
               required 
             />
-            {errors.postalCode && <label className="label"><span className="label-text-alt text-error">{errors.postalCode}</span></label>}
+            {errors.postalCode && <label className="label"><span className="label-text-alt text-error w-full">{errors.postalCode}</span></label>}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('city')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('city')} *</span></label>
             <input 
               type="text" 
               name="city" 
@@ -114,10 +114,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.city ? 'input-error' : ''}`} 
               required 
             />
-            {errors.city && <label className="label"><span className="label-text-alt text-error">{errors.city}</span></label>}
+            {errors.city && <label className="label"><span className="label-text-alt text-error w-full">{errors.city}</span></label>}
           </div>
           <div className="form-control md:col-span-2">
-            <label className="label"><span className="label-text">{t('province')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('province')} *</span></label>
             <input 
               type="text" 
               name="province" 
@@ -126,7 +126,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.province ? 'input-error' : ''}`} 
               required 
             />
-            {errors.province && <label className="label"><span className="label-text-alt text-error">{errors.province}</span></label>}
+            {errors.province && <label className="label"><span className="label-text-alt text-error w-full">{errors.province}</span></label>}
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
         <h3 className="text-xl font-bold mb-4">{t('contactInfo')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('email')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('email')} *</span></label>
             <input 
               type="email" 
               name="email" 
@@ -145,10 +145,10 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.email ? 'input-error' : ''}`} 
               required 
             />
-            {errors.email && <label className="label"><span className="label-text-alt text-error">{errors.email}</span></label>}
+            {errors.email && <label className="label"><span className="label-text-alt text-error w-full">{errors.email}</span></label>}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('phone')} *</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('phone')} *</span></label>
             <input 
               type="tel" 
               name="phone" 
@@ -157,7 +157,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               className={`input input-bordered w-full ${errors.phone ? 'input-error' : ''}`} 
               required 
             />
-            {errors.phone && <label className="label"><span className="label-text-alt text-error">{errors.phone}</span></label>}
+            {errors.phone && <label className="label"><span className="label-text-alt text-error w-full">{errors.phone}</span></label>}
           </div>
         </div>
       </div>
@@ -167,7 +167,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
         <div className="bg-base-200 p-6 rounded-lg">
           <h3 className="text-xl font-bold mb-4">{t('dogInfo')}</h3>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('dogName')}</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('dogName')}</span></label>
             <input 
               type="text" 
               name="dogName" 
@@ -185,7 +185,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
       <div className="bg-base-200 p-6 rounded-lg">
         <h3 className="text-xl font-bold mb-4">{t('quotaInfo')}</h3>
         <div className="form-control">
-          <label className="label"><span className="label-text">{t('quota')} *</span></label>
+          <label className="label pb-2"><span className="label-text w-full">{t('quota')} *</span></label>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
             {[10, 20, 25].map((amount) => (
               <label key={amount} className="flex items-center gap-2 cursor-pointer p-2 border border-base-300 rounded hover:bg-base-100">
@@ -202,7 +202,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
             ))}
           </div>
           <div className="form-control">
-            <label className="label"><span className="label-text">{t('quotaOther')}</span></label>
+            <label className="label pb-2"><span className="label-text w-full">{t('quotaOther')}</span></label>
             <input 
               type="number" 
               name="cuota" 
@@ -211,13 +211,13 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
               min="10"
               className={`input input-bordered w-full ${errors.cuota ? 'input-error' : ''}`}
             />
-            {errors.cuota && <label className="label"><span className="label-text-alt text-error">{errors.cuota}</span></label>}
+            {errors.cuota && <label className="label"><span className="label-text-alt text-error w-full">{errors.cuota}</span></label>}
           </div>
         </div>
 
         {/* Frecuencia de pago */}
         <div className="form-control mt-4">
-          <label className="label"><span className="label-text">{t('feeFrequency')} *</span></label>
+          <label className="label pb-2"><span className="label-text w-full">{t('feeFrequency')} *</span></label>
           <select 
             name="fee_frequency"
             value={formData.fee_frequency}
@@ -230,7 +230,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
             <option value="semiannual">{t('feeFrequencySemiannual')}</option>
             <option value="annual">{t('feeFrequencyAnnual')}</option>
           </select>
-          {errors.fee_frequency && <label className="label"><span className="label-text-alt text-error">{errors.fee_frequency}</span></label>}
+          {errors.fee_frequency && <label className="label"><span className="label-text-alt text-error w-full">{errors.fee_frequency}</span></label>}
         </div>
 
         <div className="alert alert-info mt-4">
@@ -272,7 +272,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
       <div className="bg-base-200 p-6 rounded-lg">
         <h3 className="text-xl font-bold mb-4">{t('bankInfo')}</h3>
         <div className="form-control">
-          <label className="label"><span className="label-text">{t('iban')} *</span></label>
+          <label className="label pb-2"><span className="label-text w-full">{t('iban')} *</span></label>
           <input 
             type="text" 
             name="iban" 
@@ -282,7 +282,7 @@ export function SponsorshipForm({ dogId, dogName, sponsorMode = 'padrino' }: Spo
             className={`input input-bordered w-full ${errors.iban ? 'input-error' : ''}`} 
             required 
           />
-          {errors.iban && <label className="label"><span className="label-text-alt text-error">{errors.iban}</span></label>}
+          {errors.iban && <label className="label"><span className="label-text-alt text-error w-full">{errors.iban}</span></label>}
           <label className="label"><span className="label-text-alt">{t('ibanHint')}</span></label>
         </div>
       </div>
