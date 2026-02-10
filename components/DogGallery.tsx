@@ -40,7 +40,7 @@ export function DogGallery({ photos, dogName }: DogGalleryProps) {
           src={currentPhoto.url}
           alt={`${dogName} - ${currentPhoto.description || 'Foto'}`}
           fill
-          className="object-cover cursor-pointer"
+          className="object-contain w-full h-full cursor-pointer"
           onClick={() => setIsOpen(true)}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
           unoptimized={currentPhoto.url.includes('r2.cloudflarestorage.com') || currentPhoto.url.includes('r2.dev')}
@@ -115,12 +115,12 @@ export function DogGallery({ photos, dogName }: DogGalleryProps) {
             <ChevronLeft size={40} />
           </button>
 
-          <div className="relative w-full h-full max-h-[90vh]">
+          <div className="relative w-full h-full max-h-[90vh] flex items-center justify-center">
             <Image
               src={currentPhoto.url}
               alt={`${dogName} - ${currentPhoto.description || 'Foto'}`}
               fill
-              className="object-cover w-full h-full rounded-lg"
+              className="object-contain w-full h-full rounded-lg"
               unoptimized={currentPhoto.url.includes('r2.cloudflarestorage.com') || currentPhoto.url.includes('r2.dev')}
             />
           </div>
