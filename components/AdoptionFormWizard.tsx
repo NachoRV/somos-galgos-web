@@ -218,7 +218,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('firstName')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('firstName')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -230,14 +230,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.firstName && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.firstName}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.firstName}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('lastName')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('lastName')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -249,14 +249,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.lastName && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.lastName}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.lastName}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('idDocument')}</span>
+                <span className="label-text w-full text-wrap">{t('idDocument')}</span>
               </label>
               <input
                 type="text"
@@ -267,14 +267,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.idDocument && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.idDocument}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.idDocument}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('email')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('email')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="email"
@@ -286,14 +286,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.email && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.email}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.email}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('phone')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('phone')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="tel"
@@ -305,14 +305,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.phone && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.phone}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.phone}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('birthYear')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('birthYear')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -324,14 +324,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.birthYear && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.birthYear}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.birthYear}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('maritalStatus')}</span>
+                <span className="label-text w-full text-wrap">{t('maritalStatus')}</span>
               </label>
               <select
                 name="maritalStatus"
@@ -348,14 +348,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               </select>
               {errors.maritalStatus && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.maritalStatus}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.maritalStatus}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('profession')}</span>
+                <span className="label-text w-full text-wrap">{t('profession')}</span>
               </label>
               <input
                 type="text"
@@ -366,14 +366,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.profession && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.profession}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.profession}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('otherContact')}</span>
+                <span className="label-text w-full text-wrap">{t('otherContact')}</span>
               </label>
               <input
                 type="text"
@@ -386,7 +386,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('currentlyWorking')}</span>
+                <span className="label-text w-full text-wrap">{t('currentlyWorking')}</span>
               </label>
               <select
                 name="currentlyWorking"
@@ -402,7 +402,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('workStability')}</span>
+                <span className="label-text w-full text-wrap">{t('workStability')}</span>
               </label>
               <select
                 name="workStability"
@@ -418,7 +418,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('workSchedule')}</span>
+                <span className="label-text w-full text-wrap">{t('workSchedule')}</span>
               </label>
               <input
                 type="text"
@@ -431,7 +431,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('hobbies')}</span>
+                <span className="label-text w-full text-wrap">{t('hobbies')}</span>
               </label>
               <textarea
                 name="hobbies"
@@ -449,7 +449,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('street')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('street')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -461,14 +461,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.street && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.street}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.street}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('postalCode')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('postalCode')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -481,14 +481,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.postalCode && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.postalCode}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.postalCode}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('city')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('city')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -500,14 +500,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.city && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.city}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.city}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('province')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('province')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -519,7 +519,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.province && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.province}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.province}</span>
                 </label>
               )}
             </div>
@@ -531,7 +531,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('housingType')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('housingType')} <span className="text-error">*</span></span>
               </label>
               <select
                 name="housingType"
@@ -549,14 +549,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               </select>
               {errors.housingType && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.housingType}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.housingType}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('housingSize')}</span>
+                <span className="label-text w-full text-wrap">{t('housingSize')}</span>
               </label>
               <input
                 type="text"
@@ -570,7 +570,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('hasGarden')}</span>
+                <span className="label-text w-full text-wrap">{t('hasGarden')}</span>
               </label>
               <select
                 name="hasGarden"
@@ -588,7 +588,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               <>
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('gardenFenced')}</span>
+                    <span className="label-text w-full text-wrap">{t('gardenFenced')}</span>
                   </label>
                   <select
                     name="gardenFenced"
@@ -604,7 +604,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('fenceHeight')}</span>
+                    <span className="label-text w-full text-wrap">{t('fenceHeight')}</span>
                   </label>
                   <input
                     type="text"
@@ -620,7 +620,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('housingOwnership')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('housingOwnership')} <span className="text-error">*</span></span>
               </label>
               <select
                 name="housingOwnership"
@@ -635,7 +635,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               </select>
               {errors.housingOwnership && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.housingOwnership}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.housingOwnership}</span>
                 </label>
               )}
             </div>
@@ -644,7 +644,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               <>
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('rentalPermission')}</span>
+                    <span className="label-text w-full text-wrap">{t('rentalPermission')}</span>
                   </label>
                   <select
                     name="rentalPermission"
@@ -660,7 +660,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('rentalAnimalLimit')}</span>
+                    <span className="label-text w-full text-wrap">{t('rentalAnimalLimit')}</span>
                   </label>
                   <select
                     name="rentalAnimalLimit"
@@ -678,7 +678,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('neighborsConcern')}</span>
+                <span className="label-text w-full text-wrap">{t('neighborsConcern')}</span>
               </label>
               <select
                 name="neighborsConcern"
@@ -699,7 +699,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('household')}</span>
+                <span className="label-text w-full text-wrap">{t('household')}</span>
               </label>
               <textarea
                 name="household"
@@ -712,7 +712,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('childrenCount')}</span>
+                <span className="label-text w-full text-wrap">{t('childrenCount')}</span>
               </label>
               <input
                 type="text"
@@ -725,7 +725,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('childrenAges')}</span>
+                <span className="label-text w-full text-wrap">{t('childrenAges')}</span>
               </label>
               <input
                 type="text"
@@ -738,7 +738,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('familyAgrees')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('familyAgrees')} <span className="text-error">*</span></span>
               </label>
               <select
                 name="familyAgrees"
@@ -753,14 +753,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               </select>
               {errors.familyAgrees && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.familyAgrees}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.familyAgrees}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('familyAllergies')}</span>
+                <span className="label-text w-full text-wrap">{t('familyAllergies')}</span>
               </label>
               <select
                 name="familyAllergies"
@@ -777,7 +777,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
             {formData.familyAllergies === 'yes' && (
               <div className="form-control">
                 <label className="label pb-2">
-                  <span className="label-text w-full">{t('allergiesDescription')}</span>
+                  <span className="label-text w-full text-wrap">{t('allergiesDescription')}</span>
                 </label>
                 <textarea
                   name="allergiesDescription"
@@ -796,7 +796,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('adoptionReason')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('adoptionReason')} <span className="text-error">*</span></span>
                 <span className="label-text-alt text-base-content/60">Mínimo 20 caracteres</span>
               </label>
               <textarea
@@ -809,14 +809,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.adoptionReason && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.adoptionReason}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.adoptionReason}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('adoptionPurpose')}</span>
+                <span className="label-text w-full text-wrap">{t('adoptionPurpose')}</span>
               </label>
               <textarea
                 name="adoptionPurpose"
@@ -829,7 +829,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('adoptionDecision')}</span>
+                <span className="label-text w-full text-wrap">{t('adoptionDecision')}</span>
               </label>
               <textarea
                 name="adoptionDecision"
@@ -842,7 +842,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('willingToFetch')}</span>
+                <span className="label-text w-full text-wrap">{t('willingToFetch')}</span>
               </label>
               <select
                 name="willingToFetch"
@@ -858,7 +858,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('adoptionTimeline')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('adoptionTimeline')} <span className="text-error">*</span></span>
               </label>
               <input
                 type="text"
@@ -870,14 +870,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               />
               {errors.adoptionTimeline && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.adoptionTimeline}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.adoptionTimeline}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('knownNeeds')}</span>
+                <span className="label-text w-full text-wrap">{t('knownNeeds')}</span>
               </label>
               <textarea
                 name="knownNeeds"
@@ -890,7 +890,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('previousContact')}</span>
+                <span className="label-text w-full text-wrap">{t('previousContact')}</span>
               </label>
               <textarea
                 name="previousContact"
@@ -903,7 +903,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('previousDogs')}</span>
+                <span className="label-text w-full text-wrap">{t('previousDogs')}</span>
               </label>
               <select
                 name="previousDogs"
@@ -920,7 +920,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
             {formData.previousDogs === 'yes' && (
               <div className="form-control">
                 <label className="label pb-2">
-                  <span className="label-text w-full">{t('previousExperience')}</span>
+                  <span className="label-text w-full text-wrap">{t('previousExperience')}</span>
                 </label>
                 <textarea
                   name="previousExperience"
@@ -934,7 +934,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('currentPets')}</span>
+                <span className="label-text w-full text-wrap">{t('currentPets')}</span>
               </label>
               <textarea
                 name="currentPets"
@@ -952,7 +952,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('appropriateFood')}</span>
+                <span className="label-text w-full text-wrap">{t('appropriateFood')}</span>
               </label>
               <textarea
                 name="appropriateFood"
@@ -965,7 +965,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('dogExpenses')}</span>
+                <span className="label-text w-full text-wrap">{t('dogExpenses')}</span>
               </label>
               <textarea
                 name="dogExpenses"
@@ -978,7 +978,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('medicalExpenses')}</span>
+                <span className="label-text w-full text-wrap">{t('medicalExpenses')}</span>
               </label>
               <textarea
                 name="medicalExpenses"
@@ -991,7 +991,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('aloneLocation')}</span>
+                <span className="label-text w-full text-wrap">{t('aloneLocation')}</span>
               </label>
               <textarea
                 name="aloneLocation"
@@ -1004,7 +1004,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('aloneTime')}</span>
+                <span className="label-text w-full text-wrap">{t('aloneTime')}</span>
               </label>
               <input
                 type="text"
@@ -1017,7 +1017,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('aloneTimeFuture')}</span>
+                <span className="label-text w-full text-wrap">{t('aloneTimeFuture')}</span>
               </label>
               <input
                 type="text"
@@ -1030,7 +1030,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('walkFrequency')}</span>
+                <span className="label-text w-full text-wrap">{t('walkFrequency')}</span>
               </label>
               <input
                 type="text"
@@ -1043,7 +1043,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('morningWalkTime')}</span>
+                <span className="label-text w-full text-wrap">{t('morningWalkTime')}</span>
               </label>
               <input
                 type="text"
@@ -1056,7 +1056,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('eveningWalkTime')}</span>
+                <span className="label-text w-full text-wrap">{t('eveningWalkTime')}</span>
               </label>
               <input
                 type="text"
@@ -1069,7 +1069,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('walkAreas')}</span>
+                <span className="label-text w-full text-wrap">{t('walkAreas')}</span>
               </label>
               <textarea
                 name="walkAreas"
@@ -1082,7 +1082,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('walkAccessories')}</span>
+                <span className="label-text w-full text-wrap">{t('walkAccessories')}</span>
               </label>
               <textarea
                 name="walkAccessories"
@@ -1095,7 +1095,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('offLeash')}</span>
+                <span className="label-text w-full text-wrap">{t('offLeash')}</span>
               </label>
               <select
                 name="offLeash"
@@ -1112,7 +1112,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
             {formData.offLeash === 'yes' && (
               <div className="form-control">
                 <label className="label pb-2">
-                  <span className="label-text w-full">{t('offLeashWhere')}</span>
+                  <span className="label-text w-full text-wrap">{t('offLeashWhere')}</span>
                 </label>
                 <textarea
                   name="offLeashWhere"
@@ -1126,7 +1126,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('dogLocation')}</span>
+                <span className="label-text w-full text-wrap">{t('dogLocation')}</span>
               </label>
               <textarea
                 name="dogLocation"
@@ -1139,7 +1139,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('forbiddenRooms')}</span>
+                <span className="label-text w-full text-wrap">{t('forbiddenRooms')}</span>
               </label>
               <textarea
                 name="forbiddenRooms"
@@ -1152,7 +1152,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('sleepLocation')}</span>
+                <span className="label-text w-full text-wrap">{t('sleepLocation')}</span>
               </label>
               <textarea
                 name="sleepLocation"
@@ -1165,7 +1165,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('sofaPolicy')}</span>
+                <span className="label-text w-full text-wrap">{t('sofaPolicy')}</span>
               </label>
               <textarea
                 name="sofaPolicy"
@@ -1178,7 +1178,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('misbehaviorPolicy')}</span>
+                <span className="label-text w-full text-wrap">{t('misbehaviorPolicy')}</span>
               </label>
               <textarea
                 name="misbehaviorPolicy"
@@ -1196,7 +1196,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('badExperienceWithDog')}</span>
+                <span className="label-text w-full text-wrap">{t('badExperienceWithDog')}</span>
               </label>
               <textarea
                 name="badExperienceWithDog"
@@ -1209,7 +1209,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('vacationPlan')}</span>
+                <span className="label-text w-full text-wrap">{t('vacationPlan')}</span>
               </label>
               <textarea
                 name="vacationPlan"
@@ -1222,7 +1222,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('familyChangePolicy')}</span>
+                <span className="label-text w-full text-wrap">{t('familyChangePolicy')}</span>
               </label>
               <textarea
                 name="familyChangePolicy"
@@ -1235,7 +1235,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('veterinarianName')}</span>
+                <span className="label-text w-full text-wrap">{t('veterinarianName')}</span>
               </label>
               <input
                 type="text"
@@ -1248,7 +1248,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('veterinarianPhone')}</span>
+                <span className="label-text w-full text-wrap">{t('veterinarianPhone')}</span>
               </label>
               <input
                 type="tel"
@@ -1261,7 +1261,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('sterileAgreement')}</span>
+                <span className="label-text w-full text-wrap">{t('sterileAgreement')}</span>
               </label>
               <select
                 name="sterileAgreement"
@@ -1277,7 +1277,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('dogTypePreference')}</span>
+                <span className="label-text w-full text-wrap">{t('dogTypePreference')}</span>
               </label>
               <textarea
                 name="dogTypePreference"
@@ -1290,7 +1290,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('dogTypeReason')}</span>
+                <span className="label-text w-full text-wrap">{t('dogTypeReason')}</span>
               </label>
               <textarea
                 name="dogTypeReason"
@@ -1303,7 +1303,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('physicalProblemTolerance')}</span>
+                <span className="label-text w-full text-wrap">{t('physicalProblemTolerance')}</span>
               </label>
               <select
                 name="physicalProblemTolerance"
@@ -1319,7 +1319,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('puppyPreference')}</span>
+                <span className="label-text w-full text-wrap">{t('puppyPreference')}</span>
               </label>
               <select
                 name="puppyPreference"
@@ -1337,7 +1337,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               <>
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('puppyWhy')}</span>
+                    <span className="label-text w-full text-wrap">{t('puppyWhy')}</span>
                   </label>
                   <textarea
                     name="puppyWhy"
@@ -1350,7 +1350,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('puppyCare')}</span>
+                    <span className="label-text w-full text-wrap">{t('puppyCare')}</span>
                   </label>
                   <textarea
                     name="puppyCare"
@@ -1363,7 +1363,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('puppyAdvantages')}</span>
+                    <span className="label-text w-full text-wrap">{t('puppyAdvantages')}</span>
                   </label>
                   <textarea
                     name="puppyAdvantages"
@@ -1376,7 +1376,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
                 <div className="form-control">
                   <label className="label pb-2">
-                    <span className="label-text w-full">{t('puppyDisadvantages')}</span>
+                    <span className="label-text w-full text-wrap">{t('puppyDisadvantages')}</span>
                   </label>
                   <textarea
                     name="puppyDisadvantages"
@@ -1391,7 +1391,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('negativeDogAspect')}</span>
+                <span className="label-text w-full text-wrap">{t('negativeDogAspect')}</span>
               </label>
               <textarea
                 name="negativeDogAspect"
@@ -1409,7 +1409,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
           <div className="space-y-4">
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('behaviorProblems')}</span>
+                <span className="label-text w-full text-wrap">{t('behaviorProblems')}</span>
               </label>
               <textarea
                 name="behaviorProblems"
@@ -1422,7 +1422,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('behaviorCauses')}</span>
+                <span className="label-text w-full text-wrap">{t('behaviorCauses')}</span>
               </label>
               <textarea
                 name="behaviorCauses"
@@ -1435,7 +1435,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('behaviorSolvable')}</span>
+                <span className="label-text w-full text-wrap">{t('behaviorSolvable')}</span>
               </label>
               <textarea
                 name="behaviorSolvable"
@@ -1448,7 +1448,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('behaviorSolution')}</span>
+                <span className="label-text w-full text-wrap">{t('behaviorSolution')}</span>
               </label>
               <textarea
                 name="behaviorSolution"
@@ -1461,7 +1461,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('behaviorBooks')}</span>
+                <span className="label-text w-full text-wrap">{t('behaviorBooks')}</span>
               </label>
               <textarea
                 name="behaviorBooks"
@@ -1474,7 +1474,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('trainingMethods')}</span>
+                <span className="label-text w-full text-wrap">{t('trainingMethods')}</span>
               </label>
               <textarea
                 name="trainingMethods"
@@ -1487,7 +1487,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('housetrainingMethod')}</span>
+                <span className="label-text w-full text-wrap">{t('housetrainingMethod')}</span>
               </label>
               <textarea
                 name="housetrainingMethod"
@@ -1500,7 +1500,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('fearfulDogExperience')}</span>
+                <span className="label-text w-full text-wrap">{t('fearfulDogExperience')}</span>
               </label>
               <textarea
                 name="fearfulDogExperience"
@@ -1513,7 +1513,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('homeVisitConsent')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('homeVisitConsent')} <span className="text-error">*</span></span>
               </label>
               <select
                 name="homeVisitConsent"
@@ -1528,14 +1528,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               </select>
               {errors.homeVisitConsent && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.homeVisitConsent}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.homeVisitConsent}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('postSurgeryInconvenience')}</span>
+                <span className="label-text w-full text-wrap">{t('postSurgeryInconvenience')}</span>
               </label>
               <select
                 name="postSurgeryInconvenience"
@@ -1552,7 +1552,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
             {formData.postSurgeryInconvenience === 'yes' && (
               <div className="form-control">
                 <label className="label pb-2">
-                  <span className="label-text w-full">{t('postSurgeryDescription')}</span>
+                  <span className="label-text w-full text-wrap">{t('postSurgeryDescription')}</span>
                 </label>
                 <textarea
                   name="postSurgeryDescription"
@@ -1566,7 +1566,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('adoptionFeeConsent')} <span className="text-error">*</span></span>
+                <span className="label-text w-full text-wrap">{t('adoptionFeeConsent')} <span className="text-error">*</span></span>
                 <span className="label-text-alt text-base-content/60">Cuota: 225€</span>
               </label>
               <select
@@ -1582,14 +1582,14 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
               </select>
               {errors.adoptionFeeConsent && (
                 <label className="label pb-2">
-                  <span className="label-text-alt text-error w-full">{errors.adoptionFeeConsent}</span>
+                  <span className="label-text-alt text-error w-full text-wrap">{errors.adoptionFeeConsent}</span>
                 </label>
               )}
             </div>
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('behaviorProblemsAware')}</span>
+                <span className="label-text w-full text-wrap">{t('behaviorProblemsAware')}</span>
               </label>
               <select
                 name="behaviorProblemsAware"
@@ -1605,7 +1605,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('willingToConductWork')}</span>
+                <span className="label-text w-full text-wrap">{t('willingToConductWork')}</span>
               </label>
               <select
                 name="willingToConductWork"
@@ -1621,7 +1621,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('willingToFollowAdvice')}</span>
+                <span className="label-text w-full text-wrap">{t('willingToFollowAdvice')}</span>
               </label>
               <select
                 name="willingToFollowAdvice"
@@ -1637,7 +1637,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('fearsAware')}</span>
+                <span className="label-text w-full text-wrap">{t('fearsAware')}</span>
               </label>
               <select
                 name="fearsAware"
@@ -1653,7 +1653,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('willingToHelpFears')}</span>
+                <span className="label-text w-full text-wrap">{t('willingToHelpFears')}</span>
               </label>
               <select
                 name="willingToHelpFears"
@@ -1669,7 +1669,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('willingToFollowFearsAdvice')}</span>
+                <span className="label-text w-full text-wrap">{t('willingToFollowFearsAdvice')}</span>
               </label>
               <select
                 name="willingToFollowFearsAdvice"
@@ -1685,7 +1685,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('additionalComments')}</span>
+                <span className="label-text w-full text-wrap">{t('additionalComments')}</span>
               </label>
               <textarea
                 name="additionalComments"
@@ -1698,7 +1698,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('howDidYouKnowUs')}</span>
+                <span className="label-text w-full text-wrap">{t('howDidYouKnowUs')}</span>
               </label>
               <input
                 type="text"
@@ -1711,7 +1711,7 @@ export function AdoptionFormWizard({ dogId, dogName }: AdoptionFormWizardProps) 
 
             <div className="form-control">
               <label className="label pb-2">
-                <span className="label-text w-full">{t('formFeedback')}</span>
+                <span className="label-text w-full text-wrap">{t('formFeedback')}</span>
               </label>
               <textarea
                 name="formFeedback"

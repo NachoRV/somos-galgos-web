@@ -681,6 +681,8 @@
     "feeFrequencySemiannual": "Semestral",
     "feeFrequencyAnnual": "Anual",
     "quotaNote": "La cuota mínima es de 10€/mes. Tu aportación ayuda a mantener todos nuestros programas activos.",
+    "transferYes": "Sí",
+    "transferNo": "No",
     "bankInfo": "Datos Bancarios",
     "iban": "IBAN",
     "ibanHint": "IBAN completo (ESXX + 20 dígitos)",

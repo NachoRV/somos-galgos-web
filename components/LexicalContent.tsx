@@ -53,7 +53,7 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
 
     switch (node.type) {
       case 'paragraph':
-        return <p key={index} className="mb-4 last:mb-0">{children}</p>;
+        return <p key={index} className="mb-4 last:mb-0"><>{children}</></p>;
       
       case 'heading':
         const HeadingTag = (node.tag || 'h2') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -78,12 +78,12 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
             key={index} 
             className={node.tag === 'ol' ? 'list-decimal ml-6 mb-4' : 'list-disc ml-6 mb-4'}
           >
-            {children}
+            <>{children}</>
           </ListTag>
         );
       
       case 'listitem':
-        return <li key={index} className="mb-1">{children}</li>;
+        return <li key={index} className="mb-1"><>{children}</></li>;
       
       case 'link':
         return (
@@ -94,14 +94,14 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
             target="_blank"
             rel="noopener noreferrer"
           >
-            {children}
+            <>{children}</>
           </a>
         );
       
       case 'quote':
         return (
           <blockquote key={index} className="border-l-4 border-gray-300 pl-4 italic my-4">
-            {children}
+            <>{children}</>
           </blockquote>
         );
       
@@ -111,13 +111,13 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
       case 'code':
         return (
           <code key={index} className="bg-gray-100 px-2 py-1 rounded font-mono text-sm">
-            {children}
+            <>{children}</>
           </code>
         );
       
       default:
         // Render unknown node types as span to avoid breaking
-        return <span key={index}>{children}</span>;
+        return <span key={index}><>{children}</></span>;
     }
   };
 
