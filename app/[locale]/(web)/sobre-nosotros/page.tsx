@@ -5,6 +5,7 @@ import { getTranslations as getServerTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 import { SITE_URL } from '@/lib/constants';
 import { LexicalContent } from '@/components/LexicalContent';
+import { isLexicalContent } from '@/lib/utils/lexical';
 import { SobreNosotrosHeroSection } from '@/components/about';
 import { ImpactCounterSection } from '@/components/home/ImpactCounterSection';
 
@@ -77,7 +78,7 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
       {(aboutData?.mission || aboutData?.vision) && (
         <section className="py-20 px-4 md:px-8 bg-white">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-            {aboutData.mission && (
+            {aboutData?.mission && isLexicalContent(aboutData.mission) && (
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Misión</h2>
                 <div className="text-gray-700">
@@ -85,7 +86,7 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
                 </div>
               </div>
             )}
-            {aboutData.vision && (
+            {aboutData?.vision && isLexicalContent(aboutData.vision) && (
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestra Visión</h2>
                 <div className="text-gray-700">
@@ -114,7 +115,13 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
                     {value.value}
                   </h3>
                   {value.description && (
-                    <p className="text-gray-600">{value.description}</p>
+                    <div className="text-gray-600">
+                      {isLexicalContent(value.description) ? (
+                        <LexicalContent content={value.description} />
+                      ) : typeof value.description === 'string' ? (
+                        <p>{value.description}</p>
+                      ) : null}
+                    </div>
                   )}
                 </div>
               ))}
@@ -158,7 +165,13 @@ export default async function SobreNosotrosPage({ params }: PageProps) {
                     </h3>
                     <p className="text-indigo-600 font-medium mb-3">{member.role}</p>
                     {member.bio && (
-                      <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
+                      <div className="text-gray-600 text-sm mb-4">
+                        {isLexicalContent(member.bio) ? (
+                          <LexicalContent content={member.bio} />
+                        ) : typeof member.bio === 'string' ? (
+                          <p>{member.bio}</p>
+                        ) : null}
+                      </div>
                     )}
                     {member.email && (
                       <a

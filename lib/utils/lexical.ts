@@ -14,8 +14,13 @@ export function isLexicalContent(content: any): boolean {
   return !!(
     content &&
     typeof content === 'object' &&
+    !Array.isArray(content) &&
+    'root' in content &&
     content.root &&
-    content.root.children
+    typeof content.root === 'object' &&
+    'children' in content.root &&
+    Array.isArray(content.root.children) &&
+    content.root.children.length > 0
   );
 }
 

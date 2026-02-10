@@ -72,7 +72,7 @@ function transformPayloadDog(payloadDog: any): Dog {
     neutering_date: payloadDog.neuteringDate || '',
     photos,
     status: payloadDog.status,
-    notes: payloadDog.notes || '',
+    notes: payloadDog.notes || null,
     web_description: payloadDog.webDescription || null,
     tested_with_cats: payloadDog.testedWithCats || false,
     is_invisible: payloadDog.isInvisible || false,

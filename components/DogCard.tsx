@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { Dog } from '@/types/dog';
 import { LexicalContent } from '@/components/LexicalContent';
+import { isLexicalContent } from '@/lib/utils/lexical';
 
 interface DogCardProps {
   dog: Dog;
@@ -53,7 +54,7 @@ export function DogCard({ dog }: DogCardProps) {
         </div>
 
         {/* Descripción web */}
-        {dog.web_description && (
+        {dog.web_description && isLexicalContent(dog.web_description) && (
           <div className="text-[var(--color-text-secondary)] mb-6 text-sm line-clamp-3 flex-grow">
             <LexicalContent content={dog.web_description} />
           </div>

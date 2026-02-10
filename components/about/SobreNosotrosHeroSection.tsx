@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { LexicalContent } from '@/components/LexicalContent';
+import { isLexicalContent } from '@/lib/utils/lexical';
 
 interface SobreNosotrosHeroSectionProps {
   title?: string;
@@ -37,7 +38,7 @@ export function SobreNosotrosHeroSection({
           </p>
         )}
 
-        {description && (
+        {description && isLexicalContent(description) && (
           <div className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto prose-invert prose">
             <LexicalContent content={description} />
           </div>

@@ -35,7 +35,7 @@ export interface Dog {
   neutering_date: string;
   photos: PhotoTransformed[];
   status: DogStatus;
-  notes?: string;
+  notes?: any; // Lexical richText object
   web_description: any; // Lexical richText object
   tested_with_cats: boolean;
   is_invisible: boolean;

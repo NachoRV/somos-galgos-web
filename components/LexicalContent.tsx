@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { isLexicalContent } from '@/lib/utils/lexical';
 
 interface LexicalNode {
   text?: string;
@@ -20,13 +21,34 @@ interface LexicalContentProps {
  * Renders Lexical editor content as HTML
  * Reusable component for all richText fields from Payload CMS
  * 
+ * Safely handles:
+ * - Lexical JSON objects ({root: {children: [...]}})
+ * - Plain strings
+ * - Invalid or unknown formats (returns null or plain text)
+ * 
  * @example
  * ```tsx
  * <LexicalContent content={dog.web_description} />
  * ```
  */
 export function LexicalContent({ content, className = '' }: LexicalContentProps) {
-  if (!content || typeof content !== 'object') {
+  // Handle null, undefined, or empty content
+  if (!content) {
+    return null;
+  }
+
+  // If it's a string, render it as plain text
+  if (typeof content === 'string') {
+    return <p className={className}>{content}</p>;
+  }
+
+  // If it's not an object, return null (can't render)
+  if (typeof content !== 'object' || Array.isArray(content)) {
+    return null;
+  }
+
+  // Check if content has the expected Lexical structure
+  if (!isLexicalContent(content)) {
     return null;
   }
 
@@ -121,12 +143,17 @@ export function LexicalContent({ content, className = '' }: LexicalContentProps)
     }
   };
 
-  if (content.root && content.root.children) {
-    return (
-      <div className={`lexical-content ${className}`}>
-        {content.root.children.map((node: LexicalNode, index: number) => renderNode(node, index))}
-      </div>
-    );
+  // Final render with proper structure check
+  try {
+    if (Array.isArray(content.root.children) && content.root.children.length > 0) {
+      return (
+        <div className={`lexical-content ${className}`}>
+          {content.root.children.map((node: LexicalNode, index: number) => renderNode(node, index))}
+        </div>
+      );
+    }
+  } catch (error) {
+    console.error('Error rendering Lexical content:', error);
   }
 
   return null;

@@ -5,6 +5,7 @@ import { getDogById } from '@/lib/services/dogService';
 import { DogGallery } from '@/components/DogGallery';
 import type { Dog } from '@/types/dog';
 import { LexicalContent } from '@/components/LexicalContent';
+import { isLexicalContent } from '@/lib/utils/lexical';
 import { lexicalToText } from '@/lib/utils/lexicalToText';
 
 interface DogDetailPageProps {
@@ -167,7 +168,11 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
             {t('about')} {dog.name}
           </h2>
           <div className="text-[var(--color-text-secondary)] leading-relaxed">
-            <LexicalContent content={dog.web_description} />
+            {dog.web_description && isLexicalContent(dog.web_description) ? (
+              <LexicalContent content={dog.web_description} />
+            ) : (
+              <p>No hay descripción disponible para este galgo.</p>
+            )}
           </div>
 
           {dog.notes && (
@@ -175,9 +180,9 @@ export default async function DogDetailPage({ params }: DogDetailPageProps) {
               <h3 className="font-bold text-[var(--color-primary)] mb-2">
                 {t('notes')}
               </h3>
-              <p className="text-[var(--color-text-secondary)] text-sm whitespace-pre-wrap">
-                {dog.notes}
-              </p>
+              <div className="text-[var(--color-text-secondary)] text-sm">
+                <LexicalContent content={dog.notes} />
+              </div>
             </div>
           )}
         </div>
