@@ -115,14 +115,15 @@ export function DogGallery({ photos, dogName }: DogGalleryProps) {
             <ChevronLeft size={40} />
           </button>
 
-          <Image
-            src={currentPhoto.url}
-            alt={`${dogName} - ${currentPhoto.description || 'Foto'}`}
-            width={1200}
-            height={800}
-            className="max-h-[90vh] w-auto object-contain"
-            unoptimized={currentPhoto.url.includes('r2.cloudflarestorage.com') || currentPhoto.url.includes('r2.dev')}
-          />
+          <div className="relative w-full h-full max-h-[90vh]">
+            <Image
+              src={currentPhoto.url}
+              alt={`${dogName} - ${currentPhoto.description || 'Foto'}`}
+              fill
+              className="object-cover w-full h-full rounded-lg"
+              unoptimized={currentPhoto.url.includes('r2.cloudflarestorage.com') || currentPhoto.url.includes('r2.dev')}
+            />
+          </div>
 
           <button
             onClick={handleNext}
