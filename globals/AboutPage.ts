@@ -2,7 +2,7 @@ import type { GlobalConfig } from 'payload'
 
 export const AboutPage: GlobalConfig = {
   slug: 'about-page',
-  label: 'About Page',
+  label: 'Sobre Nosotros',
   access: {
     read: () => true,
     update: ({ req: { user } }) => Boolean(user),
@@ -12,127 +12,127 @@ export const AboutPage: GlobalConfig = {
       type: 'tabs',
       tabs: [
         {
-          label: 'General Information',
-          description: 'Basic page content',
+          label: 'Información general',
+          description: 'Contenido básico de la página',
           fields: [
             {
               name: 'title',
               type: 'text',
               required: true,
-              label: 'Page Title',
+              label: 'Título de la página',
             },
             {
               name: 'subtitle',
               type: 'text',
-              label: 'Subtitle',
+              label: 'Subtítulo',
             },
             {
               name: 'description',
               type: 'richText',
-              label: 'Main Description',
+              label: 'Descripción',
             },
           ],
         },
         {
-          label: 'Mission & Vision',
-          description: 'Organization mission, vision, and values',
+          label: 'Misión y Visión',
+          description: 'Misión, visión y valores de la organización',
           fields: [
             {
               name: 'mission',
               type: 'richText',
-              label: 'Our Mission',
+              label: 'Nuestra misión',
             },
             {
               name: 'vision',
               type: 'richText',
-              label: 'Our Vision',
+              label: 'Nuestra visión',
             },
             {
               name: 'values',
               type: 'array',
-              label: 'Core Values',
+              label: 'Valores',
               fields: [
                 {
                   name: 'value',
                   type: 'text',
                   required: true,
-                  label: 'Value Name',
+                  label: 'Nombre del valor',
                 },
                 {
                   name: 'description',
                   type: 'text',
-                  label: 'Value Description',
+                  label: 'Descripción del valor',
                 },
               ],
             },
           ],
         },
         {
-          label: 'Statistics',
-          description: 'Impact statistics and numbers',
+          label: 'Estadísticas',
+          description: 'Estadísticas e impacto',
           fields: [
             {
               name: 'stats',
               type: 'array',
-              label: 'Statistics',
+              label: 'Estadísticas',
               fields: [
                 {
                   name: 'label',
                   type: 'text',
                   required: true,
-                  label: 'Stat Label',
+                  label: 'Etiqueta',
                 },
                 {
                   name: 'number',
                   type: 'number',
                   required: true,
-                  label: 'Stat Number',
+                  label: 'Número',
                 },
                 {
                   name: 'suffix',
                   type: 'text',
-                  label: 'Suffix (e.g., "+", "%")',
+                  label: 'Sufijo (p. ej. "+", "%")',
                 },
               ],
             },
           ],
         },
         {
-          label: 'Team',
-          description: 'Team members information',
+          label: 'Equipo',
+          description: 'Información de los miembros del equipo',
           fields: [
             {
               name: 'team_members',
               type: 'array',
-              label: 'Team Members',
+              label: 'Miembros del equipo',
               fields: [
                 {
                   name: 'name',
                   type: 'text',
                   required: true,
-                  label: 'Name',
+                  label: 'Nombre',
                 },
                 {
                   name: 'role',
                   type: 'text',
                   required: true,
-                  label: 'Role',
+                  label: 'Cargo',
                 },
                 {
                   name: 'bio',
                   type: 'textarea',
-                  label: 'Biography',
+                  label: 'Biografía',
                 },
                 {
                   name: 'image',
                   type: 'upload',
                   relationTo: 'media',
-                  label: 'Profile Image',
+                  label: 'Imagen de perfil',
                 },
                 {
                   name: 'email',
                   type: 'email',
-                  label: 'Email',
+                  label: 'Correo electrónico',
                 },
               ],
             },
@@ -140,17 +140,17 @@ export const AboutPage: GlobalConfig = {
         },
         {
           label: 'SEO',
-          description: 'Search engine optimization',
+          description: 'Optimización para buscadores',
           fields: [
             {
               name: 'meta_title',
               type: 'text',
-              label: 'Meta Title',
+              label: 'Título meta',
             },
             {
               name: 'meta_description',
               type: 'textarea',
-              label: 'Meta Description',
+              label: 'Descripción meta',
             },
           ],
         },

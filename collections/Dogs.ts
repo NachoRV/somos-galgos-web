@@ -3,6 +3,10 @@ import { volunteerReadOnlyCollectionAccess } from '../lib/access/volunteerReadOn
 
 export const Dogs: CollectionConfig = {
   slug: "dogs",
+  labels: {
+    singular: "Perro",
+    plural: "Perros",
+  },
   admin: {
     useAsTitle: "name",
     defaultColumns: ["name", "breed", "status", "entryDate", "updatedAt"],

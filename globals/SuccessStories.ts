@@ -2,7 +2,7 @@ import type { GlobalConfig } from 'payload'
 
 export const SuccessStories: GlobalConfig = {
   slug: 'success-stories',
-  label: 'Success Stories',
+  label: 'Historias de éxito',
   access: {
     read: () => true,
     update: ({ req: { user } }) => Boolean(user),
@@ -11,16 +11,16 @@ export const SuccessStories: GlobalConfig = {
     {
       name: 'enabled',
       type: 'checkbox',
-      label: 'Show Success Stories Section',
+      label: 'Mostrar sección de historias de éxito',
       defaultValue: true,
       admin: {
-        description: 'Toggle to show/hide the entire success stories section on the homepage',
+        description: 'Alternar para mostrar/ocultar la sección de historias de éxito en la página principal',
       },
     },
     {
       name: 'stories',
       type: 'array',
-      label: 'Success Stories',
+      label: 'Historias de éxito',
       required: true,
       minRows: 1,
       maxRows: 10,
@@ -29,9 +29,9 @@ export const SuccessStories: GlobalConfig = {
           name: 'dogName',
           type: 'text',
           required: true,
-          label: 'Dog Name',
+          label: 'Nombre del perro',
           admin: {
-            description: 'Name of the adopted greyhound',
+            description: 'Nombre del galgo adoptado',
           },
         },
         {
@@ -39,27 +39,27 @@ export const SuccessStories: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
-          label: 'Dog Image',
+          label: 'Imagen del perro',
           admin: {
-            description: 'Photo of the adopted dog (preferably in their new home)',
+            description: 'Foto del perro adoptado (preferiblemente en su nuevo hogar)',
           },
         },
         {
           name: 'ownerName',
           type: 'text',
           required: true,
-          label: 'Owner Name',
+          label: 'Nombre del adoptante',
           admin: {
-            description: 'Name of the person/family who adopted the dog',
+            description: 'Nombre de la persona/familia que adoptó al perro',
           },
         },
         {
           name: 'testimonial',
           type: 'textarea',
           required: true,
-          label: 'Testimonial',
+          label: 'Testimonio',
           admin: {
-            description: 'The adopter testimonial about their experience (keep it between 200-300 characters for best display)',
+            description: 'Testimonio del adoptante sobre su experiencia (mantener entre 200-300 caracteres para mejor presentación)',
           },
           maxLength: 500,
         },
@@ -67,9 +67,9 @@ export const SuccessStories: GlobalConfig = {
           name: 'adoptionDate',
           type: 'date',
           required: true,
-          label: 'Adoption Date',
+          label: 'Fecha de adopción',
           admin: {
-            description: 'Date when the dog was adopted',
+            description: 'Fecha en que se realizó la adopción del perro',
             date: {
               pickerAppearance: 'dayOnly',
               displayFormat: 'MMMM d, yyyy',
@@ -79,38 +79,38 @@ export const SuccessStories: GlobalConfig = {
         {
           name: 'featured',
           type: 'checkbox',
-          label: 'Featured Story',
+          label: 'Historia destacada',
           defaultValue: false,
           admin: {
-            description: 'Mark as featured to show first in the carousel',
+            description: 'Marcar como destacada para mostrarla primero en el carrusel',
           },
         },
         {
           name: 'active',
           type: 'checkbox',
-          label: 'Active',
+          label: 'Activo',
           defaultValue: true,
           admin: {
-            description: 'Uncheck to temporarily hide this story without deleting it',
+            description: 'Desmarcar para ocultar temporalmente esta historia sin eliminarla',
           },
         },
         {
           name: 'order',
           type: 'number',
-          label: 'Display Order',
+          label: 'Orden de visualización',
           admin: {
-            description: 'Order in which stories appear (lower numbers first). Featured stories always appear first.',
+            description: 'Orden en el que aparecen las historias (números más bajos primero). Las historias destacadas siempre aparecen primero.',
           },
           defaultValue: 0,
         },
       ],
       admin: {
-        description: 'Manage the success stories carousel displayed on the homepage',
+        description: 'Gestiona el carrusel de historias de éxito que se muestra en la página principal',
         initCollapsed: true,
       },
     },
   ],
   admin: {
-    description: 'Manage testimonials and success stories from adopters',
+    description: 'Gestiona los testimonios e historias de éxito de los adoptantes',
   },
 }
